@@ -39,7 +39,7 @@ const items = allItems
     cost: i.cost,
     tier: i.item_tier,
     slot: i.item_slot_type,
-    image: i.shop_image_small_webp ?? i.image_webp ?? i.image ?? "",
+    image: i.shop_image_webp ?? i.shop_image_small_webp ?? i.image_webp ?? i.image ?? "",
   }));
 console.log(
   `Catalog: ${heroes.length} heroes, ${items.length} items. Fetching ${authors.length} roster authors…`,

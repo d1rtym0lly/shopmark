@@ -14,7 +14,8 @@
     "doctor": "node tools/doctor.mjs",
     "preview": "node tools/preview.mjs",
     "test": "node --test test/*.test.mjs",
-    "test:ui": "playwright test"
+    "test:ui": "playwright test",
+    "install:mod": "node tools/install.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.64.1"
