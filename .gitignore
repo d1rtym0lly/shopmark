@@ -1,0 +1,9 @@
+.reference/
+.cache/
+.build/
+dist/
+node_modules/
+*.log
+test-results/
+playwright-report/
+data/snapshot.json.tmp

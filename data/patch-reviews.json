@@ -1,0 +1,224 @@
+[
+  {
+    "source": "https://store.steampowered.com/news/app/1422450/view/680765564125186045",
+    "date": "2026-10-30T20:51:49Z",
+    "complete": true,
+    "reviewedLines": [
+      "High-Velocity Rounds: Bullet Velocity reduced from 60% to 45% (upgrades unaffected)",
+      "Express Shot: Secondary Fire Weapon Damage and growth reduced by 5%",
+      "Point Blank: Slow duration increased from 2s to 2.5s",
+      "Hunter's Aura: No longer affects or counts enemies outside of line of sight or through walls",
+      "Shadow Weave: No longer has Ambush Fire Rate or Melee Damage",
+      "Shadow Weave: Now has +50% Ambush Weapon Damage",
+      "Shadow Weave: Ambush bonuses now build up over 6s of being stealthed before reaching full power (invis progress UI pulses when it is charged up)",
+      "Shadow Weave: Abilities used to break stealth now benefit from the Ambush bonus on their own damage (previously the bonus was applied after the ability had already gone off)",
+      "Toxic Bullets: Anti Heal increased from 35% to 40%",
+      "Armor Piercer: Chance increased from 55% to 60%",
+      "Glass Cannon: Weapon Damage increased from 80% to 85%",
+      "Spiritual Overflow: Spirit power increased from 6 to 8 (from component changes)",
+      "Crippling Headshot: Anti-Heal increased from -35% to -40%",
+      "Golden Goose Egg: Damage Penalty reduced from -15% to -12%",
+      "Spirit Sap: Cooldown increased from 18s to 22s",
+      "Spirit Sap: Cast range reduced from 40m to 35m",
+      "Mystic Slow: Dash Distance slow increased from -10% to -12%",
+      "Decay: Incoming Heal reduction increased from -50% to -55%",
+      "Radiant Regeneration: Regen on Spirit Damage scaling reduced from 0.35 to 0.25",
+      "Radiant Regeneration: Heal on Ability Cast now only triggers when you are in combat (like Spellslinger)",
+      "Radiant Regeneration: Heal on Ability Cast reduced from 65 to 40",
+      "Radiant Regeneration: Heal on Ability Cast boon scaling reduced from 1.7 to 1.4",
+      "Silence Wave: Bonus Health increased from +50 to +90",
+      "Torment Pulse: Melee Resistance increased from 18% to 22%",
+      "Echo Shard: Post cast time reduced from 0.5s to 0.2s",
+      "Focus Lens: Cooldown reduced from 45s to 40s",
+      "Focus Lens: Fixed damage dealt to a barrier not counting toward the repeated damage",
+      "Lightning Scroll: Damage now scales with Spirit Power (0.35)",
+      "Lightning Scroll: Dash Distance slow increased from -10% to -12%",
+      "Rebuttal: Parry Cooldown reduction reduced from -1.75s to -1.25s",
+      "Battle Vest: Weapon Damage increased from 18% to 22%",
+      "Bullet Lifesteal: Weapon Damage increased from 6% to 10%",
+      "Bullet Lifesteal: Bullet Lifesteal increased from 13% to 15%",
+      "Healbane: Multiple sources now stack on the enemy with diminishing returns (previously didn't stack)",
+      "Healbane: Heal on Hero Kill reduced from 275 to 170 + 3/Boon",
+      "Healing Booster: No longer builds from Extra Regen",
+      "Healing Booster: No longer grants +3 Health Regen",
+      "Healing Booster: Out of Combat Regen increased from +1 to +2",
+      "Return Fire: Now returns the damage you take from Haze's Fixation",
+      "Return Fire: Fixed the shop tooltip not listing the 10% Bullet Resistance",
+      "Spirit Lifesteal: Spirit Power increased from 6 to 8",
+      "Spirit Lifesteal: Spirit Lifesteal increased from 13% to 15%",
+      "Spirit Shielding: Spirit Resist reduced from 18% to 15%",
+      "Bullet Resilience: Bullet Resistance increased from 30% to 35%",
+      "Bullet Resilience: Out of Combat Regen increased from 3 to 5",
+      "Fury Trance: Active Move Speed increased from +1m to +1.5m",
+      "Fury Trance: Bullet Lifesteal increased from 14% to 15%",
+      "Fury Trance: Weapon Damage increased from 6% to 10%",
+      "Healing Nova: Now scales with Spirit Power (1.1) instead of Boons (6)",
+      "Metal Skin: Now increases your gravity by 20% while active",
+      "Infuser: Active Lifesteal increased from 70% to 75%",
+      "Infuser: Spirit Lifesteal increased from 13% to 15%",
+      "Infuser: Spirit power increased from 6 to 8",
+      "Juggernaut: Health Regen increased from +8 to +15",
+      "Leech: Bullet Lifesteal increased from 28% to 30%",
+      "Leech: Spirit Lifesteal increased from 28% to 30%",
+      "Vampiric Burst: Active Lifesteal increased from 70% to 75%",
+      "Vampiric Burst: Bullet Lifesteal increased from 13% to 15%",
+      "Vampiric Burst: Weapon Damage increased from 6% to 10%",
+      "Spellbreaker: When the item procs, it continues to reduce any other spirit damage that happens as a result in that damage stack (for example, getting hit by charged shot that procs tankbuster now both get reduced)",
+      "Divine Barrier: Cooldown increased from 45s to 55s"
+    ],
+    "items": {
+      "upgrade_high_velocity_mag": {
+        "status": "nerf",
+        "reason": "Снижена скорость пули."
+      },
+      "upgrade_express_shot": {
+        "status": "nerf",
+        "reason": "Снижен урон альтернативной стрельбы."
+      },
+      "upgrade_close_quarter_combat": {
+        "status": "buff",
+        "reason": "Увеличена длительность замедления."
+      },
+      "upgrade_bullet_armor_reduction_aura": {
+        "status": "nerf",
+        "reason": "Аура требует прямой видимости."
+      },
+      "upgrade_cloaking_device_active": {
+        "status": "mixed",
+        "reason": "Переработана засада: убраны бонусы скорострельности и ближнего боя, добавлен урон с накоплением в скрытности."
+      },
+      "upgrade_toxic_bullets": {
+        "status": "buff",
+        "reason": "Усилено подавление лечения."
+      },
+      "upgrade_aprounds": {
+        "status": "buff",
+        "reason": "Повышен шанс срабатывания."
+      },
+      "upgrade_glass_cannon": {
+        "status": "buff",
+        "reason": "Повышен урон оружия."
+      },
+      "upgrade_tech_overflow": {
+        "status": "buff",
+        "reason": "Повышена сила духа."
+      },
+      "upgrade_banshee_slugs": {
+        "status": "buff",
+        "reason": "Усилено подавление лечения."
+      },
+      "upgrade_goose_egg": {
+        "status": "buff",
+        "reason": "Снижен штраф к урону."
+      },
+      "upgrade_spirit_sap": {
+        "status": "nerf",
+        "reason": "Увеличена перезарядка и сокращена дальность."
+      },
+      "upgrade_magic_slow": {
+        "status": "buff",
+        "reason": "Усилено сокращение дальности рывка противника."
+      },
+      "upgrade_rupture": {
+        "status": "buff",
+        "reason": "Усилено подавление входящего лечения."
+      },
+      "upgrade_resonant_healing": {
+        "status": "nerf",
+        "reason": "Снижены лечение и масштабирование; лечение от применения только в бою."
+      },
+      "upgrade_targeted_silence": {
+        "status": "buff",
+        "reason": "Увеличен бонус здоровья."
+      },
+      "upgrade_tech_damage_pulse": {
+        "status": "buff",
+        "reason": "Увеличено сопротивление ближнему бою."
+      },
+      "upgrade_ability_power_shard": {
+        "status": "buff",
+        "reason": "Сокращена задержка после применения."
+      },
+      "upgrade_focus_lens": {
+        "status": "buff",
+        "reason": "Сокращена перезарядка; исправлен учёт урона барьерам."
+      },
+      "upgrade_ultimate_burst": {
+        "status": "buff",
+        "reason": "Добавлено масштабирование от силы духа, усилено сокращение дальности рывка."
+      },
+      "upgrade_melee_rebuttal": {
+        "status": "nerf",
+        "reason": "Снижен бонус сокращения перезарядки парирования."
+      },
+      "upgrade_regenerating_bullet_shield": {
+        "status": "buff",
+        "reason": "Повышен урон оружия."
+      },
+      "upgrade_vampire": {
+        "status": "buff",
+        "reason": "Повышены вампиризм и урон оружия."
+      },
+      "upgrade_healbane": {
+        "status": "mixed",
+        "reason": "Подавление лечения теперь складывается; лечение при убийстве изменено на 170 + 3 за Boon вместо 275."
+      },
+      "upgrade_healing_booster": {
+        "status": "mixed",
+        "reason": "Убраны компонент Extra Regen и +3 регенерации; усилена регенерация вне боя."
+      },
+      "upgrade_return_fire": {
+        "status": "buff",
+        "reason": "Теперь отражает урон Fixation у Haze; исправлено описание сопротивления."
+      },
+      "upgrade_health_stealing_magic": {
+        "status": "buff",
+        "reason": "Усилены сила духа и вампиризм."
+      },
+      "upgrade_spirit_bubble": {
+        "status": "nerf",
+        "reason": "Снижено сопротивление духовному урону."
+      },
+      "upgrade_improved_bullet_armor": {
+        "status": "buff",
+        "reason": "Усилены сопротивление пулям и регенерация вне боя."
+      },
+      "upgrade_fury_trance": {
+        "status": "buff",
+        "reason": "Усилены скорость, вампиризм и урон оружия."
+      },
+      "upgrade_health_nova": {
+        "status": "mixed",
+        "reason": "Масштабирование от Boons заменено масштабированием от силы духа; эффект зависит от сборки."
+      },
+      "upgrade_metal_skin": {
+        "status": "changed",
+        "reason": "Во время действия гравитация повышается на 20%; эффект зависит от ситуации."
+      },
+      "upgrade_infuser": {
+        "status": "buff",
+        "reason": "Усилены активный и духовный вампиризм и сила духа."
+      },
+      "upgrade_juggernaut": {
+        "status": "buff",
+        "reason": "Повышена регенерация здоровья."
+      },
+      "upgrade_damage_recycler": {
+        "status": "buff",
+        "reason": "Повышен вампиризм обоих типов."
+      },
+      "upgrade_surging_power": {
+        "status": "buff",
+        "reason": "Повышены вампиризм и урон оружия."
+      },
+      "upgrade_spellbreaker": {
+        "status": "buff",
+        "reason": "Защита распространяется на связанный духовный урон в том же стеке."
+      },
+      "upgrade_divine_barrier": {
+        "status": "nerf",
+        "reason": "Увеличена перезарядка."
+      }
+    }
+  }
+]
