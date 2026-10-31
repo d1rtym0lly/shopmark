@@ -6,10 +6,15 @@ test("hero selection, build inspection and item patch filtering", async ({
   page.on("pageerror", (e) => errors.push(e.message));
   await page.goto("/");
   await expect(page.locator("#hero-name")).toHaveText("Infernus");
-  await expect(page.locator(".build-card")).toHaveCount(4);
+  await expect(page.locator(".build-card")).toHaveCount(3);
+  await page.locator("#rank-filter").selectOption("3");
   await page.locator("#hero-search").fill("Bebop");
   await page.getByRole("button", { name: "Bebop" }).click();
   await expect(page.locator("#hero-name")).toHaveText("Bebop");
+  await expect(page.locator("#rank-filter")).toHaveValue("0");
+  await page.locator("#hero-search").fill("Infernus");
+  await page.getByRole("button", { name: "Infernus" }).click();
+  await expect(page.locator("#rank-filter")).toHaveValue("3");
   await page.locator("#all-items").click();
   await page.locator("#status-filter").selectOption("nerf");
   await expect(page.locator(".item")).not.toHaveCount(0);

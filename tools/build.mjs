@@ -93,6 +93,10 @@ await fs.cp(
   at("src/panorama/shopmark.css"),
   path.join(content, "panorama/styles/shopmark.css"),
 );
+await fs.copyFile(
+  at("src/panorama/shopmark_badge.js"),
+  path.join(content, "panorama/scripts/shopmark_badge.js"),
+);
 const includes =
   '\n\t\t<include src="s2r://panorama/styles/shopmark.vcss_c" />\n\t\t<include src="s2r://panorama/styles/shopmark_marks.vcss_c" />\n\t';
 const badge =
@@ -136,6 +140,10 @@ for (const name of nativeNames) {
     if (!xml.includes(anchor))
       throw Error("Native item card anchor changed; review needed");
     xml = xml.replace(anchor, anchor + badge);
+    xml = xml.replace(
+      "</styles>",
+      '</styles><scripts><include src="s2r://panorama/scripts/shopmark_marks_data.vjs_c" /><include src="s2r://panorama/scripts/shopmark_badge.vjs_c" /></scripts>',
+    );
   }
   await fs.writeFile(path.join(content, "panorama/layout", name + ".xml"), xml);
 }
@@ -146,6 +154,8 @@ await fs.writeFile(path.join(output, "gameinfo.gi"), gi);
 const sources = [
   "panorama/scripts/shopmark_data.js",
   "panorama/scripts/shopmark.js",
+  "panorama/scripts/shopmark_marks_data.js",
+  "panorama/scripts/shopmark_badge.js",
   "panorama/styles/shopmark.css",
   "panorama/styles/shopmark_marks.css",
   ...nativeNames.map((n) => "panorama/layout/" + n + ".xml"),
@@ -188,7 +198,7 @@ const artifact = packVpk(files);
 await fs.mkdir(at("dist"), { recursive: true });
 await fs.writeFile(at("dist/shopmark.vpk"), artifact);
 await writeJSON(at("dist/build-manifest.json"), {
-  version: "0.1.0",
+  version: "0.2.0",
   gameBuild: version,
   createdAt: new Date().toISOString(),
   dataGeneratedAt: snapshot.generatedAt,

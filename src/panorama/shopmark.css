@@ -1,8 +1,8 @@
 #ShopmarkMount {
   flow-children: down;
   width: 100%;
-  background-color: #101b20f5;
-  border-top: 2px solid #b8d4bd;
+  background-color: #100c11fa;
+  border-top: 2px solid #ff8196;
   padding: 14px 20px 12px 20px;
 }
 CitadelHeroBuildsSelector {
@@ -25,7 +25,7 @@ CitadelHeroBuildsSelector .MainContainer {
   font-weight: bold;
   font-size: 27px;
   letter-spacing: 3px;
-  color: #f2ead7;
+  color: #fff0f4;
 }
 .sm-subtitle {
   font-size: 16px;
@@ -37,7 +37,7 @@ CitadelHeroBuildsSelector .MainContainer {
   horizontal-align: right;
   font-size: 14px;
   letter-spacing: 1px;
-  color: #b8d4bd;
+  color: #ff8196;
   vertical-align: center;
 }
 .sm-controls {
@@ -60,12 +60,12 @@ CitadelHeroBuildsSelector .MainContainer {
   margin-right: 12px;
 }
 .sm-button {
-  background-color: #b8d4bd;
+  background-color: #ff8196;
   padding: 5px 14px;
   border-radius: 3px;
 }
 .sm-button Label {
-  color: #101b20;
+  color: #100c11;
   font-size: 16px;
   font-weight: bold;
 }
@@ -73,7 +73,7 @@ CitadelHeroBuildsSelector .MainContainer {
   brightness: 1.15;
 }
 .sm-button:focus {
-  border: 1px solid #f2ead7;
+  border: 1px solid #fff0f4;
 }
 .sm-help {
   font-size: 14px;
@@ -96,7 +96,7 @@ CitadelHeroBuildsSelector .MainContainer {
   overflow: squish scroll;
   margin-right: 15px;
   padding: 8px;
-  background-color: #203037;
+  background-color: #21141e;
 }
 .sm-patch-excerpt {
   color: #b2beb8;
@@ -110,19 +110,19 @@ CitadelHeroBuildsSelector .MainContainer {
   flow-children: down;
   padding: 10px 13px;
   margin-right: 10px;
-  background-color: #203037;
-  border: 1px solid #384b4b;
+  background-color: #21141e;
+  border: 1px solid #77364c;
   border-radius: 3px;
 }
 .sm-card-author {
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 1px;
-  color: #b8d4bd;
+  color: #ff8196;
 }
 .sm-card-name {
   font-size: 18px;
-  color: #f2ead7;
+  color: #fff0f4;
   height: 27px;
   text-overflow: ellipsis;
   margin-top: 4px;
@@ -146,7 +146,7 @@ CitadelHeroBuildsSelector .MainContainer {
   margin-right: 18px;
 }
 .sm-legend-buff {
-  color: #b7e3b3;
+  color: #8ce8bd;
 }
 .sm-legend-nerf {
   color: #ffa198;
@@ -170,7 +170,7 @@ CitadelHeroBuildsSelector .MainContainer {
   vertical-align: top;
   margin: 4px;
   border-radius: 3px;
-  background-color: #111b23f5;
+  background-color: #120c12f5;
   border: 1px solid #758580;
   font-size: 23px;
   font-weight: bold;
@@ -191,7 +191,7 @@ CitadelShopMod .itemContainer .ShopmarkBadge {
   margin: 0px;
 }
 .ShopmarkBuff {
-  color: #b7e3b3;
+  color: #8ce8bd;
 }
 .ShopmarkNerf {
   color: #ffa198;
@@ -209,5 +209,27 @@ CitadelShopMod .itemContainer .ShopmarkBadge {
 .ShopmarkUnknown {
   color: #a1acab;
   font-size: 19px;
+  visibility: visible;
+}
+
+.ShopmarkUnknown {
+  visibility: collapse;
+}
+.ShopmarkResolved .ShopmarkBadge {
+  visibility: collapse;
+}
+.ShopmarkResolved.sm-mark-buff .ShopmarkBuff {
+  visibility: visible;
+}
+.ShopmarkResolved.sm-mark-nerf .ShopmarkNerf {
+  visibility: visible;
+}
+.ShopmarkResolved.sm-mark-mixed .ShopmarkMixed {
+  visibility: visible;
+}
+.ShopmarkResolved.sm-mark-changed .ShopmarkChanged {
+  visibility: visible;
+}
+.ShopmarkResolved.sm-mark-unchanged .ShopmarkUnchanged {
   visibility: visible;
 }

@@ -12,7 +12,7 @@
         >S<span class="brand-mark">↗</span> / SHOPMARK</a
       >
       <div class="edition">DEADLOCK · МАСТЕРСКАЯ СБОРОК</div>
-      <div class="preview-tag">ПРЕДПРОСМОТР МОДА <span>0.1</span></div>
+      <div class="preview-tag">ПРЕДПРОСМОТР МОДА <span>0.2</span></div>
     </header>
     <div class="workspace">
       <aside class="hero-sidebar">
@@ -39,7 +39,7 @@
             <div class="eyebrow">ПЛАН НА СЛЕДУЮЩУЮ ИГРУ</div>
             <h1 id="hero-name">Загрузка…</h1>
             <p id="hero-description">
-              Сборки разных авторов. Изменения предметов — на виду.
+              Твой герой → ранг матчей → подходящая сборка.
             </p>
           </div>
           <div class="hero-stamp">
@@ -49,15 +49,16 @@
         <section aria-labelledby="builds-title">
           <div class="section-line">
             <h2 id="builds-title">02 / СБОРКИ</h2>
-            <button id="author-filter" class="text-button" aria-pressed="true">
-              Только про авторы <span>●</span>
-            </button>
+            <label class="rank-label"
+              >Ранг матчей
+              <select id="rank-filter" aria-label="Ранг матчей"></select
+            ></label>
           </div>
           <div id="builds" class="build-grid"></div>
           <p class="small-print">
-            Автор подтверждён по Steam ID в реестре Tracklock. Рейтинг учитывает
-            матчи после патча и размер выборки. Выбор сборки не гарантирует
-            победу.
+            Подборка по результатам матчей этого героя на выбранном ранге.
+            Рейтинг учитывает матчи после патча и размер выборки (от 20). Ранг —
+            средний по обеим командам. Выбор сборки не гарантирует победу.
           </p>
         </section>
         <section class="items-section" aria-labelledby="items-title">

@@ -1,11 +1,11 @@
 :root {
   color-scheme: dark;
-  --bg: #11191c;
-  --panel: #182326;
-  --line: #334042;
-  --ink: #ede9da;
-  --muted: #91a19e;
-  --mint: #b9d5bb;
+  --bg: #0c090e;
+  --panel: #1b111b;
+  --line: #4a263a;
+  --ink: #fff0f4;
+  --muted: #be9fac;
+  --mint: #ff8196;
   --buff: #b7e3b3;
   --nerf: #ffa198;
   --mixed: #f0cb7e;
@@ -143,7 +143,7 @@ nav {
   min-height: 38px;
 }
 .hero-button:hover {
-  background: #253134;
+  background: #341c2b;
   color: var(--ink);
 }
 .hero-button.active {
@@ -260,7 +260,7 @@ p {
 }
 .build-card.selected {
   border-color: var(--mint);
-  background: #23332f;
+  background: #3a192b;
 }
 .build-card.selected:before {
   content: "ВЫБРАНА";
@@ -702,3 +702,16 @@ footer {
     font-size: 10px;
   }
 }
+
+.rank-label {
+  color: var(--mint);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.build-card.selected {
+  box-shadow: inset 3px 0 var(--mint);
+}
+@media(max-width:650px){.section-line{flex-wrap:wrap}.rank-label{max-width:100%;flex-wrap:wrap}.rank-label select{min-width:0;max-width:100%}}
+.build-card{min-width:0}@media(max-width:650px){.build-grid{grid-template-columns:minmax(0,1fr)}}

@@ -32,8 +32,19 @@ export async function generate() {
       JSON.stringify({
         heroes: s.heroes.map((h) => ({ id: h.id, name: h.name })),
         patch: s.patch,
-        shortlists,
-        proShortlists,
+
+        meta: Object.fromEntries(
+          Object.entries(s.meta ?? {}).map(([hero, ranks]) => [
+            hero,
+            Object.fromEntries(
+              Object.entries(ranks).map(([rank, builds]) => [
+                rank,
+                builds.map(({ categories, description, ...b }) => b),
+              ]),
+            ),
+          ]),
+        ),
+        ranks: s.ranks ?? [],
         recentPatches: s.recentPatches,
         changes: s.items
           .filter(
@@ -56,7 +67,17 @@ export async function generate() {
   });
   await fs.writeFile(
     dir + "/styles/shopmark_marks.css",
-    rules.join("\n") + "\n",
+    "/* 0.2 resolves item names at runtime; no assumption about native CSS item classes. */\n",
+  );
+  const names = {};
+  for (const item of s.items) {
+    const m = s.marks[item.id];
+    for (const name of [item.name, ...(item.aliases ?? [])])
+      names[name.trim().toLowerCase()] = m?.status ?? "unknown";
+  }
+  await fs.writeFile(
+    dir + "/scripts/shopmark_marks_data.js",
+    "$.ShopmarkMarks = " + JSON.stringify(names) + ";",
   );
   console.log(
     `Generated ${s.items.length} static item rules; ${Object.values(shortlists).flat().length} build cards.`,

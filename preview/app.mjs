@@ -4,7 +4,8 @@ const s = await (await fetch("/data/snapshot.json")).json();
 const state = {
   hero: s.heroes.find((h) => h.name === "Infernus") ?? s.heroes[0],
   build: null,
-  pro: true,
+  rank: 0,
+  ranksByHero: {},
   all: false,
 };
 const itemMap = new Map(s.items.map((i) => [i.id, i]));
@@ -49,6 +50,8 @@ function heroes() {
     if (h.id === state.hero.id) b.append(el("span", "arrow", "↗"));
     b.onclick = () => {
       state.hero = h;
+      state.rank = state.ranksByHero[h.id] ?? 0;
+      $("rank-filter").value = String(state.rank);
       state.build = null;
       render();
     };
@@ -56,11 +59,7 @@ function heroes() {
   }
 }
 function builds() {
-  const selected = shortlist(
-    s.builds.filter((b) => !state.pro || b.pro),
-    state.hero.id,
-    4,
-  );
+  const selected = s.meta?.[state.hero.id]?.[state.rank] ?? [];
   if (!selected.some((b) => b.id === state.build?.id))
     state.build = selected[0] ?? null;
   $("builds").replaceChildren();
@@ -69,18 +68,18 @@ function builds() {
       el(
         "div",
         "empty",
-        "Проверенных сборок пока нет. Переключите фильтр авторов.",
+        "Для этого героя и ранга мало матчей после патча. Выберите «Все ранги».",
       ),
     );
-  for (const b of selected) {
+  for (const [index,b] of selected.entries()) {
     const card = el(
       "article",
       "build-card" + (state.build?.id === b.id ? " selected" : ""),
     );
     const author = el("div", "card-author");
     author.append(
-      el("span", "card-type", b.pro ? "PRO /" : "COMMUNITY /"),
-      document.createTextNode(b.author),
+      el("span", "card-type", "META /"),
+      document.createTextNode(["Стабильный выбор","Альтернатива","Ещё вариант"][index]),
     );
     card.append(author, el("h3", "", b.name));
     const meta = el("div", "card-meta");
@@ -218,17 +217,19 @@ function render() {
   items();
 }
 $("hero-count").textContent = s.heroes.length;
-$("sync-date").textContent = date(s.generatedAt);
+$("sync-date").textContent = date(s.metaUpdatedAt ?? s.generatedAt);
 $("hero-search").oninput = heroes;
 $("item-search").oninput = items;
 $("status-filter").onchange = items;
-$("author-filter").onclick = () => {
-  state.pro = !state.pro;
-  $("author-filter").replaceChildren(
-    document.createTextNode(state.pro ? "Только про авторы " : "Все авторы "),
-    el("span", "", state.pro ? "●" : "○"),
-  );
-  $("author-filter").setAttribute("aria-pressed", String(state.pro));
+for (const rank of [{ id: 0, name: "Все ранги" }, ...(s.ranks ?? [])]) {
+  const option = el("option", "", rank.name);
+  option.value = rank.id;
+  $("rank-filter").append(option);
+}
+$("rank-filter").onchange = () => {
+  state.rank = Number($("rank-filter").value);
+  state.ranksByHero[state.hero.id] = state.rank;
+  state.build = null;
   builds();
   items();
 };

@@ -1,6 +1,6 @@
 {
   "name": "shopmark",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Deadlock builds and patch marks in the native shop",
   "type": "module",
@@ -8,14 +8,16 @@
     "node": ">=22"
   },
   "scripts": {
-    "sync": "node tools/sync.mjs",
+    "sync": "node tools/meta-sync.mjs",
     "generate": "node tools/generate.mjs",
     "build": "node tools/build.mjs",
     "doctor": "node tools/doctor.mjs",
     "preview": "node tools/preview.mjs",
     "test": "node --test test/*.test.mjs",
     "test:ui": "playwright test",
-    "install:mod": "node tools/install.mjs"
+    "install:mod": "node tools/install.mjs",
+    "sync:meta": "node tools/meta-sync.mjs",
+    "sync:legacy": "node tools/sync.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.64.1"
