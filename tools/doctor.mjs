@@ -12,6 +12,9 @@ const artifact = await fs.readFile(at("dist/shopmark.vpk"));
 const integrity = hash(artifact) === manifest.sha256;
 const conflicts = [];
 const installedCopies = [];
+const installedOtherVersions = [];
+let ownedInstallation;
+try { ownedInstallation = await readJSON('.cache/installation.json'); } catch {}
 const dirs = [path.join(game, "addons")];
 const gi = await fs.readFile(path.join(game, "gameinfo.gi"), "utf8");
 // Include manager profiles mounted by SearchPaths, when explicitly quoted.
@@ -37,6 +40,12 @@ for (const dir of dirs) {
         installedCopies.push(file);
         continue;
       }
+      if (ownedInstallation && path.resolve(ownedInstallation.destination).toLowerCase() === path.resolve(file).toLowerCase() &&
+          path.dirname(path.resolve(file)).toLowerCase() === path.resolve(game, 'addons').toLowerCase() &&
+          hash(await fs.readFile(file)) === ownedInstallation.sha256) {
+        installedOtherVersions.push(file);
+        continue;
+      }
       const addon = await readVpk(file);
       const shared = Object.keys(manifest.nativeHashes).filter((key) =>
         addon.entries.has(key),
@@ -53,6 +62,7 @@ const report = {
   nativeFilesChanged: changed,
   conflicts,
   installedCopies,
+  installedOtherVersions,
   runtimeTested: manifest.runtimeTested,
   checkedAt: new Date().toISOString(),
 };
