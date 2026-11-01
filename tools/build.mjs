@@ -203,7 +203,7 @@ const artifact = packVpk(files);
 await fs.mkdir(at("dist"), { recursive: true });
 await fs.writeFile(at("dist/shopmark.vpk"), artifact);
 await writeJSON(at("dist/build-manifest.json"), {
-  version: "0.3.0",
+  version: (await readJSON("package.json")).version,
   gameBuild: version,
   createdAt: new Date().toISOString(),
   dataGeneratedAt: snapshot.generatedAt,
