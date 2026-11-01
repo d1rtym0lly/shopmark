@@ -1,0 +1,185 @@
+{
+  "gameBuild": 6839,
+  "sourceRevision": 11193905,
+  "scenario": "new_player_basics + hero testing controller, finite money, isolated desktop",
+  "note": "Recorded HUD readings. Timestamps normalized; player/account names and raw logs excluded. This is a sandbox receipt, not a completed public match.",
+  "frames": [
+    {
+      "checkpoint": "before hero",
+      "snapshot": {
+        "playing": false,
+        "heroId": null,
+        "inventoryKnown": true,
+        "purchased": [],
+        "allies": [],
+        "enemies": [],
+        "budget": null,
+        "seconds": 0,
+        "friendlySouls": 0,
+        "enemySouls": 0,
+        "ownSouls": null,
+        "infiniteMoney": true,
+        "capturedAt": 0
+      }
+    },
+    {
+      "checkpoint": "Infernus",
+      "snapshot": {
+        "playing": true,
+        "heroId": 1,
+        "inventoryKnown": true,
+        "purchased": [],
+        "allies": [
+          {
+            "hero": "Infernus",
+            "heroId": 1,
+            "souls": 0,
+            "sameLane": true
+          }
+        ],
+        "enemies": [],
+        "budget": 0,
+        "seconds": 3,
+        "friendlySouls": 600,
+        "enemySouls": 1000,
+        "ownSouls": 0,
+        "infiniteMoney": false,
+        "capturedAt": 1000
+      }
+    },
+    {
+      "checkpoint": "purchase",
+      "snapshot": {
+        "playing": true,
+        "heroId": 1,
+        "inventoryKnown": true,
+        "purchased": [
+          1548066885
+        ],
+        "allies": [
+          {
+            "hero": "Infernus",
+            "heroId": 1,
+            "souls": 21000,
+            "sameLane": true
+          }
+        ],
+        "enemies": [
+          {
+            "hero": "Infernus",
+            "heroId": 1,
+            "souls": 600,
+            "sameLane": false
+          }
+        ],
+        "budget": 5474,
+        "seconds": 7,
+        "friendlySouls": 21000,
+        "enemySouls": 2000,
+        "ownSouls": 21000,
+        "infiniteMoney": false,
+        "capturedAt": 2000
+      }
+    },
+    {
+      "checkpoint": "upgrade",
+      "snapshot": {
+        "playing": true,
+        "heroId": 1,
+        "inventoryKnown": true,
+        "purchased": [
+          2356412290
+        ],
+        "allies": [
+          {
+            "hero": "Infernus",
+            "heroId": 1,
+            "souls": 21000,
+            "sameLane": true
+          }
+        ],
+        "enemies": [
+          {
+            "hero": "Infernus",
+            "heroId": 1,
+            "souls": 600,
+            "sameLane": false
+          }
+        ],
+        "budget": 19596,
+        "seconds": 10,
+        "friendlySouls": 21000,
+        "enemySouls": 2000,
+        "ownSouls": 21000,
+        "infiniteMoney": false,
+        "capturedAt": 3000
+      }
+    },
+    {
+      "checkpoint": "undo upgrade",
+      "snapshot": {
+        "playing": true,
+        "heroId": 1,
+        "inventoryKnown": true,
+        "purchased": [
+          1548066885
+        ],
+        "allies": [
+          {
+            "hero": "Infernus",
+            "heroId": 1,
+            "souls": 21000,
+            "sameLane": true
+          }
+        ],
+        "enemies": [
+          {
+            "hero": "Infernus",
+            "heroId": 1,
+            "souls": 600,
+            "sameLane": false
+          }
+        ],
+        "budget": 19265,
+        "seconds": 13,
+        "friendlySouls": 21000,
+        "enemySouls": 2000,
+        "ownSouls": 21000,
+        "infiniteMoney": false,
+        "capturedAt": 4000
+      }
+    },
+    {
+      "checkpoint": "Haze and enemy",
+      "snapshot": {
+        "playing": true,
+        "heroId": 13,
+        "inventoryKnown": true,
+        "purchased": [],
+        "allies": [
+          {
+            "hero": "Haze",
+            "heroId": 13,
+            "souls": 600,
+            "sameLane": true
+          }
+        ],
+        "enemies": [
+          {
+            "hero": "Infernus",
+            "heroId": 1,
+            "souls": 600,
+            "sameLane": false
+          }
+        ],
+        "budget": 600,
+        "seconds": 18,
+        "friendlySouls": 1000,
+        "enemySouls": 2000,
+        "ownSouls": 600,
+        "infiniteMoney": false,
+        "capturedAt": 5000
+      }
+    }
+  ]
+}

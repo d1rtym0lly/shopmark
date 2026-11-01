@@ -2,13 +2,20 @@
   'use strict';
   // Only visible HUD facts enter this module. Missing facts stay unknown.
   function number(text) {
-    var s = String(text == null ? '' : text).replace(/<[^>]*>/g, '').replace(/[\s\u00a0\u202f]/g, '').toLowerCase();
+    var s = String(text == null ? '' : text).replace(/<[^>]*>/g, '').replace(/[\s\u0000-\u001f\u007f\u00a0\u202f]/g, '').toLowerCase();
+    s = s.replace(/(?:тыс\.?|т\.)$/, 'k').replace(/(?:млн\.?|м\.)$/, 'm');
+    if (/^\d{1,3}(?:,\d{3})+$/.test(s)) s=s.replace(/,/g,'');
+    else if (/^\d{1,3}(?:\.\d{3})+$/.test(s)) s=s.replace(/\./g,'');
     if (!/^\d+(?:[.,]\d+)?[kкmм]?$/.test(s)) return null;
     return Math.round(Number(s.replace(',', '.').replace(/[kкmм]$/, '')) * (/[kк]$/.test(s) ? 1000 : /[mм]$/.test(s) ? 1000000 : 1));
   }
   function clock(text) {
     var m = /^(\d{1,3}):(\d{2})$/.exec(String(text || '').trim());
     return m && Number(m[2]) < 60 ? Number(m[1]) * 60 + Number(m[2]) : null;
+  }
+  function numberText(value) {
+    // Panorama ships without the full ICU locale data available in browsers.
+    return Number.isFinite(value) ? String(Math.round(value)).replace(/\B(?=(\d{3})+(?!\d))/g, '\u202f') : '—';
   }
   var matchups = {
     'Abrams': ['heal', 'control'], 'Shiv': ['heal'], 'Infernus': ['heal', 'spirit'],
@@ -26,22 +33,30 @@
     return delta > 0.12 ? 'ahead' : delta < -0.12 ? 'behind' : 'even';
   }
   function create(coach) {
-    var previousHero = null, previousTime = null, laneAtEnd = null, inventory = [];
-    function reset() { previousHero = null; previousTime = null; laneAtEnd = null; inventory = []; }
+    var previousHero = null, previousTime = null, laneAtEnd = null, inventory = [], haveInventory = false, lastPurchased = null;
+    function reset() { previousHero = null; previousTime = null; laneAtEnd = null; inventory = []; haveInventory = false; lastPurchased = null; }
     function evaluate(data, raw, settings, now) {
       settings = settings || {};
       now = now == null ? Date.now() : now;
       if (!settings.enabled) { reset(); return { status: 'off', recommendations: [] }; }
       if (!raw || !Number.isFinite(raw.capturedAt) || now - raw.capturedAt > 3500 || now < raw.capturedAt)
         return { status: 'waiting', reason: 'Жду свежие данные матча', recommendations: [] };
-      if (!raw.heroId || !raw.inventoryKnown || !raw.playing || raw.spectating)
+      if (!raw.playing || raw.spectating) {
+        reset();
+        return { status: 'waiting', reason: 'Жду героя и покупки в матче', recommendations: [] };
+      }
+      if (!raw.heroId || !raw.inventoryKnown)
         return { status: 'waiting', reason: 'Жду героя и покупки в матче', recommendations: [] };
       if (previousHero !== raw.heroId || (previousTime != null && raw.seconds != null && raw.seconds < previousTime - 15)) reset();
       previousHero = raw.heroId;
       previousTime = raw.seconds;
       var current = raw.purchased || [];
+      var added = current.filter(function (id) { return inventory.indexOf(id) < 0; });
+      if (haveInventory && added.length) lastPurchased = added.length === 1 ? added[0] : null;
+      if (lastPurchased && current.indexOf(lastPurchased) < 0) lastPurchased = null;
       inventory = inventory.filter(function (id) { return current.indexOf(id) >= 0; });
       current.forEach(function (id) { if (inventory.indexOf(id) < 0) inventory.push(id); });
+      haveInventory = true;
       var hero = (data.heroes || []).filter(function (h) { return h.id === raw.heroId; })[0];
       if (!hero) return { status: 'waiting', reason: 'Герой пока не распознан', recommendations: [] };
       var builds = coach.catalog(data, raw.heroId, settings.rank || 0, 'all', '');
@@ -68,12 +83,15 @@
       if (priority && Number.isFinite(priority.souls) && Number.isFinite(raw.ownSouls) && raw.ownSouls >= 3200 &&
           priority.souls >= raw.ownSouls * 0.9) {
         threats = (matchups[priority.hero] || []).slice(0, 1);
-        evidence = priority.hero + ' · ' + priority.souls.toLocaleString('ru-RU') + ' душ' + (priority.sameLane ? ' · твоя линия' : ' · больше всего душ у врага');
+        evidence = priority.hero + ' · ' + numberText(priority.souls) + ' душ' + (priority.sameLane ? ' · твоя линия' : ' · больше всего душ у врага');
       }
-      var result = coach.plan(data, build, { purchased: inventory, enemies: enemies.map(function (e) { return e.hero; }),
-        threats: threats, budget: raw.budget, advantage: advantage, lane: lane === 'ahead' ? 'won' : lane === 'behind' ? 'lost' : lane });
+      var result = coach.plan(data, build, { purchased: inventory, lastPurchased:lastPurchased, enemies: enemies.map(function (e) { return e.hero; }),
+        threats: threats, availableItems:raw.availableItems, budget: raw.infiniteMoney ? Number.MAX_SAFE_INTEGER : raw.budget, advantage: advantage, lane: lane === 'ahead' ? 'won' : lane === 'behind' ? 'lost' : lane });
       result.recommendations.forEach(function (r) {
-        if (r.kind === 'situation') r.why = 'Учитываю ' + evidence + '. Возможный ответ по набору способностей: ' + r.why;
+        if (r.kind === 'situation') {
+          r.why = 'Учитываю ' + evidence + '. Возможный ответ по набору способностей: ' + r.why;
+          r.shortWhy = 'Против ' + priority.hero + ': ' + r.shortWhy;
+        }
       });
       result.status = 'live';
       result.mode = 'automatic';
@@ -83,6 +101,7 @@
       result.lane = lane;
       result.seconds = raw.seconds;
       result.budget = raw.budget;
+      result.infiniteMoney = !!raw.infiniteMoney;
       result.purchased = (raw.purchased || []).slice();
       result.evidence = evidence;
       result.warnings.unshift('Ситуативные ответы оцениваются по открытым героям и душам. Помощник не знает, кто нанёс тебе урон, и не видит скрытые действия.');
@@ -90,7 +109,7 @@
     }
     return { evaluate: evaluate, reset: reset };
   }
-  var api = { number: number, clock: clock, comparison: comparison, create: create };
+  var api = { number: number, clock: clock, numberText:numberText, comparison: comparison, create: create };
   if (typeof $ !== 'undefined') $.ShopmarkLive = api;
   if (typeof globalThis !== 'undefined') globalThis.ShopmarkLive = api;
 })();

@@ -127,7 +127,7 @@
       seen = {};
     ((build || {}).categories || []).forEach(function (c) {
       (c.items || []).forEach(function (ref) {
-        if (!seen[ref.id] && !owned[ref.id] && byId[ref.id]) {
+        if (!seen[ref.id] && !owned[ref.id] && byId[ref.id] && (!state.availableItems || state.availableItems.indexOf(ref.id) >= 0)) {
           seen[ref.id] = true;
           base.push({
             item: byId[ref.id],
@@ -169,7 +169,7 @@
           ? "Следующий некупленный обязательный шаг выбранной сборки."
           : "Более поздний шаг сборки: оцени его после ближайшей покупки.";
       if (r.item.effect) reason += " Эффект по описанию игры: " + r.item.effect;
-      var last = byId[inventory[inventory.length - 1]];
+      var last = byId[state.lastPurchased === undefined ? inventory[inventory.length - 1] : state.lastPurchased];
       if (last && (r.item.components || []).indexOf(last.id) >= 0)
         reason +=
           " " +
@@ -202,6 +202,9 @@
         kind: "build",
         score: 100 - index * 5,
         why: reason,
+        shortWhy: last && (r.item.components || []).indexOf(last.id) >= 0
+          ? "Улучшает уже купленный " + last.name + "."
+          : r.item.effect || "Следующий некупленный шаг выбранной сборки.",
         when: "Проверь, что выбранная сборка подходит твоему стилю и текущему патчу.",
         tradeoff:
           "Покупка ситуативного ответа может отложить этот шаг, но иногда позволяет дожить до следующей драки.",
@@ -211,7 +214,7 @@
     threats.forEach(function (key) {
       var rule = situations[key],
         item = rule && byName[rule.item];
-      if (!item || owned[item.id]) return;
+      if (!item || owned[item.id] || (state.availableItems && state.availableItems.indexOf(item.id) < 0)) return;
       var cost = remaining(item);
       candidates = candidates.filter(function (r) {
         return r.id !== item.id;
@@ -223,6 +226,7 @@
         kind: "situation",
         score: state.advantage === "behind" ? 145 : 125,
         why: rule.why,
+        shortWhy: rule.why,
         when: rule.when,
         tradeoff: first
           ? "Отложит " +
@@ -242,6 +246,7 @@
           (item.roles || []).indexOf("mobility") >= 0)
       ) {
         r.score += 30;
+        r.shortWhy = "При отставании здоровье или подвижность помогут безопаснее вернуться к фарму.";
         r.why +=
           " В указанном отставании доступный запас здоровья или подвижность поднят выше в учебном плане, чтобы уменьшить риск следующей смерти.";
       }

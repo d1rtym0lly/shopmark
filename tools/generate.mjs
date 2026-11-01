@@ -13,6 +13,7 @@ export async function generate() {
         heroes: s.heroes.map((h) => ({ id: h.id, name: h.name, className: h.className })),
         patch: s.patch,
         catalog: s.builds,
+        shopItemIds: s.items.filter((i) => i.tier >= 1 && i.tier <= 4).map((i) => i.id),
         items: s.items.map(({ id, name, class_name, cost, effect, roles, components, aliases, image }) => ({
           id,
           name,

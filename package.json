@@ -1,6 +1,6 @@
 {
   "name": "shopmark",
-  "version": "0.4.0-dev.1",
+  "version": "0.4.0-beta.1",
   "private": true,
   "description": "Deadlock builds and patch marks in the native shop",
   "type": "module",

@@ -10,7 +10,20 @@
     view = "builds",
     selected = null,
     states = {},
-    ranks = {};
+    ranks = {},
+    pendingRender = null,
+    searchRequest = 0;
+  function alive(p) { return !!p && p.IsValid(); }
+  function action(fn) {
+    return function () {
+      if (!alive(ctx) || !alive(host)) return;
+      try { fn(); }
+      catch (e) {
+        $.Msg('[Shopmark] UI action: ' + String(e));
+        if (alive(note)) note.text = 'Не удалось обновить панель. Закрой и открой сборки заново.';
+      }
+    };
+  }
   function label(parent, text, cls) {
     var p = $.CreatePanel("Label", parent, "");
     p.text = text;
@@ -22,7 +35,7 @@
     var p = $.CreatePanel("Button", parent, "");
     p.AddClass("sm-button");
     label(p, text);
-    p.SetPanelEvent("onactivate", fn);
+    p.SetPanelEvent("onactivate", action(fn));
     return p;
   }
   function panel(parent, cls) {
@@ -40,10 +53,10 @@
       d.AddOption(l);
     });
     d.SetSelected(id + "-" + value);
-    d.SetPanelEvent("oninputsubmit", function () {
+    d.SetPanelEvent("oninputsubmit", action(function () {
       var s = d.GetSelected();
-      if (s) change(s.GetAttributeString("value", ""));
-    });
+      if (alive(s)) change(s.GetAttributeString("value", ""));
+    }));
     return d;
   }
   function value(d) {
@@ -102,10 +115,10 @@
   var search = $.CreatePanel("TextEntry", bar, "ShopmarkBuildSearch");
   search.AddClass("sm-picker");
   search.SetAttributeString("placeholder", "Название / автор / ID");
-  search.SetPanelEvent("ontextentrychange", function () {
+  search.SetPanelEvent("ontextentrychange", action(function () {
     page = 0;
     render();
-  });
+  }));
   button(bar, "←", function () {
     page = Math.max(0, page - 1);
     view = "builds";
@@ -154,19 +167,42 @@
     );
   }
   function find(build) {
-    var entry = ctx.FindChildTraverse("SearchTextEntry");
-    if (!entry) {
-      note.text = "Введи ID в поиск игры: " + build.id;
-      return;
-    }
-    entry.text = String(build.id);
-    var tabs = ctx.FindChildrenWithClassTraverse("PublicBuilds");
-    if (tabs.length) $.DispatchEvent("Activated", tabs[0], "mouse");
-    $.DispatchEvent("Activated", entry, "keyboard");
-    note.text =
-      "Проверь ID #" + build.id + " и нажми штатную кнопку «Использовать».";
+    var request = ++searchRequest;
+    note.text = 'Открываю сборку #' + build.id + '…';
+    // The native tab handler may replace the search field. Never retain a
+    // panel reference across that callback, or synthesize text-entry input.
+    $.Schedule(0.03, action(function () {
+      if (request !== searchRequest) return;
+      var tabs = ctx.FindChildrenWithClassTraverse('PublicBuilds');
+      if (tabs.length && alive(tabs[0])) $.DispatchEvent('Activated', tabs[0], 'mouse');
+      $.Schedule(0.05, action(function () {
+        if (request !== searchRequest) return;
+        var entry = ctx.FindChildTraverse('SearchTextEntry');
+        var refresh = ctx.FindChildTraverse('RefreshButton');
+        if (!alive(entry) || !alive(refresh)) {
+          note.text = 'Открой штатный поиск сборок и введи ID #' + build.id + '.';
+          return;
+        }
+        entry.text = String(build.id);
+        note.text = 'Сборка #' + build.id + ': проверь результат и нажми «Использовать».';
+        // Invoke the same native button as a normal click. No retained native
+        // panels are touched after dispatch, including if it closes the popup.
+        $.DispatchEvent('Activated', refresh, 'mouse');
+      }));
+    }));
   }
   function render() {
+    if (pendingRender !== null || !alive(ctx) || !alive(cards)) return;
+    // Native DropDown/activation code still owns its event target until the
+    // JS handler returns. Rebuilding it synchronously can leave a dangling
+    // native pointer. Coalesce updates and defer deletion to the next frame.
+    pendingRender = $.Schedule(0.03, function () {
+      pendingRender = null;
+      action(renderNow)();
+    });
+  }
+  function renderNow() {
+    if (!alive(cards)) return;
     cards.RemoveAndDeleteChildren();
     cards.SetHasClass("sm-coach-view", view !== "builds");
     var id = Number(value(hero)),
@@ -257,7 +293,7 @@
     label(left, "СЦЕНАРИЙ ЗАДАН ВАМИ", "sm-card-author");
     label(
       left,
-      "Автосбор состояния матча не подключён. Совет меняется по указанным ниже данным.",
+      "Ручной сценарий. Автопомощник включается отдельным переключателем в магазине.",
       "sm-help",
     );
     label(
@@ -351,7 +387,7 @@
       label(right, "Когда: " + r.when, "sm-patch-excerpt");
       label(right, r.tradeoff, "sm-help");
       button(right, "Отметить купленным", function () {
-        st.purchased.push(r.id);
+        if (st.purchased.indexOf(r.id) < 0) st.purchased.push(r.id);
         render();
       });
     });
