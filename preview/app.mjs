@@ -1,3 +1,4 @@
+import "/src/coach.js";
 import { MARKS, shortlist } from "/src/core.mjs";
 const $ = (id) => document.getElementById(id);
 const s = await (await fetch("/data/snapshot.json")).json();
@@ -7,6 +8,9 @@ const state = {
   rank: 0,
   ranksByHero: {},
   all: false,
+  source: "all",
+  page: 0,
+  scenarios: {},
 };
 const itemMap = new Map(s.items.map((i) => [i.id, i]));
 const date = (value) =>
@@ -50,6 +54,7 @@ function heroes() {
     if (h.id === state.hero.id) b.append(el("span", "arrow", "↗"));
     b.onclick = () => {
       state.hero = h;
+      state.page = 0;
       state.rank = state.ranksByHero[h.id] ?? 0;
       $("rank-filter").value = String(state.rank);
       state.build = null;
@@ -59,7 +64,21 @@ function heroes() {
   }
 }
 function builds() {
-  const selected = s.meta?.[state.hero.id]?.[state.rank] ?? [];
+  const all = globalThis.ShopmarkCoach.catalog(
+    s,
+    state.hero.id,
+    state.rank,
+    state.source,
+    $("build-search").value,
+  );
+  state.page = Math.min(state.page, Math.max(0, Math.ceil(all.length / 3) - 1));
+  $("catalog-count").textContent =
+    all.length +
+    " сборок · " +
+    (state.page + 1) +
+    " / " +
+    Math.max(1, Math.ceil(all.length / 3));
+  const selected = all.slice(state.page * 3, state.page * 3 + 3);
   if (!selected.some((b) => b.id === state.build?.id))
     state.build = selected[0] ?? null;
   $("builds").replaceChildren();
@@ -71,7 +90,7 @@ function builds() {
         "Для этого героя и ранга мало матчей после патча. Выберите «Все ранги».",
       ),
     );
-  for (const [index,b] of selected.entries()) {
+  for (const [index, b] of selected.entries()) {
     const card = el(
       "article",
       "build-card" + (state.build?.id === b.id ? " selected" : ""),
@@ -79,7 +98,7 @@ function builds() {
     const author = el("div", "card-author");
     author.append(
       el("span", "card-type", "META /"),
-      document.createTextNode(["Стабильный выбор","Альтернатива","Ещё вариант"][index]),
+      document.createTextNode(b.author),
     );
     card.append(author, el("h3", "", b.name));
     const meta = el("div", "card-meta");
@@ -114,6 +133,7 @@ function builds() {
       state.build = b;
       builds();
       items();
+      renderCoach();
     };
     bottom.append(stat, choose);
     card.append(bottom);
@@ -215,6 +235,7 @@ function render() {
   $("hero-name").textContent = state.hero.name;
   builds();
   items();
+  if (typeof renderCoach === "function") renderCoach();
 }
 $("hero-count").textContent = s.heroes.length;
 $("sync-date").textContent = date(s.metaUpdatedAt ?? s.generatedAt);
@@ -228,10 +249,12 @@ for (const rank of [{ id: 0, name: "Все ранги" }, ...(s.ranks ?? [])]) {
 }
 $("rank-filter").onchange = () => {
   state.rank = Number($("rank-filter").value);
+  state.page = 0;
   state.ranksByHero[state.hero.id] = state.rank;
   state.build = null;
   builds();
   items();
+  renderCoach();
 };
 for (const [id, all] of [
   ["all-items", true],
@@ -259,4 +282,134 @@ for (const p of s.recentPatches.slice(0, 4)) {
   );
   $("recent-patches").append(a);
 }
+const coach = globalThis.ShopmarkCoach;
+function scenario() {
+  return (state.scenarios[state.hero.id] ??= {
+    purchased: [],
+    enemies: [],
+    threats: [],
+    advantage: "even",
+    lane: "even",
+  });
+}
+function renderCoach() {
+  const st = scenario();
+  $("coach-adv").value = st.advantage;
+  $("coach-lane").value = st.lane;
+  $("coach-budget").value = st.budget ?? "";
+  $("coach-threats").replaceChildren();
+  for (const [key, rule] of Object.entries(coach.situations)) {
+    const b = el("button", st.threats.includes(key) ? "active" : "", rule.name);
+    b.setAttribute("aria-pressed", String(st.threats.includes(key)));
+    b.onclick = () => {
+      st.threats = st.threats.includes(key)
+        ? st.threats.filter((k) => k !== key)
+        : [...st.threats, key];
+      renderCoach();
+    };
+    $("coach-threats").append(b);
+  }
+  $("coach-enemies").textContent =
+    "Враги: " +
+    (st.enemies.join(", ") || "не указаны") +
+    " · Отмечено покупок: " +
+    st.purchased.length;
+  const plan = coach.plan(s, state.build, st);
+  $("coach-warnings").replaceChildren(
+    ...plan.warnings.concat(plan.watch).map((w) => el("p", "coach-warning", w)),
+  );
+  $("coach-next").replaceChildren();
+  for (const [index, r] of plan.recommendations.entries()) {
+    const card = el("article", "coach-advice");
+    card.dataset.itemId = r.id;
+    card.append(
+      el(
+        "div",
+        "eyebrow",
+        r.kind === "situation" ? "СИТУАТИВНЫЙ ОТВЕТ" : "ШАГ СБОРКИ",
+      ),
+      el(
+        "h3",
+        "",
+        String(index + 1) + ". " + r.name + " · " + r.cost + " souls",
+      ),
+      el("p", "", r.why),
+      el("p", "condition", "Когда: " + r.when),
+      el("p", "tradeoff", r.tradeoff),
+    );
+    const owned = el("button", "", "Отметить купленным");
+    owned.onclick = () => {
+      st.purchased.push(r.id);
+      renderCoach();
+    };
+    card.append(owned);
+    $("coach-next").append(card);
+  }
+  if (!plan.recommendations.length)
+    $("coach-next").append(
+      el(
+        "p",
+        "empty",
+        "Все обязательные предметы отмечены или сборка не выбрана. Ситуативные предметы не становятся обязательными автоматически.",
+      ),
+    );
+}
+for (const h of s.heroes) {
+  const o = el("option", "", h.name);
+  o.value = h.name;
+  $("coach-enemy").append(o);
+}
+$("coach-add-enemy").onclick = () => {
+  const st = scenario(),
+    enemy = $("coach-enemy").value;
+  if (st.enemies.length < 6 && !st.enemies.includes(enemy))
+    st.enemies.push(enemy);
+  renderCoach();
+};
+$("coach-reset").onclick = () => {
+  delete state.scenarios[state.hero.id];
+  renderCoach();
+};
+$("coach-adv").onchange = () => {
+  scenario().advantage = $("coach-adv").value;
+  renderCoach();
+};
+$("coach-lane").onchange = () => {
+  scenario().lane = $("coach-lane").value;
+  renderCoach();
+};
+$("coach-budget").onchange = () => {
+  const n = Number($("coach-budget").value);
+  scenario().budget =
+    $("coach-budget").value !== "" && Number.isFinite(n) && n >= 0
+      ? n
+      : undefined;
+  renderCoach();
+};
+$("build-source").onchange = () => {
+  state.source = $("build-source").value;
+  state.page = 0;
+  builds();
+  items();
+  renderCoach();
+};
+$("build-search").oninput = () => {
+  state.page = 0;
+  builds();
+  items();
+  renderCoach();
+};
+$("prev-builds").onclick = () => {
+  state.page = Math.max(0, state.page - 1);
+  builds();
+  items();
+  renderCoach();
+};
+$("next-builds").onclick = () => {
+  state.page++;
+  builds();
+  items();
+  renderCoach();
+};
 render();
+renderCoach();

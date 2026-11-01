@@ -1,4 +1,33 @@
 import { test, expect } from "@playwright/test";
+test("catalog pages and coaching respond to purchases and confirmed threats", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await expect(page.locator("#catalog-count")).toContainText("18 сборок");
+  const before = await page.locator(".build-card h3").allTextContents();
+  await page.locator("#next-builds").click();
+  expect(await page.locator(".build-card h3").allTextContents()).not.toEqual(
+    before,
+  );
+  await page.locator("#build-source").selectOption("pro");
+  await expect(page.locator("#catalog-count")).toContainText("12 сборок");
+  await page.locator("#coach-adv").selectOption("behind");
+  await page
+    .getByRole("button", { name: "Враг много лечится", exact: true })
+    .click();
+  await expect(page.locator("#coach-next .coach-advice").first()).toContainText(
+    "Healbane",
+  );
+  await page
+    .locator("#coach-next .coach-advice")
+    .first()
+    .getByRole("button", { name: "Отметить купленным" })
+    .click();
+  await expect(page.locator('#coach-next [data-item-id="2603935618"]')).toHaveCount(0);
+  await page.locator("#coach-enemy").selectOption("Abrams");
+  await page.locator("#coach-add-enemy").click();
+  await expect(page.locator("#coach-warnings")).toContainText("Abrams");
+});
 test("hero selection, build inspection and item patch filtering", async ({
   page,
 }) => {

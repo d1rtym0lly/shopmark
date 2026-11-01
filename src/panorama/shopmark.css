@@ -233,3 +233,59 @@ CitadelShopMod .itemContainer .ShopmarkBadge {
 .ShopmarkResolved.sm-mark-unchanged .ShopmarkUnchanged {
   visibility: visible;
 }
+
+/* 0.3: bright status seals, steady without flashing. */
+.ShopmarkBadge {
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  font-size: 24px;
+  font-weight: bold;
+  border-width: 2px;
+  box-shadow: 0px 2px 5px #000000aa;
+}
+CitadelShopMod .itemContainer .ShopmarkBadge {
+  width: 20px;
+  height: 20px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+.ShopmarkBuff {
+  background-color: #24ddb1;
+  color: #06251d;
+  border-color: #b3ffeb;
+}
+.ShopmarkNerf {
+  background-color: #ff527c;
+  color: #2e0613;
+  border-color: #ffd0dd;
+}
+.ShopmarkUnchanged {
+  background-color: #a897ff;
+  color: #160d39;
+  border-color: #eae3ff;
+}
+.ShopmarkMixed {
+  background-color: #ffd16b;
+  color: #302007;
+  border-color: #fff1c9;
+}
+.sm-coach-view {
+  height: 300px;
+}
+.sm-coach-feed {
+  width: fill-parent-flow(1);
+  height: 100%;
+  flow-children: down;
+  overflow: squish scroll;
+  padding: 12px;
+  margin-right: 12px;
+  background-color: #170f18;
+  border: 1px solid #77364c;
+}
+.sm-coach-feed .sm-button {
+  margin-bottom: 6px;
+}
+.sm-card .sm-button {
+  margin-bottom: 5px;
+}

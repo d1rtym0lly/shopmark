@@ -279,6 +279,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/basic_magazine.webp",
       "aliases": [
         "Увеличенный магазин"
+      ],
+      "effect": "",
+      "components": [],
+      "roles": [
+        "weapon"
       ]
     },
     {
@@ -291,7 +296,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/monster_rounds.webp",
       "aliases": [
         "Чудовищные патроны"
-      ]
+      ],
+      "effect": "",
+      "components": [],
+      "roles": []
     },
     {
       "id": 709540378,
@@ -303,6 +311,14 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/cultist_sacrifice.webp",
       "aliases": [
         "Жертвенный ритуал"
+      ],
+      "effect": "Вы поглощаете выбранное существо, не являющееся героем, получая бонусные души в размере 170% и мощный долгосрочный положительный эффект.",
+      "components": [
+        1009965641
+      ],
+      "roles": [
+        "weapon",
+        "health"
       ]
     },
     {
@@ -315,7 +331,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/tesla_bullets.webp",
       "aliases": [
         "Тесла-пули"
-      ]
+      ],
+      "effect": "У ваших выстрелов есть шанс поразить цель электричеством. Электрический заряд также отскочит на ближайшего к цели врага.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 710436191,
@@ -327,7 +346,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/capacitor.webp",
       "aliases": [
         "Конденсатор"
-      ]
+      ],
+      "effect": "Вы выпускаете снаряд, наносящий урон и накладывающий сильное замедление, которое постепенно развеивается. Цель также не может использовать выносливость, а на её предметы и умения, связанные с движением, накладывается безмолвие.",
+      "components": [
+        811521119
+      ],
+      "roles": []
     },
     {
       "id": 2678489038,
@@ -339,6 +363,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/hollow_point.webp",
       "aliases": [
         "Разрывник"
+      ],
+      "effect": "Когда у вас более 65% здоровья, вы наносите дополнительный урон от оружия, а ваши пули снижают сопротивляемость пулям у врагов.",
+      "components": [],
+      "roles": [
+        "weapon",
+        "health"
       ]
     },
     {
@@ -351,6 +381,14 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/opening_rounds.webp",
       "aliases": [
         "Вскрывающие патроны"
+      ],
+      "effect": "Повышает урон от оружия, наносимый врагам, у которых больше 50% здоровья.",
+      "components": [
+        3077079169
+      ],
+      "roles": [
+        "spirit",
+        "weapon"
       ]
     },
     {
@@ -363,6 +401,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/high_velocity_rounds.webp",
       "aliases": [
         "Скоростные патроны"
+      ],
+      "effect": "",
+      "components": [],
+      "roles": [
+        "weapon"
       ]
     },
     {
@@ -375,7 +418,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/melee_lifesteal.webp",
       "aliases": [
         "Ударная кража здоровья"
-      ]
+      ],
+      "effect": "Ваша следующая атака ближнего боя лечит вас. Лечение от существ, не являющихся героями, эффективно на 30%. Множитель времени перезарядки составляет 1.5 при нанесении лёгких ударов ближнего боя.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 4204808176,
@@ -387,6 +433,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/rebuttal.webp",
       "aliases": [
         "Отпор"
+      ],
+      "effect": "В случае успешного парирования атаки вражеского героя вы лечите себя на объём, соответствующий парированному урону, отражаете этот урон на цель и получаете временный бонус к наносимому урону.",
+      "components": [],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -399,6 +450,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/counterspell.webp",
       "aliases": [
         "Контрчары"
+      ],
+      "effect": "Ваше следующее парирование защитит вас от урона и эффектов вражеских умений и предметов. При успешном парировании умения вы получите лечение и бонусы к скорости передвижения и спиритической мощи.",
+      "components": [],
+      "roles": [
+        "health",
+        "mobility"
       ]
     },
     {
@@ -411,6 +468,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/weighted_shots.webp",
       "aliases": [
         "Утяжелённые выстрелы"
+      ],
+      "effect": "Ваши пули накладывают на врагов накапливаемое снижение скорости передвижения.",
+      "components": [
+        393974127
+      ],
+      "roles": [
+        "weapon"
       ]
     },
     {
@@ -423,6 +487,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/close_quarters.webp",
       "aliases": [
         "Ближняя дистанция"
+      ],
+      "effect": "Когда цель выстрелов находится на малой дальности, вы наносите больше урона оружием.",
+      "components": [],
+      "roles": [
+        "weapon"
       ]
     },
     {
@@ -435,7 +504,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/long_range.webp",
       "aliases": [
         "Дальняя дистанция"
-      ]
+      ],
+      "effect": "Вы наносите больше урона оружием, когда цель находится за пределами минимальной дальности.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 393974127,
@@ -447,7 +519,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/slowing_bullets.webp",
       "aliases": [
         "Замедляющие пули"
-      ]
+      ],
+      "effect": "Ваши пули накладывают на врагов накапливаемое снижение скорости передвижения.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 2037039379,
@@ -459,6 +534,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/inhibitor.webp",
       "aliases": [
         "Ограничитель"
+      ],
+      "effect": "Ваши пули накладывают на цель накапливаемый эффект, который снижает наносимый ею урон и её лечение.",
+      "components": [],
+      "roles": [
+        "weapon",
+        "health"
       ]
     },
     {
@@ -471,7 +552,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/spirit_shredder_bullets.webp",
       "aliases": [
         "Душегубные пули"
-      ]
+      ],
+      "effect": "Ваши пули накладывают на цель эффект, снижающий её сопротивляемость спиритизму и дающий вам и вашим союзникам кражу здоровья жертвы спиритизмом.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 2108215830,
@@ -483,7 +567,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/heroic_aura.webp",
       "aliases": [
         "Героическая аура"
-      ]
+      ],
+      "effect": "Даёт сопротивляемость пулям союзникам поблизости.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 619484391,
@@ -495,6 +582,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/silence_glyph.webp",
       "aliases": [
         "Волна безмолвия"
+      ],
+      "effect": "Вы выпускаете расширяющийся снаряд, который ненадолго накладывает на врагов безмолвие и наносит урон при попадании. Безмолвие не прерывает подготавливаемые умения.",
+      "components": [],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -507,7 +599,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/silencer.webp",
       "aliases": [
         "Глушитель"
-      ]
+      ],
+      "effect": "Ваши пули накладывают накапливаемое безмолвие. Жертвы становятся невосприимчивы к накапливанию через 10 сек. после истечения действия безмолвия.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 1414319208,
@@ -519,7 +614,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/berserker.webp",
       "aliases": [
         "Берсерк"
-      ]
+      ],
+      "effect": "Повышает наносимый урон от оружия, когда вы получаете урон на протяжении долгого времени.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 339443430,
@@ -531,6 +629,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/frenzy.webp",
       "aliases": [
         "Ярость"
+      ],
+      "effect": "",
+      "components": [],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -543,6 +646,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/siphon_bullets.webp",
       "aliases": [
         "Вытягивающие пули"
+      ],
+      "effect": "",
+      "components": [],
+      "roles": [
+        "weapon"
       ]
     },
     {
@@ -555,6 +663,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/headshot_booster.webp",
       "aliases": [
         "Усилитель выстрелов в голову"
+      ],
+      "effect": "Ваше следующее попадание в голову вражескому герою нанесёт ему доп. урон от оружия.",
+      "components": [],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -567,6 +680,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/weakening_headshot.webp",
       "aliases": [
         "Ослабляющий выстрел в голову"
+      ],
+      "effect": "Попадание в голову снижает сопротивляемость пулям у жертвы.",
+      "components": [],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -579,6 +697,14 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/sharp_shooter.webp",
       "aliases": [
         "Прицельная стрельба"
+      ],
+      "effect": "Вы наносите больше урона оружием, когда цель находится за пределами минимальной дальности.",
+      "components": [
+        3331811235,
+        3077079169
+      ],
+      "roles": [
+        "weapon"
       ]
     },
     {
@@ -591,6 +717,15 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/headhunter.webp",
       "aliases": [
         "Охотник за головами"
+      ],
+      "effect": "Ваше следующее попадание в голову вражескому герою нанесёт ему доп. урон от оружия. Вы также получите лечение, а ваша скорость передвижения ненадолго повысится.",
+      "components": [
+        2010028405
+      ],
+      "roles": [
+        "weapon",
+        "health",
+        "mobility"
       ]
     },
     {
@@ -603,6 +738,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/spellslinger_headshots.webp",
       "aliases": [
         "Спиритический разрыв"
+      ],
+      "effect": "",
+      "components": [
+        1144549437
+      ],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -615,6 +757,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/crippling_headshot.webp",
       "aliases": [
         "Калечащий выстрел в голову"
+      ],
+      "effect": "Попадание в голову уменьшает жертве сопротивляемость пулям и спиритизму, а также получаемое лечение.",
+      "components": [
+        1770441818
+      ],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -627,7 +776,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/mystic_shot.webp",
       "aliases": [
         "Мистический выстрел"
-      ]
+      ],
+      "effect": "Ваша следующая пуля нанесёт дополнительный спиритический урон.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 1396247347,
@@ -639,7 +791,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/lucky_shot.webp",
       "aliases": [
         "Удачный выстрел"
-      ]
+      ],
+      "effect": "Ваши пули могут стать усиленными и нанести дополнительный урон при попадании. Дополнительный урон не может быть критическим.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 2095565695,
@@ -651,6 +806,14 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/point_blank.webp",
       "aliases": [
         "Стрельба в упор"
+      ],
+      "effect": "Когда цель выстрелов находится на малой дальности, вы замедляете её передвижение выстрелами и наносите больше урона оружием.",
+      "components": [
+        1342610602
+      ],
+      "roles": [
+        "weapon",
+        "health"
       ]
     },
     {
@@ -663,7 +826,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/toxic_bullets.webp",
       "aliases": [
         "Токсичные пули"
-      ]
+      ],
+      "effect": "От ваших пуль у врагов накапливается эффект кровотечения, который наносит им постепенный урон в процентах от их макс. здоровья, а также снижает им получаемое лечение.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 2480592370,
@@ -675,7 +841,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/ricochet.webp",
       "aliases": [
         "Рикошет"
-      ]
+      ],
+      "effect": "Ваши пули рикошетят во врагов рядом с целью, накладывая эффекты выстрелов и нанося долю изначального урона.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 3633614685,
@@ -687,6 +856,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/extra_health.webp",
       "aliases": [
         "Добавочное здоровье"
+      ],
+      "effect": "",
+      "components": [],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -699,6 +873,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/bullet_lifesteal.webp",
       "aliases": [
         "Пулевая кража здоровья"
+      ],
+      "effect": "",
+      "components": [],
+      "roles": [
+        "weapon",
+        "health"
       ]
     },
     {
@@ -711,6 +891,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/debuff_reducer.webp",
       "aliases": [
         "Уменьшитель эффектов"
+      ],
+      "effect": "Снижает длительность всех накладываемых на вас отрицательных эффектов.",
+      "components": [],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -723,7 +908,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/debuff_remover.webp",
       "aliases": [
         "Развеивание магии"
-      ]
+      ],
+      "effect": "",
+      "components": [],
+      "roles": []
     },
     {
       "id": 2163598980,
@@ -735,7 +923,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/spirit_resilience.webp",
       "aliases": [
         "Спиритическая стойкость"
-      ]
+      ],
+      "effect": "Если у вас менее 50% здоровья, вы получаете дополнительную сопротивляемость спиритизму.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 3140772621,
@@ -747,7 +938,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/bullet_resilience.webp",
       "aliases": [
         "Пулевая стойкость"
-      ]
+      ],
+      "effect": "Если у вас менее 50% здоровья, вы получаете дополнительную сопротивляемость пулям.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 1378931225,
@@ -759,7 +953,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/metal_skin.webp",
       "aliases": [
         "Металлическая кожа"
-      ]
+      ],
+      "effect": "Даёт невосприимчивость к пулям.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 2566692615,
@@ -771,7 +968,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/healing_booster.webp",
       "aliases": [
         "Усилитель лечения"
-      ]
+      ],
+      "effect": "Повышает эффективность вашего лечения.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 3585132399,
@@ -783,6 +983,14 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/fortitude.webp",
       "aliases": [
         "Выдержка"
+      ],
+      "effect": "Если в течение некоторого времени не получать урон, вам даётся восстановление здоровья.",
+      "components": [
+        3633614685
+      ],
+      "roles": [
+        "health",
+        "mobility"
       ]
     },
     {
@@ -795,6 +1003,16 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/leech.webp",
       "aliases": [
         "Кровопийца"
+      ],
+      "effect": "Ослабляет накладываемое на вас врагами снижения лечения.",
+      "components": [
+        499683006,
+        876563814
+      ],
+      "roles": [
+        "spirit",
+        "weapon",
+        "health"
       ]
     },
     {
@@ -807,7 +1025,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/sprint_boots.webp",
       "aliases": [
         "Беговые ботинки"
-      ]
+      ],
+      "effect": "",
+      "components": [],
+      "roles": []
     },
     {
       "id": 3074274290,
@@ -819,7 +1040,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/trophy_collector.webp",
       "aliases": [
         "Собиратель трофеев"
-      ]
+      ],
+      "effect": "При каждой помощи или убийстве вы получаете бонус к скорости бега и дальности умений, а ещё у вас начинают пассивно генерироваться души. Данный эффект накапливается и не обнуляется в случае смерти.",
+      "components": [
+        3399065363
+      ],
+      "roles": []
     },
     {
       "id": 2447176615,
@@ -831,6 +1057,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/enduring_speed.webp",
       "aliases": [
         "Скоростная стойкость"
+      ],
+      "effect": "Уменьшает эффективность наложенного врагами снижения скорости передвижения.",
+      "components": [
+        3399065363
+      ],
+      "roles": [
+        "mobility"
       ]
     },
     {
@@ -843,7 +1076,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/stamina_mastery.webp",
       "aliases": [
         "Превосходная выносливость"
-      ]
+      ],
+      "effect": "",
+      "components": [
+        4139877411
+      ],
+      "roles": []
     },
     {
       "id": 668299740,
@@ -855,7 +1093,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/rapid_rounds.webp",
       "aliases": [
         "Спешная стрельба"
-      ]
+      ],
+      "effect": "",
+      "components": [],
+      "roles": []
     },
     {
       "id": 4139877411,
@@ -867,7 +1108,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/extra_stamina.webp",
       "aliases": [
         "Добавочная выносливость"
-      ]
+      ],
+      "effect": "",
+      "components": [],
+      "roles": []
     },
     {
       "id": 2481177645,
@@ -879,6 +1123,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/hunters_aura.webp",
       "aliases": [
         "Аура охотника"
+      ],
+      "effect": "Снижает сопротивляемость пулям и скорострельность у врагов поблизости. Если рядом только один вражеский герой, эффект удваивается.",
+      "components": [],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -891,7 +1140,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/grit.webp",
       "aliases": [
         "Крепость"
-      ]
+      ],
+      "effect": "Вы ненадолго получаете барьер.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 805079544,
@@ -903,7 +1155,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/weapon_shielding.webp",
       "aliases": [
         "Оружейная защита"
-      ]
+      ],
+      "effect": "Даёт вам барьер, когда вражеские герои наносят вам значительный урон от оружия за короткий интервал времени.",
+      "components": [
+        1672893796
+      ],
+      "roles": []
     },
     {
       "id": 112198670,
@@ -915,7 +1172,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/spirit_shielding.webp",
       "aliases": [
         "Спиритическая защита"
-      ]
+      ],
+      "effect": "Даёт вам барьер, когда вражеские герои наносят вам значительный спиритический урон за короткий интервал времени.",
+      "components": [
+        1672893796
+      ],
+      "roles": []
     },
     {
       "id": 1235347618,
@@ -927,6 +1189,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/battle_vest.webp",
       "aliases": [
         "Боевой жилет"
+      ],
+      "effect": "Если у вас более 65% здоровья, увеличивается наносимый вами урон от оружия и вам даётся повышенная скорострельность.",
+      "components": [],
+      "roles": [
+        "weapon"
       ]
     },
     {
@@ -939,6 +1206,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/enchanters_emblem.webp",
       "aliases": [
         "Эмблема заклинателя"
+      ],
+      "effect": "Если у вас более 65% здоровья, вам даётся дополнительная спиритическая мощь и сокращённое время перезарядки умений.",
+      "components": [],
+      "roles": [
+        "spirit"
       ]
     },
     {
@@ -951,6 +1223,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/extra_spirit.webp",
       "aliases": [
         "Добавочный спиритизм"
+      ],
+      "effect": "",
+      "components": [],
+      "roles": [
+        "spirit"
       ]
     },
     {
@@ -963,6 +1240,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/mystic_regen.webp",
       "aliases": [
         "Мистическое восстановление"
+      ],
+      "effect": "Нанесение спиритического урона вражеским героям даёт вам бонусное восстановление. Накапливается при нанесении урона разным героям.",
+      "components": [],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -975,6 +1257,14 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/improved_spirit.webp",
       "aliases": [
         "Улучшенный спиритизм"
+      ],
+      "effect": "",
+      "components": [
+        968099481
+      ],
+      "roles": [
+        "spirit",
+        "health"
       ]
     },
     {
@@ -987,6 +1277,14 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/spiritual_overflow.webp",
       "aliases": [
         "Спиритическое переполнение"
+      ],
+      "effect": "Стреляя в героев, вы накапливаете эффект, который повышает ваши скорострельность, спиритическую мощь и кражу здоровья спиритизмом.",
+      "components": [
+        876563814
+      ],
+      "roles": [
+        "spirit",
+        "health"
       ]
     },
     {
@@ -999,7 +1297,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/return_fire.webp",
       "aliases": [
         "Обратный огонь"
-      ]
+      ],
+      "effect": "Автоматически выстреливает в любого врага, который наносит вам урон умением или оружием.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 1193964439,
@@ -1011,7 +1312,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/greater_expansion.webp",
       "aliases": [
         "Усиленное расширение"
-      ]
+      ],
+      "effect": "Увеличивает дальность и радиус действия ваших умений и предметов.",
+      "components": [
+        754480263
+      ],
+      "roles": []
     },
     {
       "id": 754480263,
@@ -1023,7 +1329,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/mystic_reach.webp",
       "aliases": [
         "Мистическое расширение"
-      ]
+      ],
+      "effect": "Увеличивает дальность выбранного умения и радиус его эффекта.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 3776945997,
@@ -1035,7 +1344,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/extra_charge.webp",
       "aliases": [
         "Добавочные заряды"
-      ]
+      ],
+      "effect": "",
+      "components": [],
+      "roles": []
     },
     {
       "id": 876563814,
@@ -1047,6 +1359,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/spirit_lifesteal.webp",
       "aliases": [
         "Спиритическая кража здоровья"
+      ],
+      "effect": "",
+      "components": [],
+      "roles": [
+        "spirit",
+        "health"
       ]
     },
     {
@@ -1059,6 +1377,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/bullet_resist_shredder.webp",
       "aliases": [
         "Измельчитель пулестойкости"
+      ],
+      "effect": "Снижает сопротивляемость пулям у врагов, которым вы наносите спиритический урон.",
+      "components": [],
+      "roles": [
+        "weapon"
       ]
     },
     {
@@ -1071,7 +1394,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/mystic_reverb.webp",
       "aliases": [
         "Мистический отзвук"
-      ]
+      ],
+      "effect": "",
+      "components": [],
+      "roles": []
     },
     {
       "id": 1998374645,
@@ -1083,7 +1409,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/mystic_burst.webp",
       "aliases": [
         "Мистический импульс"
-      ]
+      ],
+      "effect": "Постепенно заряжается спиритическим уроном, благодаря чему умения, наносящие более 80 ед. урона, причиняют дополнительный урон.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 2121044373,
@@ -1095,6 +1424,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/tankbuster.webp",
       "aliases": [
         "Гроза танков"
+      ],
+      "effect": "Постепенно заряжается спиритическим уроном, благодаря чему умения, наносящие более 165 ед. урона, причиняют дополнительный урон. Игнорирует сопротивляемость спиритизму.",
+      "components": [
+        1998374645
+      ],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -1107,7 +1443,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/mystic_vulnerability.webp",
       "aliases": [
         "Мистическая уязвимость"
-      ]
+      ],
+      "effect": "Когда враг получает спиритический урон, у него снижается сопротивляемость спиритизму.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 2603935618,
@@ -1119,6 +1458,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/healbane.webp",
       "aliases": [
         "Гроза целителей"
+      ],
+      "effect": "Наносимый вами спиритический урон снижает врагу получаемое лечение. Если вражеский герой умирает, находясь под действием этого эффекта, вы значительно восстанавливаете здоровье.",
+      "components": [],
+      "roles": [
+        "spirit"
       ]
     },
     {
@@ -1131,6 +1475,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/mystic_slow.webp",
       "aliases": [
         "Мистическое замедление"
+      ],
+      "effect": "Когда цель получает спиритический урон, у неё снижается скорость передвижения.",
+      "components": [],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -1143,7 +1492,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/escalating_exposure.webp",
       "aliases": [
         "Растущее воздействие"
-      ]
+      ],
+      "effect": "Нанося спиритический урон, вы получаете накапливаемое повышение спиритизма, которое увеличивает спиритический урон, наносимый вами цели.",
+      "components": [
+        2081037738
+      ],
+      "roles": []
     },
     {
       "id": 787198704,
@@ -1155,7 +1509,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/rapid_recharge.webp",
       "aliases": [
         "Спешные заряды"
-      ]
+      ],
+      "effect": "",
+      "components": [
+        3776945997
+      ],
+      "roles": []
     },
     {
       "id": 424779525,
@@ -1167,7 +1526,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/brawl/omnicharge_pendant.webp",
       "aliases": [
         "Всезарядная печать"
-      ]
+      ],
+      "effect": "Позволяет добавить любому активному умению, не являющемуся ультом, дополнительные заряды. У умений с системой зарядов повышается их число.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 380806748,
@@ -1179,7 +1541,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/improved_cooldown.webp",
       "aliases": [
         "Сжатая перезарядка умения"
-      ]
+      ],
+      "effect": "Сокращает время перезарядки выбранного умения.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 3261353684,
@@ -1191,7 +1556,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/superior_cooldown.webp",
       "aliases": [
         "Превосходная перезарядка умений"
-      ]
+      ],
+      "effect": "Сокращает время перезарядки ваших умений.",
+      "components": [
+        380806748
+      ],
+      "roles": []
     },
     {
       "id": 915014646,
@@ -1203,7 +1573,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/transcendent_cooldown.webp",
       "aliases": [
         "Трансцендентная перезарядка"
-      ]
+      ],
+      "effect": "Сокращает время перезарядки ваших умений и предметов.",
+      "components": [
+        3261353684
+      ],
+      "roles": []
     },
     {
       "id": 1813726886,
@@ -1215,7 +1590,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/slowing_hex.webp",
       "aliases": [
         "Замедляющие чары"
-      ]
+      ],
+      "effect": "Замедляет передвижение выбранного врага и накладывает безмолвие на его предметы и умения, связанные с передвижением. Увеличивает гравитацию цели. Не влияет на расход её выносливости.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 1219329868,
@@ -1227,6 +1605,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/spirit_sap.webp",
       "aliases": [
         "Спиритическое истощение"
+      ],
+      "effect": "Снижает сопротивляемость спиритизму и спиритическую мощь выбранного врага.",
+      "components": [],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -1239,7 +1622,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/focus_lens.webp",
       "aliases": [
         "Фокусная линза"
-      ]
+      ],
+      "effect": "Накладывает безмолвие на выбранного врага. Часть всего урона, нанесённого в период безмолвия, накладывается на цель по окончании действия эффекта.",
+      "components": [
+        1219329868
+      ],
+      "roles": []
     },
     {
       "id": 2922054143,
@@ -1251,6 +1639,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/rusted_barrel.webp",
       "aliases": [
         "Ржавый ствол"
+      ],
+      "effect": "У выбранной цели снижаются скорострельность и сопротивляемость пулям.",
+      "components": [],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -1263,6 +1656,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/disarming_hex.webp",
       "aliases": [
         "Чары обезоруживания"
+      ],
+      "effect": "Разоружает выбранного врага и снижает его сопротивляемость пулям.",
+      "components": [
+        2922054143
+      ],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -1275,7 +1675,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/rescue_beam.webp",
       "aliases": [
         "Спасательный луч"
-      ]
+      ],
+      "effect": "Лечит вас и выбранного союзного героя в зависимости от максимального здоровья. Один раз за время лечения вы можете притянуть цель к себе. Можно применить на себя.",
+      "components": [
+        1710079648
+      ],
+      "roles": []
     },
     {
       "id": 3144988365,
@@ -1287,6 +1692,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/decay.webp",
       "aliases": [
         "Разложение"
+      ],
+      "effect": "Вы постепенно наносите урон цели на основе её текущего здоровья. Урон от «Разложения» не может убить и не влияет на срабатывание предметов.",
+      "components": [],
+      "roles": [
+        "spirit",
+        "health"
       ]
     },
     {
@@ -1299,6 +1710,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/scourge.webp",
       "aliases": [
         "Кара"
+      ],
+      "effect": "Накладывает на союзника сопротивляемость спиритизму, сопротивляемость отриц. эффектам и ауру, которая наносит урон врагам пропорционально их макс. здоровью. Отрицательные эффекты, уже наложенные на цель, ослабляются. Можно применять на себя.",
+      "components": [],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -1311,6 +1727,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/knockdown.webp",
       "aliases": [
         "Нокдаун"
+      ],
+      "effect": "Вы накладываете оглушение после задержки в 2 сек. Оглушение действует дольше на цели, находящиеся в воздухе. Во время действия оглушения гравитация цели увеличивается.",
+      "components": [],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -1323,6 +1744,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/phantom_strike.webp",
       "aliases": [
         "Фантомный удар"
+      ],
+      "effect": "Телепортирует вас к выбранному врагу и притягивает его к земле, нанося урон, обезоруживая его, и снижая скорость его передвижения.",
+      "components": [],
+      "roles": [
+        "spirit",
+        "weapon"
       ]
     },
     {
@@ -1335,7 +1762,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/warp_stone.webp",
       "aliases": [
         "Камень переноса"
-      ]
+      ],
+      "effect": "Телепортирует вас вперёд и увеличивает сопротивляемость пулям.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 1152158042,
@@ -1347,7 +1777,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/vortex_web.webp",
       "aliases": [
         "Паутинный вихрь"
-      ]
+      ],
+      "effect": "",
+      "components": [
+        1813726886
+      ],
+      "roles": []
     },
     {
       "id": 677738769,
@@ -1359,7 +1794,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/refresher.webp",
       "aliases": [
         "Обновитель"
-      ]
+      ],
+      "effect": "Сбрасывает перезарядку всех ваших умений и восстанавливает все их заряды.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 630839635,
@@ -1371,7 +1809,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/echo_shard.webp",
       "aliases": [
         "Осколок эха"
-      ]
+      ],
+      "effect": "",
+      "components": [],
+      "roles": []
     },
     {
       "id": 395944548,
@@ -1383,6 +1824,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/torment_pulse.webp",
       "aliases": [
         "Терзающий пульс"
+      ],
+      "effect": "Периодически наносит спиритический урон двум ближайшим врагам неподалёку.",
+      "components": [],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -1395,6 +1841,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/cheat_death.webp",
       "aliases": [
         "Обман смерти"
+      ],
+      "effect": "",
+      "components": [],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -1407,7 +1858,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/shadow_weave.webp",
       "aliases": [
         "Сплетение теней"
-      ]
+      ],
+      "effect": "Даёт скрытность. Получение урона ненадолго раскроет вас.",
+      "components": [
+        3399065363
+      ],
+      "roles": []
     },
     {
       "id": 600033864,
@@ -1419,7 +1875,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/majestic_leap.webp",
       "aliases": [
         "Грациозный скачок"
-      ]
+      ],
+      "effect": "Подбрасывает вас ввысь и даёт вам барьер. Находясь в воздухе, вы можете снова применить этот предмет, чтобы ускорить падение. Нельзя использовать в течение 5 сек. после того, как вас атаковал вражеский герой.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 2956256701,
@@ -1431,7 +1890,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/healing_nova.webp",
       "aliases": [
         "Вспышка исцеления"
-      ]
+      ],
+      "effect": "Лечит вас и союзников поблизости.",
+      "components": [
+        1710079648
+      ],
+      "roles": []
     },
     {
       "id": 2059712766,
@@ -1443,7 +1907,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/restorative_locket.webp",
       "aliases": [
         "Живительный медальон"
-      ]
+      ],
+      "effect": "",
+      "components": [],
+      "roles": []
     },
     {
       "id": 1710079648,
@@ -1455,7 +1922,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/healing_rite.webp",
       "aliases": [
         "Обряд лечения"
-      ]
+      ],
+      "effect": "Даёт цели восстановление здоровья и скорость бега. Эффект пропадает, если цель получает урон от вражеских героев или построек. Можно применить на себя.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 4121584236,
@@ -1467,6 +1937,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/brawl/shrink_ray.webp",
       "aliases": [
         "Луч уменьшения"
+      ],
+      "effect": "Уменьшает размер модели и даёт цели бонус к скорости передвижения. Позволяет цели использовать туннели. Можно применить на себя.",
+      "components": [],
+      "roles": [
+        "mobility"
       ]
     },
     {
@@ -1479,6 +1954,14 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/infuser.webp",
       "aliases": [
         "Насытитель"
+      ],
+      "effect": "Даёт бонус к краже здоровья спиритизмом и спиритической мощи.",
+      "components": [
+        876563814
+      ],
+      "roles": [
+        "spirit",
+        "health"
       ]
     },
     {
@@ -1491,6 +1974,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/guardian_ward.webp",
       "aliases": [
         "Заслон стража"
+      ],
+      "effect": "Цель получает барьер и временное повышение скорости передвижения. Можно применять на себя. Если применяется не на себя, время перезарядки сокращается вдвое.",
+      "components": [
+        1672893796
+      ],
+      "roles": [
+        "mobility"
       ]
     },
     {
@@ -1503,6 +1993,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/divine_barrier.webp",
       "aliases": [
         "Божественный барьер"
+      ],
+      "effect": "Снимает все отрицательные эффекты (кроме оглушения) с цели, а также даёт ей барьер и бонус к скорости передвижения. Можно применять на себя. При применении не на себя время перезарядки сокращается вдвое.",
+      "components": [
+        857669956
+      ],
+      "roles": [
+        "mobility"
       ]
     },
     {
@@ -1515,7 +2012,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/alchemical_fire.webp",
       "aliases": [
         "Алхимический огонь"
-      ]
+      ],
+      "effect": "Вы бросаете колбу, которая взрывается в указанной точке и создаёт область, наносящую растущий спиритический урон каждую секунду и снижающую сопротивляемость пулям у врагов. Урон существам, не являющимися героями, ниже на 50%.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 989206714,
@@ -1527,6 +2027,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/blood_tribute.webp",
       "aliases": [
         "Кровавая дань"
+      ],
+      "effect": "Когда включено: вы постоянно жертвуете здоровьем, чтобы повысить скорострельность, сопротивляемость отрицательным эффектам и скорость передвижения.",
+      "components": [],
+      "roles": [
+        "mobility"
       ]
     },
     {
@@ -1539,6 +2044,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/fleetfoot.webp",
       "aliases": [
         "Проворная поступь"
+      ],
+      "effect": "",
+      "components": [],
+      "roles": [
+        "weapon"
       ]
     },
     {
@@ -1551,7 +2061,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/kinetic_dash.webp",
       "aliases": [
         "Кинетический рывок"
-      ]
+      ],
+      "effect": "При совершении рывка с прыжком вы получаете бонус к скорострельности и боезапасу до следующей перезарядки. Действует до 7 сек.",
+      "components": [
+        4139877411
+      ],
+      "roles": []
     },
     {
       "id": 1150006784,
@@ -1563,7 +2078,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/arcane_surge.webp",
       "aliases": [
         "Колдовской порыв"
-      ]
+      ],
+      "effect": "После совершения рывка с прыжком следующее умение, которое вы используете в течение 7 сек., будет иметь бонусную дальность, длительность и спиритическую мощь.",
+      "components": [
+        4139877411
+      ],
+      "roles": []
     },
     {
       "id": 3357231760,
@@ -1575,6 +2095,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/unstoppable.webp",
       "aliases": [
         "Неудержимость"
+      ],
+      "effect": "Временно подавляет отрицательные эффекты и даёт вам невосприимчивость к оглушению, безмолвию, сну, оцепенению и обезоруживанию. Нельзя использовать во время оглушения или сна.",
+      "components": [
+        1047818222
+      ],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -1587,6 +2114,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/colossus.webp",
       "aliases": [
         "Колосс"
+      ],
+      "effect": "Вы увеличиваетесь в размерах и получаете бонусы к сопротивляемости пулям и спиритизму, а также наносите повышенный урон ближнего боя. Враги поблизости замедляются и имеют сниженную скорость рывка.",
+      "components": [
+        3633614685
+      ],
+      "roles": [
+        "weapon"
       ]
     },
     {
@@ -1599,7 +2133,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/cold_front.webp",
       "aliases": [
         "Холодный фронт"
-      ]
+      ],
+      "effect": "Вы выпускаете расширяющуюся леденящую волну, которая наносит спиритический урон и замедляет задетых врагов.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 3812615317,
@@ -1611,7 +2148,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/arctic_blast.webp",
       "aliases": [
         "Арктический взрыв"
-      ]
+      ],
+      "effect": "Вы выпускаете расширяющуюся леденящую волну, которая наносит спиритический урон и замораживает, а затем замедляет задетые цели. У замедленных жертв замораживается восстановление выносливости",
+      "components": [
+        1976391348
+      ],
+      "roles": []
     },
     {
       "id": 2533252781,
@@ -1623,6 +2165,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/ethereal_shift.webp",
       "aliases": [
         "Развоплощение"
+      ],
+      "effect": "Вы мгновенно переходите в состояние пустоты и кратковременно становитесь неуязвимы.",
+      "components": [],
+      "roles": [
+        "mobility"
       ]
     },
     {
@@ -1635,7 +2182,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/curse.webp",
       "aliases": [
         "Проклятая реликвия"
-      ]
+      ],
+      "effect": "Проклинает врага: прерывает его действия, накладывает безмолвие и обезоруживание и запрещает использовать предметы. Снимает все положительные эффекты, кроме наложенных ультами. Наносимый вами урон снижен на время действия проклятия.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 2951612397,
@@ -1647,7 +2197,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/duration_extender.webp",
       "aliases": [
         "Увеличитель длительности"
-      ]
+      ],
+      "effect": "Усиливает выбранное умение, повышая время его действия.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 2717651715,
@@ -1659,7 +2212,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/superior_duration.webp",
       "aliases": [
         "Превосходная длительность"
-      ]
+      ],
+      "effect": "Увеличивает длительность действия ваших умений и предметов.",
+      "components": [
+        2951612397
+      ],
+      "roles": []
     },
     {
       "id": 365620721,
@@ -1671,6 +2229,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/glass_cannon.webp",
       "aliases": [
         "Стеклянная пушка"
+      ],
+      "effect": "Каждое убийство героя даёт постоянный бонус к скорострельности (максимум — 8 раз). При смерти владельца теряется один бонус.",
+      "components": [],
+      "roles": [
+        "weapon"
       ]
     },
     {
@@ -1683,6 +2246,14 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/fury_trance.webp",
       "aliases": [
         "Яростный экстаз"
+      ],
+      "effect": "",
+      "components": [
+        499683006
+      ],
+      "roles": [
+        "weapon",
+        "health"
       ]
     },
     {
@@ -1695,6 +2266,14 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/vampiric_burst.webp",
       "aliases": [
         "Порыв вампиризма"
+      ],
+      "effect": "",
+      "components": [
+        499683006
+      ],
+      "roles": [
+        "weapon",
+        "health"
       ]
     },
     {
@@ -1707,6 +2286,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/lifestrike.webp",
       "aliases": [
         "Витальный удар"
+      ],
+      "effect": "Ваши атаки ближнего боя замедляют врагов и лечат вас на процент от нанесённого в ближнем бою урона, а также на фиксированное количество единиц. Лечение от существ, не являющихся героями, эффективно на 40%. Множитель времени перезарядки составляет 1.5 при нанесении лёгких ударов ближнего боя.",
+      "components": [
+        1437614329
+      ],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -1719,7 +2305,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/spirit_strike.webp",
       "aliases": [
         "Спиритический удар"
-      ]
+      ],
+      "effect": "Совершив лёгкий или тяжёлый удар ближнего боя по герою, вы нанесёте ему дополнительный спиритический урон и уменьшите его сопротивляемость спиритизму. При нанесении лёгких ударов ближнего боя перезарядка длится в 2 раза дольше.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 3190916303,
@@ -1731,6 +2320,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/spirit_snatch.webp",
       "aliases": [
         "Похищение спиритизма"
+      ],
+      "effect": "Совершив лёгкий или тяжёлый удар ближнего боя по герою, вы нанесёте ему дополнительный спиритический урон, а также украдёте его сопротивляемость спиритизму и спиритическую мощь. При нанесении лёгких ударов ближнего боя сила эффектов снижается на 30%.",
+      "components": [
+        465043967
+      ],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -1743,7 +2339,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/melee_charge.webp",
       "aliases": [
         "Удар с зарядом"
-      ]
+      ],
+      "effect": "Ваш следующий тяжёлый удар ближнего боя наносит врагу повышенный урон.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 800008313,
@@ -1755,7 +2354,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/crushing_fists.webp",
       "aliases": [
         "Сокрушительные кулаки"
-      ]
+      ],
+      "effect": "Нанесённый вами урон ближнего боя восстанавливает ваш боезапас и накладывает накапливаемый эффект снижения сопротивляемости пулям на врагов. Тяжёлый удар ближнего боя накладывает 2 ед. эффекта. Если на цель наложено макс. число единиц эффекта, она оглушается.",
+      "components": [
+        26002154
+      ],
+      "roles": []
     },
     {
       "id": 2820116164,
@@ -1767,6 +2371,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/diviners_kevlar.webp",
       "aliases": [
         "Доспех прорицателя"
+      ],
+      "effect": "Применив ульт, вы получаете барьер и временный бонус к спиритической мощи.",
+      "components": [],
+      "roles": [
+        "spirit"
       ]
     },
     {
@@ -1779,6 +2388,14 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/radiant_regeneration.webp",
       "aliases": [
         "Сияющее восстановление"
+      ],
+      "effect": "В бою вы при применении умения вы получаете лечение и кратковременный бонус к скорости передвижения.",
+      "components": [
+        1439347412
+      ],
+      "roles": [
+        "health",
+        "mobility"
       ]
     },
     {
@@ -1791,6 +2408,14 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/boundless_spirit.webp",
       "aliases": [
         "Безграничный спиритизм"
+      ],
+      "effect": "",
+      "components": [
+        7409189
+      ],
+      "roles": [
+        "spirit",
+        "health"
       ]
     },
     {
@@ -1803,6 +2428,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/burst_fire.webp",
       "aliases": [
         "Шквальный огонь"
+      ],
+      "effect": "Ненадолго увеличивает ваши скорострельность и скорость передвижения при попадании выстрелом по герою.",
+      "components": [
+        668299740
+      ],
+      "roles": [
+        "mobility"
       ]
     },
     {
@@ -1815,7 +2447,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/extra_regen.webp",
       "aliases": [
         "Добавочное восстановление"
-      ]
+      ],
+      "effect": "",
+      "components": [],
+      "roles": []
     },
     {
       "id": 1292979587,
@@ -1827,6 +2462,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/surge_of_power.webp",
       "aliases": [
         "Прилив мощи"
+      ],
+      "effect": "Усиливает выбранное умение: навсегда увеличивает его спиритическую мощь. Применив его, вы некоторое время передвигаетесь быстрее и не замедляетесь при совершении атак.",
+      "components": [
+        968099481
+      ],
+      "roles": [
+        "mobility"
       ]
     },
     {
@@ -1839,6 +2481,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/suppressor.webp",
       "aliases": [
         "Подавитель"
+      ],
+      "effect": "Нанося спиритический урон врагам, вы также снижаете их скорострельность.",
+      "components": [],
+      "roles": [
+        "spirit"
       ]
     },
     {
@@ -1851,7 +2498,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/quicksilver_reload.webp",
       "aliases": [
         "Ртутная перезарядка"
-      ]
+      ],
+      "effect": "Усиленное умение постепенно заряжается, благодаря чему при использовании наносит доп. спиритический урон, даёт повышенную скорострельность и перезаряжает оружие.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 3919289022,
@@ -1863,6 +2513,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/mercurial_magnum.webp",
       "aliases": [
         "Ртутный Магнум"
+      ],
+      "effect": "Усиленное умение постепенно заряжается, благодаря чему наносит доп. спиритический урон, повышает скорострельность и перезаряжает оружие при использовании. До следующей перезарядки оружия ваши пули наносят доп. спиритический урон, пропорциональный вашей спиритической мощи.",
+      "components": [
+        84321454
+      ],
+      "roles": [
+        "spirit"
       ]
     },
     {
@@ -1875,7 +2532,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/intensifying_magazine.webp",
       "aliases": [
         "Усиливающий магазин"
-      ]
+      ],
+      "effect": "Увеличивает урон от оружия при непрерывной стрельбе.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 2463960640,
@@ -1887,6 +2547,14 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/escalating_resilience.webp",
       "aliases": [
         "Растущая стойкость"
+      ],
+      "effect": "Увеличивает вашу сопротивляемость пулям, когда ваши пули задевают героя. Каждый выстрел может дать только одну единицу этого эффекта.",
+      "components": [
+        1548066885
+      ],
+      "roles": [
+        "weapon",
+        "health"
       ]
     },
     {
@@ -1899,7 +2567,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/swift_striker.webp",
       "aliases": [
         "Быстрый стрелок"
-      ]
+      ],
+      "effect": "",
+      "components": [
+        668299740
+      ],
+      "roles": []
     },
     {
       "id": 865958998,
@@ -1911,6 +2584,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/veil_walker.webp",
       "aliases": [
         "Незримый покров"
+      ],
+      "effect": "Пройдя через вселенскую вуаль, вы получите скрытность, лечение и повышенную скорость передвижения.",
+      "components": [],
+      "roles": [
+        "health",
+        "mobility"
       ]
     },
     {
@@ -1923,7 +2602,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/reactive_barrier.webp",
       "aliases": [
         "Барьерная реакция"
-      ]
+      ],
+      "effect": "Вы получаете барьер, когда оглушены, скованы, обездвижены, спите или обезмолвлены.",
+      "components": [
+        1672893796
+      ],
+      "roles": []
     },
     {
       "id": 951866250,
@@ -1935,7 +2619,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/indomitable.webp",
       "aliases": [
         "Непреклонность"
-      ]
+      ],
+      "effect": "",
+      "components": [
+        1644605047
+      ],
+      "roles": []
     },
     {
       "id": 3862866912,
@@ -1947,6 +2636,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/restorative_shot.webp",
       "aliases": [
         "Живительный выстрел"
+      ],
+      "effect": "Следующий выстрел вас излечит (количество будет зависеть от того, во что или кого вы попадёте).",
+      "components": [],
+      "roles": [
+        "weapon"
       ]
     },
     {
@@ -1959,6 +2653,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/titanic_magazine.webp",
       "aliases": [
         "Титанический магазин"
+      ],
+      "effect": "",
+      "components": [
+        1548066885
+      ],
+      "roles": [
+        "weapon"
       ]
     },
     {
@@ -1971,7 +2672,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/split_shot.webp",
       "aliases": [
         "Веерный выстрел"
-      ]
+      ],
+      "effect": "Ваше оружие начинает совершать мультивыстрелы. Попадание в более чем одного героя за выстрел даёт накапливаемый бонус к урону от оружия. При каждом мультивыстреле попасть в определённую цель можно только единожды.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 381961617,
@@ -1983,6 +2687,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/active_reload.webp",
       "aliases": [
         "Активная перезарядка"
+      ],
+      "effect": "Нажав Перезарядка в указанный момент перезарядки, вы мгновенно завершите её и получите бонус к скорострельности, краже здоровья пулями и скорости передвижения.",
+      "components": [],
+      "roles": [
+        "mobility"
       ]
     },
     {
@@ -1995,6 +2704,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/magic_carpet.webp",
       "aliases": [
         "Ковёр-самолёт"
+      ],
+      "effect": "Призывает волшебный ковёр, который уносит вас прочь. Вам даётся невосприимчивость к замедлениям на время полёта, но любое ваше действие его прервёт. Во время призыва нельзя использовать умения.",
+      "components": [],
+      "roles": [
+        "spirit",
+        "health"
       ]
     },
     {
@@ -2007,7 +2722,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/spirit_burn.webp",
       "aliases": [
         "Спиритический ожог"
-      ]
+      ],
+      "effect": "Если нанести врагу значительный спиритический урон в течение 5 сек., происходит взрыв, который наносит урон этому врагу и обжигает его. Во время горения враги получают постепенный урон, а получаемое ими лечение уменьшается. Для каждого врага действует отдельная перезарядка: до её окончания нельзя повторно наложить эффект. Если целью выбран не герой, урон уменьшается вдвое.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 493591231,
@@ -2019,6 +2737,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/lightning_scroll.webp",
       "aliases": [
         "Свиток молнии"
+      ],
+      "effect": "Урон от вашего ульта накладывает оглушение и наносит доп. спиритический урон после короткой задержки.",
+      "components": [
+        1102081447
+      ],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -2031,6 +2756,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/witchmail.webp",
       "aliases": [
         "Ведьмовской доспех"
+      ],
+      "effect": "Когда вы получаете большой спиритический урон от врагов, у вашего случайно выбранного умения сокращается время перезарядки.",
+      "components": [],
+      "roles": [
+        "spirit"
       ]
     },
     {
@@ -2043,6 +2773,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/healing_tempo.webp",
       "aliases": [
         "Целебный темп"
+      ],
+      "effect": "Когда вы накладываете на себя или союзника лечение, у цели будет повышенная скорострельность и bonus move speed. Не распространяется на врождённое восстановление и пассивную кражу здоровья пулями/спиритизмом.",
+      "components": [
+        2566692615
+      ],
+      "roles": [
+        "mobility"
       ]
     },
     {
@@ -2055,6 +2792,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/armor_piercing_rounds.webp",
       "aliases": [
         "Бронебой"
+      ],
+      "effect": "Ваши пули получают шанс стать неотвратимыми — такие прошивают врагов и игнорируют их сопротивляемость пулям.",
+      "components": [
+        3077079169
+      ],
+      "roles": [
+        "weapon"
       ]
     },
     {
@@ -2067,7 +2811,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/brawl/infinite_rounds.webp",
       "aliases": [
         "Бесконечные патроны"
-      ]
+      ],
+      "effect": "Даёт бесконечный боезапас.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 3491236900,
@@ -2079,6 +2826,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/plated_armor.webp",
       "aliases": [
         "Латная броня"
+      ],
+      "effect": "Даёт шанс нейтрализовать либо наносимый пулями урон от оружия, либо эффекты, накладываемые на вас пулями при попадании.",
+      "components": [],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -2091,6 +2843,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/spellbreaker.webp",
       "aliases": [
         "Разрушитель чар"
+      ],
+      "effect": "При следующем получении большого спиритического урона он будет существенно снижен.",
+      "components": [
+        1047818222
+      ],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -2103,6 +2862,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/vitality/juggernaut.webp",
       "aliases": [
         "Громила"
+      ],
+      "effect": "",
+      "components": [
+        2447176615
+      ],
+      "roles": [
+        "mobility"
       ]
     },
     {
@@ -2115,7 +2881,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/spell_slinger.webp",
       "aliases": [
         "Метатель чар"
-      ]
+      ],
+      "effect": "При использовании умения или предмета в бою вы получаете суммирующийся положительный эффект, повышающий вашу скорострельность и скорость перезарядки. Каждое новое использование продлевает действие эффекта.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 98582110,
@@ -2127,6 +2896,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/backstabber.webp",
       "aliases": [
         "Преследователь"
+      ],
+      "effect": "Нанесение урона от оружия на ближней дистанции открывает рану и даёт вам увеличенную скорость передвижения. Раненые враги получают постепенный спиритический урон, имеют сниженную сопротивляемость пулям и становятся видимыми сквозь стены.",
+      "components": [],
+      "roles": [
+        "health",
+        "mobility"
       ]
     },
     {
@@ -2139,6 +2914,13 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/express_shot.webp",
       "aliases": [
         "Экспресс-выстрел"
+      ],
+      "effect": "При следующей атаке вы быстро произведёте два выстрела один за другим. Выпущенные при этом пули имеют повышенную скорость и наносят дополнительный урон. Данная атака расходует дополнительный боезапас.",
+      "components": [
+        3077079169
+      ],
+      "roles": [
+        "weapon"
       ]
     },
     {
@@ -2151,7 +2933,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/brawl/icarus_wings.webp",
       "aliases": [
         "Крылья серафима"
-      ]
+      ],
+      "effect": "Находясь в воздухе, вы наносите больше и получаете меньше урона. Вам также доступны неограниченные рывки и прыжки в воздухе.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 2054088113,
@@ -2163,7 +2948,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/brawl/mystical_piano.webp",
       "aliases": [
         "Мистическое фортепиано"
-      ]
+      ],
+      "effect": "После короткой задержки враги в выбранной области будут оглушены и лишены запаса выносливости. После оглушения враги будут временно ошеломлены.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 3949773228,
@@ -2175,6 +2963,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/brawl/nullification_aura.webp",
       "aliases": [
         "Обнуляющий импульс"
+      ],
+      "effect": "Снимает с врагов все положительные эффекты, а также не даёт им использовать выносливость и лечение.",
+      "components": [],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -2187,7 +2980,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/brawl/celestial_guidance.webp",
       "aliases": [
         "Небесное благословение"
-      ]
+      ],
+      "effect": "Накладывает мощнейшее очищение, которое восстанавливает силы всех ваших союзников.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 230297145,
@@ -2199,7 +2995,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/brawl/eternal_gift.webp",
       "aliases": [
         "Вечный дар"
-      ]
+      ],
+      "effect": "Периодически даёт постоянный бонус к случайной характеристике.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 4050602737,
@@ -2211,6 +3010,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/brawl/patrons_blessing.webp",
       "aliases": [
         "Мистическая связь"
+      ],
+      "effect": "Даёт вам и союзникам мощную спиритическую ауру. Сила ауры меньше для союзников.",
+      "components": [],
+      "roles": [
+        "spirit"
       ]
     },
     {
@@ -2223,7 +3027,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/brawl/eldritch_shot.webp",
       "aliases": [
         "Терзающий выстрел"
-      ]
+      ],
+      "effect": "Ваша следующая пуля накладывает мощный отрицательный эффект, который снижает урон, лечение и скорость передвижения врага. Кроме того, она наносит доп. спиритический урон пропорционально текущему здоровью цели. Пуля имеет больший размер и прошивает цели насквозь.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 3523480953,
@@ -2235,6 +3042,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/brawl/cloak_of_opportunity.webp",
       "aliases": [
         "Плащ возможностей"
+      ],
+      "effect": "Блокирует следующее наложение на вас оглушения, сковывания, обездвиживания, сна или блокировки передвижения и даёт вам неудержимость. Вы также получаете барьер и увеличенную скорость передвижения.",
+      "components": [],
+      "roles": [
+        "mobility"
       ]
     },
     {
@@ -2247,7 +3059,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/brawl/runed_gauntlets.webp",
       "aliases": [
         "Рунные рукавицы"
-      ]
+      ],
+      "effect": "При каждом попадании тяжёлым ударом время текущих перезарядок сокращается.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 1825399334,
@@ -2259,7 +3074,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/brawl/electric_slippers.webp",
       "aliases": [
         "Электротапки"
-      ]
+      ],
+      "effect": "При скольжении вы уклоняетесь от пуль, получаете бонус к скорострельности и наносите урон врагам вокруг. Перезарядка отдельна для каждой цели.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 1132564516,
@@ -2271,7 +3089,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/brawl/prism_blast.webp",
       "aliases": [
         "Призматический взрыв"
-      ]
+      ],
+      "effect": "Вы входите в состояние пустоты, которое ненадолго даёт вам неуязвимость и запрещает выбирать вас целью. Во время действия от вас исходят вращающиеся лазерные лучи.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 1558545403,
@@ -2283,6 +3104,14 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/brawl/unstable_concoction.webp",
       "aliases": [
         "Нестабильный отвар"
+      ],
+      "effect": "Вы принимаете отвар, который даёт вам неудержимость и повышает вашу скорость, здоровье и урон от оружия и спиритизма. Спустя короткое время вы погибаете и взрываетесь, оглушая врагов поблизости и нанося урон, пропорциональный вашему максимальному здоровью. Такая смерть сокращает время вашего возрождения на 50%.",
+      "components": [],
+      "roles": [
+        "spirit",
+        "weapon",
+        "health",
+        "mobility"
       ]
     },
     {
@@ -2295,7 +3124,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/brawl/frostbite.webp",
       "aliases": [
         "Морозящий амулет"
-      ]
+      ],
+      "effect": "У усиленного умения сокращается время перезарядки и увеличивается спиритическая мощь. Когда умение наносит урон, цель замораживается и получает дополнительный урон. Перезарядка отдельна для каждой цели.",
+      "components": [],
+      "roles": []
     },
     {
       "id": 2319629810,
@@ -2307,6 +3139,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/brawl/shadow_strike.webp",
       "aliases": [
         "Теневой удар"
+      ],
+      "effect": "При расходовании выносливости вы получаете невидимость без радиуса обнаружения. При нанесении удара ближнего боя в невидимом состоянии вы украдёте у цели сопротивляемость пулям и спиритизму; цель также будет получать постепенный урон.",
+      "components": [],
+      "roles": [
+        "health"
       ]
     },
     {
@@ -2319,7 +3156,12 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/alchemical_seal.webp",
       "aliases": [
         "Баллистические чары"
-      ]
+      ],
+      "effect": "Выбранное умение получает повышенную дальность. Нанесение урона этим умением увеличивает урон от оружия за каждого задетого героя. Слабее действует на существ, не являющихся героями.",
+      "components": [
+        754480263
+      ],
+      "roles": []
     },
     {
       "id": 1763073141,
@@ -2331,6 +3173,11 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/weapon/recharging_rounds.webp",
       "aliases": [
         "Прилив зарядов"
+      ],
+      "effect": "Нанеся значительный урон от оружия, вы восстанавливаете заряд у каждого умения с зарядами.",
+      "components": [],
+      "roles": [
+        "weapon"
       ]
     },
     {
@@ -2343,7 +3190,10 @@
       "image": "https://assets-bucket.deadlock-api.com/assets-api-res/images/items/spirit/goose_egg.webp",
       "aliases": [
         "Золотое гусиное яйцо"
-      ]
+      ],
+      "effect": "Вы постепенно получаете души, пока живы.",
+      "components": [],
+      "roles": []
     }
   ],
   "builds": [

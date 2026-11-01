@@ -12,7 +12,7 @@
         >S<span class="brand-mark">↗</span> / SHOPMARK</a
       >
       <div class="edition">DEADLOCK · МАСТЕРСКАЯ СБОРОК</div>
-      <div class="preview-tag">ПРЕДПРОСМОТР МОДА <span>0.2</span></div>
+      <div class="preview-tag">ПРЕДПРОСМОТР МОДА <span>0.3</span></div>
     </header>
     <div class="workspace">
       <aside class="hero-sidebar">
@@ -54,12 +54,67 @@
               <select id="rank-filter" aria-label="Ранг матчей"></select
             ></label>
           </div>
+          <div class="catalog-controls">
+            <label
+              >Показать
+              <select id="build-source">
+                <option value="all">Все сборки</option>
+                <option value="pro">Известные авторы</option>
+              </select></label
+            ><input
+              id="build-search"
+              placeholder="Сборка, автор или ID"
+              aria-label="Поиск сборок"
+            /><button id="prev-builds">←</button><span id="catalog-count"></span
+            ><button id="next-builds">→</button>
+          </div>
           <div id="builds" class="build-grid"></div>
           <p class="small-print">
             Подборка по результатам матчей этого героя на выбранном ранге.
             Рейтинг учитывает матчи после патча и размер выборки (от 20). Ранг —
             средний по обеим командам. Выбор сборки не гарантирует победу.
           </p>
+        </section>
+        <section class="coach-board" aria-label="Помощник новичка">
+          <div class="section-line">
+            <h2>ПОЧЕМУ ЭТА ПОКУПКА?</h2>
+            <span class="manual-tag">Сценарий задан вами</span>
+          </div>
+          <p class="small-print">
+            Автосбор матча не подключён. Укажите ситуацию — помощник объяснит
+            следующий шаг и пересчитает приоритеты. Кнопки не покупают предметы
+            в игре.
+          </p>
+          <div class="coach-controls">
+            <label
+              >Положение<select id="coach-adv">
+                <option value="even">Силы равны</option>
+                <option value="ahead">Есть преимущество</option>
+                <option value="behind">Отстаю</option>
+              </select></label
+            ><label
+              >Линия<select id="coach-lane">
+                <option value="even">Ровная</option>
+                <option value="won">Выиграл</option>
+                <option value="lost">Проиграл</option>
+              </select></label
+            ><label
+              >Бюджет, souls<input
+                id="coach-budget"
+                type="number"
+                min="0"
+                placeholder="Не указан"
+            /></label>
+          </div>
+          <div id="coach-threats" class="coach-threats"></div>
+          <div class="coach-controls">
+            <label>Герой противника<select id="coach-enemy"></select></label
+            ><button id="coach-add-enemy">Добавить врага</button
+            ><button id="coach-reset">Сбросить ситуацию</button>
+          </div>
+          <p id="coach-enemies" class="small-print"></p>
+          <div id="coach-warnings"></div>
+          <div id="coach-next"></div>
         </section>
         <section class="items-section" aria-labelledby="items-title">
           <div class="section-line">

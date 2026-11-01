@@ -2,6 +2,7 @@ import http from "node:http";
 import fs from "node:fs/promises";
 import { at } from "./lib.mjs";
 const files = new Map([
+  ["/src/coach.js", "src/coach.js"],
   ["/", "preview/index.html"],
   ["/preview/style.css", "preview/style.css"],
   ["/preview/app.mjs", "preview/app.mjs"],

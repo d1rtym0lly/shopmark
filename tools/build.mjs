@@ -97,6 +97,10 @@ await fs.copyFile(
   at("src/panorama/shopmark_badge.js"),
   path.join(content, "panorama/scripts/shopmark_badge.js"),
 );
+await fs.copyFile(
+  at("src/coach.js"),
+  path.join(content, "panorama/scripts/shopmark_coach.js"),
+);
 const includes =
   '\n\t\t<include src="s2r://panorama/styles/shopmark.vcss_c" />\n\t\t<include src="s2r://panorama/styles/shopmark_marks.vcss_c" />\n\t';
 const badge =
@@ -129,7 +133,7 @@ for (const name of nativeNames) {
       throw Error("Native build selector anchor changed; review needed");
     xml = xml.replace(
       "</styles>",
-      '</styles>\n<scripts><include src="s2r://panorama/scripts/shopmark_data.vjs_c" /><include src="s2r://panorama/scripts/shopmark.vjs_c" /></scripts>',
+      '</styles>\n<scripts><include src="s2r://panorama/scripts/shopmark_data.vjs_c" /><include src="s2r://panorama/scripts/shopmark_coach.vjs_c" /><include src="s2r://panorama/scripts/shopmark.vjs_c" /></scripts>',
     );
     xml = xml.replace(
       "<CitadelHeroBuildsSelector>",
@@ -154,6 +158,7 @@ await fs.writeFile(path.join(output, "gameinfo.gi"), gi);
 const sources = [
   "panorama/scripts/shopmark_data.js",
   "panorama/scripts/shopmark.js",
+  "panorama/scripts/shopmark_coach.js",
   "panorama/scripts/shopmark_marks_data.js",
   "panorama/scripts/shopmark_badge.js",
   "panorama/styles/shopmark.css",
@@ -198,7 +203,7 @@ const artifact = packVpk(files);
 await fs.mkdir(at("dist"), { recursive: true });
 await fs.writeFile(at("dist/shopmark.vpk"), artifact);
 await writeJSON(at("dist/build-manifest.json"), {
-  version: "0.2.0",
+  version: "0.3.0",
   gameBuild: version,
   createdAt: new Date().toISOString(),
   dataGeneratedAt: snapshot.generatedAt,

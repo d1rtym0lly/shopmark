@@ -1,13 +1,16 @@
-// Runs only when the native build browser is opened. No polling or HTTP.
 (function () {
-  var ctx = $.GetContextPanel();
-  var data = $.ShopmarkData;
-  if (!data || !ctx || ctx.FindChildTraverse("ShopmarkHeader")) return;
-  var lang = typeof $.Language === "function" ? $.Language() : "english";
-  var ru = lang === "russian";
-  function tr(r, e) {
-    return ru ? r : e;
-  }
+  var ctx = $.GetContextPanel(),
+    data = $.ShopmarkData,
+    coach = $.ShopmarkCoach;
+  if (!data || !coach || ctx.FindChildTraverse("ShopmarkHeader")) return;
+  var host = ctx.FindChildTraverse("ShopmarkMount");
+  if (!host) return;
+  var page = 0,
+    source = "all",
+    view = "builds",
+    selected = null,
+    states = {},
+    ranks = {};
   function label(parent, text, cls) {
     var p = $.CreatePanel("Label", parent, "");
     p.text = text;
@@ -15,203 +18,349 @@
     if (cls) p.AddClass(cls);
     return p;
   }
-  function button(parent, text, fn, cls) {
+  function button(parent, text, fn) {
     var p = $.CreatePanel("Button", parent, "");
-    p.AddClass(cls || "sm-button");
+    p.AddClass("sm-button");
     label(p, text);
     p.SetPanelEvent("onactivate", fn);
     return p;
   }
-  var host = ctx.FindChildTraverse("ShopmarkMount");
-  if (!host) return;
+  function panel(parent, cls) {
+    var p = $.CreatePanel("Panel", parent, "");
+    p.AddClass(cls);
+    return p;
+  }
+  function select(parent, id, options, value, change) {
+    var d = $.CreatePanel("DropDown", parent, id);
+    d.AddClass("sm-picker");
+    options.forEach(function (o) {
+      var l = $.CreatePanel("Label", d, id + "-" + o[0]);
+      l.text = o[1];
+      l.SetAttributeString("value", String(o[0]));
+      d.AddOption(l);
+    });
+    d.SetSelected(id + "-" + value);
+    d.SetPanelEvent("oninputsubmit", function () {
+      var s = d.GetSelected();
+      if (s) change(s.GetAttributeString("value", ""));
+    });
+    return d;
+  }
+  function value(d) {
+    var v = d.GetSelected();
+    return v ? v.GetAttributeString("value", "0") : "0";
+  }
   var header = $.CreatePanel("Panel", host, "ShopmarkHeader");
   header.AddClass("sm-header");
-  var title = $.CreatePanel("Panel", header, "");
-  title.AddClass("sm-brand");
-  label(title, "SHOPMARK", "sm-wordmark");
-  label(title, tr("Сборки и баланс", "Builds & balance"), "sm-subtitle");
-  var patchTitle = data.patch
-    ? data.patch.date.slice(0, 10)
-    : tr("нет данных", "no data");
-  label(header, tr("ПАТЧ  ", "PATCH  ") + patchTitle, "sm-patch-date");
-  var controls = $.CreatePanel("Panel", host, "");
-  controls.AddClass("sm-controls");
-  label(controls, tr("Герой", "Hero"), "sm-control-label");
-  var picker = $.CreatePanel("DropDown", controls, "ShopmarkHero");
-  picker.AddClass("sm-picker");
-  data.heroes.forEach(function (hero) {
-    var option = $.CreatePanel("Label", picker, "sm-hero-" + hero.id);
-    option.text = hero.name;
-    option.SetAttributeInt("hero-id", hero.id);
-    picker.AddOption(option);
+  label(header, "SHOPMARK / COACH", "sm-wordmark");
+  label(
+    header,
+    "Патч " + (data.patch ? data.patch.date.slice(0, 10) : "не проверен"),
+    "sm-patch-date",
+  );
+  var controls = panel(host, "sm-controls");
+  label(controls, "Герой", "sm-control-label");
+  var hero = select(
+    controls,
+    "sm-hero",
+    data.heroes.map(function (h) {
+      return [h.id, h.name];
+    }),
+    data.heroes[0].id,
+    function () {
+      page = 0;
+      rank.SetSelected("sm-rank-" + (ranks[value(hero)] || 0));
+      selected = null;
+      render();
+    },
+  );
+  label(controls, "Ранг матчей", "sm-control-label");
+  var rank = select(
+    controls,
+    "sm-rank",
+    [[0, "Все ранги"]].concat(
+      data.ranks.map(function (r) {
+        return [r.id, r.name];
+      }),
+    ),
+    0,
+    function (v) {
+      ranks[value(hero)] = Number(v);
+      page = 0;
+      render();
+    },
+  );
+  var bar = panel(host, "sm-controls");
+  var filter = button(bar, "Все сборки", function () {
+    source = source === "all" ? "pro" : "all";
+    filter.GetChild(0).text =
+      source === "all" ? "Все сборки" : "Известные авторы";
+    page = 0;
+    view = "builds";
+    render();
   });
-  var showPatches = false;
-  var rememberedRanks = {};
-  label(controls, tr("Ранг матчей", "Match rank"), "sm-control-label");
-  var rankPicker = $.CreatePanel("DropDown", controls, "ShopmarkRank");
-  rankPicker.AddClass("sm-picker");
-  [{ id: 0, name: tr("Все ранги", "All ranks") }]
-    .concat(data.ranks || [])
-    .forEach(function (rank) {
-      var option = $.CreatePanel("Label", rankPicker, "sm-rank-" + rank.id);
-      option.text = rank.name;
-      option.SetAttributeInt("rank-id", rank.id);
-      rankPicker.AddOption(option);
-    });
-  rankPicker.SetSelected("sm-rank-0");
-  button(controls, tr("Патчи и предметы", "Patches & items"), function () {
-    showPatches = !showPatches;
+  var search = $.CreatePanel("TextEntry", bar, "ShopmarkBuildSearch");
+  search.AddClass("sm-picker");
+  search.SetAttributeString("placeholder", "Название / автор / ID");
+  search.SetPanelEvent("ontextentrychange", function () {
+    page = 0;
+    render();
+  });
+  button(bar, "←", function () {
+    page = Math.max(0, page - 1);
+    view = "builds";
+    render();
+  });
+  var count = label(bar, "", "sm-control-label");
+  button(bar, "→", function () {
+    page++;
+    view = "builds";
+    render();
+  });
+  button(bar, "Помощник", function () {
+    view = view === "coach" ? "builds" : "coach";
+    render();
+  });
+  button(bar, "Патчи", function () {
+    view = view === "patches" ? "builds" : "patches";
     render();
   });
   var note = label(
     host,
-    tr(
-      "1. Тот же герой, что в игре  →  2. Ранг матчей  →  3. Найти и «Использовать». Выборка ranked после патча, от 20 матчей.",
-      "Choose the same hero as in the game build browser. Press Find, then the native Use Build button.",
-    ),
+    "Выбери того же героя, что в игре. «Найти» передаёт ID штатному поиску, «Разобрать» открывает объяснения.",
     "sm-help",
   );
-  var cards = $.CreatePanel("Panel", host, "ShopmarkCards");
-  cards.AddClass("sm-cards");
-  var legend = $.CreatePanel("Panel", host, "");
-  legend.AddClass("sm-legend");
+  var cards = panel(host, "sm-cards");
+  var legend = panel(host, "sm-legend");
   [
-    ["↑", tr("усиление", "buff"), "buff"],
-    ["↓", tr("ослабление", "nerf"), "nerf"],
-    ["=", tr("без изменений", "untouched"), "unchanged"],
-    ["↕", tr("смешанное", "mixed"), "mixed"],
-    ["•", tr("изменено", "changed"), "changed"],
-    ["?", tr("не проверено", "unreviewed"), "unknown"],
-  ].forEach(function (entry) {
-    label(legend, entry[0] + " " + entry[1], "sm-legend-" + entry[2]);
+    ["↑", "усилили", "buff"],
+    ["↓", "ослабили", "nerf"],
+    ["=", "без правок", "unchanged"],
+    ["↕", "смешанное", "mixed"],
+  ].forEach(function (a) {
+    label(legend, a[0] + " " + a[1], "sm-legend-" + a[2]);
   });
+  function scenario() {
+    var id = value(hero);
+    return (
+      states[id] ||
+      (states[id] = {
+        purchased: [],
+        enemies: [],
+        threats: [],
+        advantage: "even",
+        lane: "even",
+      })
+    );
+  }
+  function find(build) {
+    var entry = ctx.FindChildTraverse("SearchTextEntry");
+    if (!entry) {
+      note.text = "Введи ID в поиск игры: " + build.id;
+      return;
+    }
+    entry.text = String(build.id);
+    var tabs = ctx.FindChildrenWithClassTraverse("PublicBuilds");
+    if (tabs.length) $.DispatchEvent("Activated", tabs[0], "mouse");
+    $.DispatchEvent("Activated", entry, "keyboard");
+    note.text =
+      "Проверь ID #" + build.id + " и нажми штатную кнопку «Использовать».";
+  }
   function render() {
     cards.RemoveAndDeleteChildren();
-    cards.SetHasClass("sm-patch-view", showPatches);
-    if (showPatches) {
-      var feed = $.CreatePanel("Panel", cards, "");
-      feed.AddClass("sm-patch-feed");
-      (data.recentPatches || []).forEach(function (patch) {
-        label(
-          feed,
-          patch.date.slice(0, 10) + " / " + patch.title,
-          "sm-card-author",
-        );
-        label(feed, patch.excerpt, "sm-patch-excerpt");
+    cards.SetHasClass("sm-coach-view", view !== "builds");
+    var id = Number(value(hero)),
+      rankId = Number(value(rank)),
+      all = coach.catalog(data, id, rankId, source, search.text || "");
+    page = Math.min(page, Math.max(0, Math.ceil(all.length / 3) - 1));
+    count.text =
+      all.length +
+      " сборок · " +
+      (page + 1) +
+      " / " +
+      Math.max(1, Math.ceil(all.length / 3));
+    if (!selected || selected.heroId !== id) selected = all[0] || null;
+    if (view === "patches") {
+      var feed = panel(cards, "sm-coach-feed");
+      (data.recentPatches || []).forEach(function (p) {
+        label(feed, p.date.slice(0, 10) + " / " + p.title, "sm-card-author");
+        label(feed, p.excerpt, "sm-patch-excerpt");
       });
-      var changes = $.CreatePanel("Panel", cards, "");
-      changes.AddClass("sm-patch-feed");
-      var symbols = { buff: "↑", nerf: "↓", mixed: "↕", changed: "•" };
-      (data.changes || []).forEach(function (item) {
-        label(
-          changes,
-          symbols[item.status] + " " + item.name,
-          "sm-legend-" + item.status,
-        );
-        label(
-          changes,
-          ru ? item.reason : item.notes.join(" / "),
-          "sm-patch-excerpt",
-        );
+      var changes = panel(cards, "sm-coach-feed");
+      (data.changes || []).forEach(function (i) {
+        label(changes, i.name, "sm-card-author");
+        label(changes, i.reason || i.notes.join(" / "), "sm-patch-excerpt");
       });
       return;
     }
-    var selected = picker.GetSelected();
-    if (!selected) return;
-    var heroId = selected.GetAttributeInt("hero-id", 0);
-    var rankOption = rankPicker.GetSelected();
-    var rankId = rankOption ? rankOption.GetAttributeInt("rank-id", 0) : 0;
-    rememberedRanks[heroId] = rankId;
-    var list = ((data.meta || {})[heroId] || {})[rankId] || [];
-    if (!list.length) {
+    if (view === "coach") {
+      renderCoach();
+      return;
+    }
+    if (!all.length) {
       label(
         cards,
-        tr(
-          "Для этого героя и ранга пока мало матчей после патча. Выберите «Все ранги» или обновите данные позже.",
-          "Not enough post-patch matches for this hero and rank. Try All ranks or update later.",
-        ),
+        "Сборки по этому фильтру не найдены. Сбрось поиск или выбери «Все сборки».",
         "sm-empty",
       );
       return;
     }
-    list.forEach(function (build, index) {
-      var card = $.CreatePanel("Panel", cards, "");
-      card.AddClass("sm-card");
+    all.slice(page * 3, page * 3 + 3).forEach(function (b) {
+      var card = panel(cards, "sm-card");
       label(
         card,
-        [
-          tr("СТАБИЛЬНЫЙ ВЫБОР", "STEADY PICK"),
-          tr("АЛЬТЕРНАТИВА", "ALTERNATIVE"),
-          tr("ЕЩЁ ВАРИАНТ", "ANOTHER OPTION"),
-        ][index],
+        (b.pro ? "ИЗВЕСТНЫЙ АВТОР / " : "СООБЩЕСТВО / ") + b.author,
         "sm-card-author",
       );
-      label(card, build.name, "sm-card-name");
-      var date = new Date(build.updated * 1000).toISOString().slice(0, 10);
+      label(card, b.name, "sm-card-name");
       label(
         card,
         "#" +
-          build.id +
-          "  ·  " +
-          date +
-          (build.stale
-            ? tr("  ·  УСТАРЕЛА", "  ·  STALE")
-            : build.prePatch
-              ? tr("  ·  ДО ПАТЧА", "  ·  PRE-PATCH")
-              : ""),
+          b.id +
+          " · " +
+          new Date(b.updated * 1000).toISOString().slice(0, 10) +
+          (b.stale ? " · УСТАРЕЛА" : ""),
         "sm-card-meta",
       );
       label(
         card,
-        build.stats
-          ? ((100 * build.stats.wins) / build.stats.matches).toFixed(1) +
-              "%  /  " +
-              build.stats.matches +
-              tr(" матчей", " games")
-          : tr("Мало матчей после патча", "Low post-patch sample"),
+        b.stats
+          ? ((100 * b.stats.wins) / b.stats.matches).toFixed(1) +
+              "% / " +
+              b.stats.matches +
+              " матчей"
+          : "Для выбранного ранга нет подтверждённой выборки",
         "sm-card-meta",
       );
-      button(card, tr("Найти сборку", "Find build") + "  →", function () {
-        var search = ctx.FindChildTraverse("SearchTextEntry");
-        if (!search) {
-          note.text =
-            tr(
-              "Поле поиска игры недоступно. Введите ID вручную: ",
-              "Game search unavailable. Enter ID manually: ",
-            ) + build.id;
-          return;
-        }
-        search.text = String(build.id);
-        try {
-          // Invoke the existing XML handlers rather than guessing native event signatures.
-          var publicTabs = ctx.FindChildrenWithClassTraverse("PublicBuilds");
-          if (publicTabs.length)
-            $.DispatchEvent("Activated", publicTabs[0], "mouse");
-          $.DispatchEvent("Activated", search, "keyboard");
-          note.text =
-            tr(
-              "Проверьте ID и автора в результатах, затем нажмите «Использовать»: #",
-              "Check ID and author in the results, then press Use Build: #",
-            ) + build.id;
-        } catch (e) {
-          note.text =
-            tr(
-              "ID подставлен. Нажмите обновление в штатном поиске: #",
-              "ID entered. Press refresh in the native search: #",
-            ) + build.id;
-        }
+      button(card, "Разобрать сборку", function () {
+        selected = b;
+        view = "coach";
+        render();
+      });
+      button(card, "Найти в игре →", function () {
+        find(b);
       });
     });
   }
-  rankPicker.SetPanelEvent("oninputsubmit", render);
-  picker.SetPanelEvent("oninputsubmit", function () {
-    var h = picker.GetSelected();
-    if (h)
-      rankPicker.SetSelected(
-        "sm-rank-" + (rememberedRanks[h.GetAttributeInt("hero-id", 0)] || 0),
+  function renderCoach() {
+    var st = scenario(),
+      left = panel(cards, "sm-coach-feed"),
+      right = panel(cards, "sm-coach-feed");
+    label(left, "СЦЕНАРИЙ ЗАДАН ВАМИ", "sm-card-author");
+    label(
+      left,
+      "Автосбор состояния матча не подключён. Совет меняется по указанным ниже данным.",
+      "sm-help",
+    );
+    label(
+      left,
+      selected ? selected.name : "Нет выбранной сборки",
+      "sm-card-name",
+    );
+    select(
+      left,
+      "sm-adv",
+      [
+        ["even", "Силы равны"],
+        ["ahead", "Есть преимущество"],
+        ["behind", "Отстаю"],
+      ],
+      st.advantage,
+      function (v) {
+        st.advantage = v;
+        render();
+      },
+    );
+    select(
+      left,
+      "sm-lane",
+      [
+        ["even", "Линия ровная"],
+        ["won", "Выиграл линию"],
+        ["lost", "Проиграл линию"],
+      ],
+      st.lane,
+      function (v) {
+        st.lane = v;
+        render();
+      },
+    );
+    var budget = $.CreatePanel("TextEntry", left, "sm-budget");
+    budget.AddClass("sm-picker");
+    budget.text = typeof st.budget === "number" ? String(st.budget) : "";
+    button(left, "Учесть бюджет (souls)", function () {
+      var n = Number(budget.text);
+      st.budget = budget.text !== "" && isFinite(n) && n >= 0 ? n : undefined;
+      render();
+    });
+    Object.keys(coach.situations).forEach(function (key) {
+      button(
+        left,
+        (st.threats.indexOf(key) >= 0 ? "✓ " : "+ ") +
+          coach.situations[key].name,
+        function () {
+          var i = st.threats.indexOf(key);
+          if (i >= 0) st.threats.splice(i, 1);
+          else st.threats.push(key);
+          render();
+        },
       );
-    render();
-  });
-  picker.SetSelected("sm-hero-" + data.heroes[0].id);
+    });
+    var enemy = select(
+      left,
+      "sm-enemy",
+      data.heroes.map(function (h) {
+        return [h.id, h.name];
+      }),
+      data.heroes[0].id,
+      function () {},
+    );
+    button(left, "Добавить врага", function () {
+      var id = Number(value(enemy)),
+        h = data.heroes.filter(function (h) {
+          return h.id === id;
+        })[0];
+      if (h && st.enemies.indexOf(h.name) < 0 && st.enemies.length < 6)
+        st.enemies.push(h.name);
+      render();
+    });
+    label(left, "Враги: " + (st.enemies.join(", ") || "не указаны"), "sm-help");
+    button(left, "Сбросить сценарий", function () {
+      delete states[value(hero)];
+      render();
+    });
+    var result = coach.plan(data, selected, st);
+    result.warnings.concat(result.watch).forEach(function (s) {
+      label(right, s, "sm-patch-excerpt");
+    });
+    result.recommendations.forEach(function (r, index) {
+      label(
+        right,
+        index + 1 + ". " + r.name + " · " + r.cost + " souls",
+        "sm-card-author",
+      );
+      label(right, r.why, "sm-patch-excerpt");
+      label(right, "Когда: " + r.when, "sm-patch-excerpt");
+      label(right, r.tradeoff, "sm-help");
+      button(right, "Отметить купленным", function () {
+        st.purchased.push(r.id);
+        render();
+      });
+    });
+    result.optional.forEach(function (r) {
+      label(
+        right,
+        "По ситуации: " + r.name + " — " + r.note,
+        "sm-patch-excerpt",
+      );
+    });
+    label(
+      right,
+      "Отмечено покупок: " +
+        st.purchased.length +
+        ". Кнопки не покупают и не переставляют предметы в самой игре.",
+      "sm-help",
+    );
+  }
   render();
 })();
