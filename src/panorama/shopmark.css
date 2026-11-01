@@ -289,3 +289,4 @@ CitadelShopMod .itemContainer .ShopmarkBadge {
 .sm-card .sm-button {
   margin-bottom: 5px;
 }
+.ShopmarkAutoNext #Outline { border: 3px solid #ff7f90; box-shadow: #ff7f9060 0px 0px 10px 0px; }

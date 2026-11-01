@@ -12,6 +12,7 @@ const running = execFileSync(
 if (running.toLowerCase().includes('"deadlock.exe"'))
   throw Error("Close Deadlock before installation.");
 const manifest = await readJSON("dist/build-manifest.json");
+if (manifest.diagnostic) throw Error("Diagnostic builds are for the isolated test harness; build without --probe before installation.");
 const data = await fs.readFile(at("dist/shopmark.vpk"));
 if (hash(data) !== manifest.sha256) throw Error("Artifact checksum mismatch");
 const native = await readVpk(path.join(game, "pak01_dir.vpk"));

@@ -100,11 +100,34 @@
       byId[i.id] = i;
       byName[i.name] = i;
     });
+    // An upgrade already contains its consumed components. Do not recommend
+    // buying those again, and quote the remaining price for an owned recipe.
+    function fulfill(id, seen) {
+      if (seen[id]) return;
+      seen[id] = true;
+      owned[id] = true;
+      ((byId[id] || {}).components || []).forEach(function (c) { fulfill(c, seen); });
+    }
+    inventory.forEach(function (id) { fulfill(id, {}); });
+    var held = {};
+    inventory.forEach(function (id) { held[id] = true; });
+    function credit(id, seen) {
+      if (seen[id]) return 0;
+      seen[id] = true;
+      var item = byId[id];
+      if (!item) return 0;
+      if (held[id]) return item.cost || 0;
+      return (item.components || []).reduce(function (sum, c) { return sum + credit(c, seen); }, 0);
+    }
+    function remaining(item) {
+      var seen = {};
+      return Math.max(0, (item.cost || 0) - (item.components || []).reduce(function (sum, c) { return sum + credit(c, seen); }, 0));
+    }
     var base = [],
       seen = {};
     ((build || {}).categories || []).forEach(function (c) {
       (c.items || []).forEach(function (ref) {
-        if (!seen[ref.id] && !owned[ref.id] && byId[ref.id]) {
+        if (!seen[ref.id] && !owned[ref.id] && byId[ref.id] && (!state.availableItems || state.availableItems.indexOf(ref.id) >= 0)) {
           seen[ref.id] = true;
           base.push({
             item: byId[ref.id],
@@ -137,7 +160,7 @@
         "Выигранная линия даёт окно закрепить объект или помочь соседу. Перед уходом проверь волну, безопасный маршрут и доступность своей цели.",
       );
     var candidates = required.slice(0, 8).map(function (r, index) {
-      var cost = r.item.cost || 0;
+      var cost = remaining(r.item);
       var affordable = Number.isFinite(state.budget)
         ? cost <= state.budget
         : null;
@@ -146,7 +169,7 @@
           ? "Следующий некупленный обязательный шаг выбранной сборки."
           : "Более поздний шаг сборки: оцени его после ближайшей покупки.";
       if (r.item.effect) reason += " Эффект по описанию игры: " + r.item.effect;
-      var last = byId[inventory[inventory.length - 1]];
+      var last = byId[state.lastPurchased === undefined ? inventory[inventory.length - 1] : state.lastPurchased];
       if (last && (r.item.components || []).indexOf(last.id) >= 0)
         reason +=
           " " +
@@ -179,6 +202,9 @@
         kind: "build",
         score: 100 - index * 5,
         why: reason,
+        shortWhy: last && (r.item.components || []).indexOf(last.id) >= 0
+          ? "Улучшает уже купленный " + last.name + "."
+          : r.item.effect || "Следующий некупленный шаг выбранной сборки.",
         when: "Проверь, что выбранная сборка подходит твоему стилю и текущему патчу.",
         tradeoff:
           "Покупка ситуативного ответа может отложить этот шаг, но иногда позволяет дожить до следующей драки.",
@@ -188,8 +214,8 @@
     threats.forEach(function (key) {
       var rule = situations[key],
         item = rule && byName[rule.item];
-      if (!item || owned[item.id]) return;
-      var cost = item.cost || 0;
+      if (!item || owned[item.id] || (state.availableItems && state.availableItems.indexOf(item.id) < 0)) return;
+      var cost = remaining(item);
       candidates = candidates.filter(function (r) {
         return r.id !== item.id;
       });
@@ -200,6 +226,7 @@
         kind: "situation",
         score: state.advantage === "behind" ? 145 : 125,
         why: rule.why,
+        shortWhy: rule.why,
         when: rule.when,
         tradeoff: first
           ? "Отложит " +
@@ -219,6 +246,7 @@
           (item.roles || []).indexOf("mobility") >= 0)
       ) {
         r.score += 30;
+        r.shortWhy = "При отставании здоровье или подвижность помогут безопаснее вернуться к фарму.";
         r.why +=
           " В указанном отставании доступный запас здоровья или подвижность поднят выше в учебном плане, чтобы уменьшить риск следующей смерти.";
       }

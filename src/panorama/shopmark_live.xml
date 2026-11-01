@@ -1,0 +1,30 @@
+<root>
+  <styles><include src="s2r://panorama/styles/shopmark_live.vcss_c" /></styles>
+  <scripts>
+    <include src="s2r://panorama/scripts/shopmark_data.vjs_c" />
+    <include src="s2r://panorama/scripts/shopmark_coach.vjs_c" />
+    <include src="s2r://panorama/scripts/shopmark_live_core.vjs_c" />
+    <include src="s2r://panorama/scripts/shopmark_hud.vjs_c" />
+    <include src="s2r://panorama/scripts/shopmark_live.vjs_c" />
+  </scripts>
+  <Panel class="ShopmarkLiveHost" hittest="false">
+    <GlobalClassListener classes="gShopOpen gEditingBuilds gScoreboardOpen" />
+    <Panel id="ShopmarkNext" hittest="false" hittestchildren="false">
+      <Image id="ShopmarkNextIcon" />
+      <Panel id="ShopmarkNextCopy">
+        <Label id="ShopmarkNextTag" text="SHOPMARK · ДАЛЬШЕ" />
+        <Label id="ShopmarkNextName" />
+        <Label id="ShopmarkNextWhy" />
+        <Label id="ShopmarkNextPrice" />
+      </Panel>
+    </Panel>
+    <Panel id="ShopmarkLiveBox" hittest="true">
+      <Button id="ShopmarkAutoToggle"><Label id="ShopmarkAutoToggleText" text="SHOPMARK · Автопомощник выкл" /></Button>
+      <Panel id="ShopmarkPlacement">
+        <Button id="ShopmarkSideToggle"><Label id="ShopmarkSideText" text="Карточка: слева" /></Button>
+        <Button id="ShopmarkCompactToggle"><Label id="ShopmarkCompactText" text="Только иконка" /></Button>
+      </Panel>
+      <Panel id="ShopmarkLiveBody" />
+    </Panel>
+  </Panel>
+</root>
