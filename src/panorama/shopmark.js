@@ -14,6 +14,26 @@
     pendingRender = null,
     searchRequest = 0;
   function alive(p) { return !!p && p.IsValid(); }
+  function gameHud() {
+    var p = ctx;
+    for (var n = 0; alive(p) && n < 40; n++) {
+      if (p.id === 'Hud') return p;
+      var parent = p.GetParent();
+      if (!alive(parent)) break;
+      p = parent;
+    }
+    // Native popups can be siblings of Hud under the same window root.
+    return alive(p) ? p.FindChildTraverse('Hud') : null;
+  }
+  function currentHero() {
+    var hud = gameHud(), top = alive(hud) && hud.FindChildTraverse('TopBar');
+    var players = alive(top) ? top.FindChildrenWithClassTraverse('LocalPlayer') : [];
+    var names = players.length ? players[0].FindChildrenWithClassTraverse('HeroName') : [];
+    var name = names.length ? String(names[0].text).toLowerCase() : '';
+    var match = data.heroes.filter(function (h) { return h.name.toLowerCase() === name ||
+      (typeof $.Localize === 'function' && h.className && String($.Localize('#' + h.className)).toLowerCase() === name); })[0];
+    return (match || data.heroes[0]).id;
+  }
   function action(fn) {
     return function () {
       if (!alive(ctx) || !alive(host)) return;
@@ -79,7 +99,7 @@
     data.heroes.map(function (h) {
       return [h.id, h.name];
     }),
-    data.heroes[0].id,
+    currentHero(),
     function () {
       page = 0;
       rank.SetSelected("sm-rank-" + (ranks[value(hero)] || 0));
@@ -277,9 +297,8 @@
         find(b);
       });
       button(card, "Для автопомощника", function () {
-        var hud = ctx;
-        for (var n = 0; hud && hud.id !== 'Hud' && n < 40; n++) hud = hud.GetParent();
-        if (!hud || hud.id !== 'Hud') { note.text = 'Открой сборки из магазина в матче.'; return; }
+        var hud = gameHud();
+        if (!alive(hud)) { note.text = 'Открой сборки из магазина в матче.'; return; }
         hud.SetAttributeInt('shopmark_build', b.id);
         hud.SetAttributeInt('shopmark_rank', rankId);
         note.text = 'Автопомощник использует «' + b.name + '». Включи его переключателем в магазине.';

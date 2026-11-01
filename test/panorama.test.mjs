@@ -6,7 +6,7 @@ import vm from 'node:vm';
 // A strict lifecycle harness, not a claim of running the native client. It
 // rejects deleting a panel while a native event still owns it, and rejects
 // every operation on stale references. These are real native UI constraints.
-function harness() {
+function harness({popupSibling=false,localHero=false}={}) {
   const jobs=[], errors=[], events=[], nodes=[];
   let active=null, nextJob=0, destructiveEvents=0;
   class Panel {
@@ -40,8 +40,11 @@ function harness() {
       this.nodes.forEach(p=>p.destroy());this.nodes=[];
     }
   }
-  const root=new Panel('CitadelHud',null,'Hud');
-  const ctx=new Panel('CitadelHeroBuildsSelector',root,'Selector');
+  const window=new Panel('Panel',null,'Window');
+  const root=new Panel('CitadelHud',window,'Hud');
+  const ctx=new Panel('CitadelHeroBuildsSelector',popupSibling?window:root,'Selector');
+  if(localHero){const top=new Panel('Panel',root,'TopBar'),player=new Panel('CitadelHudTopBarPlayer',top,'Local');
+    player.AddClass('LocalPlayer');const name=new Panel('Label',player,'');name.AddClass('HeroName');name.text='Haze';}
   new Panel('Panel',ctx,'ShopmarkMount');
   const tab=new Panel('Panel',ctx,'NativePublicTab');tab.AddClass('PublicBuilds');
   let nativeEntry=new Panel('TextEntry',ctx,'SearchTextEntry');
@@ -93,6 +96,13 @@ test('all catalogue controls and manual coach actions preserve native event targ
   h.click('Для автопомощника');assert(h.root.GetAttributeInt('shopmark_build',0)>0);
   assert.equal(h.root.GetAttributeInt('shopmark_rank',0),2);
   assert.equal(h.destructiveEvents,0);assert.deepEqual(h.errors,[]);
+});
+
+test('a native popup beside Hud defaults to the current hero and can set the automatic build',()=>{
+  const h=harness({popupSibling:true,localHero:true});
+  assert.equal(h.ctx.FindChildTraverse('sm-hero').GetSelected().GetAttributeString('value',''),'2');
+  h.choose('sm-hero',1);h.click('Для автопомощника');
+  assert(h.root.GetAttributeInt('shopmark_build',0)>0);assert.deepEqual(h.errors,[]);
 });
 
 test('native search reacquires the replaced field and activates the refresh button',()=>{
