@@ -1,0 +1,20 @@
+.ShopmarkLiveHost { width: 100%; height: 100%; visibility: collapse; }
+.ShopmarkLiveHost.gShopOpen { visibility: visible; }
+.ShopmarkLiveHost.gEditingBuilds, .ShopmarkLiveHost.gScoreboardOpen { visibility: collapse; }
+#ShopmarkLiveBox { width: 340px; horizontal-align: right; vertical-align: bottom; margin-right: 22px; margin-bottom: 76px; flow-children: down; background-color: #0b0c12f8; border: 1px solid #ff7f9060; border-radius: 12px; box-shadow: #000000aa 0px 5px 20px 0px; }
+#ShopmarkAutoToggle { width: 100%; padding: 14px; background-color: #ff7f9018; }
+#ShopmarkAutoToggle:hover { background-color: #ff7f9030; }
+#ShopmarkAutoToggleText { color: #ff9aa7; font-size: 16px; font-weight: bold; }
+#ShopmarkLiveBody { width: 100%; max-height: 570px; overflow: squish scroll; flow-children: down; padding: 0px 14px 14px; visibility: collapse; }
+.sm-auto-enabled #ShopmarkLiveBody { visibility: visible; }
+.sm-live-state { color: #9ef1c8; font-size: 16px; margin-top: 10px; }
+.sm-live-note { color: #a8a8ba; font-size: 13px; margin-top: 7px; }
+.sm-live-name { color: #fff2ed; font-size: 17px; font-weight: bold; }
+.sm-live-row { width: 100%; flow-children: right; margin-top: 14px; border-top: 1px solid #ffffff14; padding-top: 10px; }
+.sm-live-icon { width: 48px; height: 48px; margin-right: 10px; border-radius: 8px; }
+.sm-live-copy { width: fill-parent-flow(1); flow-children: down; }
+.sm-live-why { color: #d6d2df; font-size: 14px; margin-top: 5px; }
+.sm-live-tag { color: #ff9aa7; font-size: 13px; }
+.sm-live-button { margin-top: 7px; padding: 5px 9px; border: 1px solid #ff7f9045; border-radius: 5px; }
+.sm-live-button Label { color: #ff9aa7; font-size: 13px; }
+.sm-live-button:hover { background-color: #ff7f9020; }

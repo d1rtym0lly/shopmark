@@ -240,6 +240,14 @@
       button(card, "Найти в игре →", function () {
         find(b);
       });
+      button(card, "Для автопомощника", function () {
+        var hud = ctx;
+        for (var n = 0; hud && hud.id !== 'Hud' && n < 40; n++) hud = hud.GetParent();
+        if (!hud || hud.id !== 'Hud') { note.text = 'Открой сборки из магазина в матче.'; return; }
+        hud.SetAttributeInt('shopmark_build', b.id);
+        hud.SetAttributeInt('shopmark_rank', rankId);
+        note.text = 'Автопомощник использует «' + b.name + '». Включи его переключателем в магазине.';
+      });
     });
   }
   function renderCoach() {

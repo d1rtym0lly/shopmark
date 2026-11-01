@@ -27,6 +27,7 @@ const nativeNames = [
   "citadel_shop_mod_view_favorites",
 ];
 const native = at(".build/native");
+const probe = process.argv.includes("--probe");
 await fs.mkdir(native, { recursive: true });
 const sourceHashes = {};
 for (const name of nativeNames) {
@@ -101,6 +102,17 @@ await fs.copyFile(
   at("src/coach.js"),
   path.join(content, "panorama/scripts/shopmark_coach.js"),
 );
+if (probe) await fs.copyFile(at("src/panorama/shopmark_probe.js"), path.join(content, "panorama/scripts/shopmark_probe.js"));
+for (const [source, destination] of [
+  ['src/live.js', 'panorama/scripts/shopmark_live_core.js'],
+  ['src/panorama/shopmark_hud.js', 'panorama/scripts/shopmark_hud.js'],
+  ['src/panorama/shopmark_live.js', 'panorama/scripts/shopmark_live.js'],
+  ['src/panorama/shopmark_live.css', 'panorama/styles/shopmark_live.css'],
+  ['src/panorama/shopmark_live.xml', 'panorama/layout/shopmark_live.xml'],
+]) {
+  await fs.mkdir(path.dirname(path.join(content, destination)), { recursive:true });
+  await fs.copyFile(at(source), path.join(content, destination));
+}
 const includes =
   '\n\t\t<include src="s2r://panorama/styles/shopmark.vcss_c" />\n\t\t<include src="s2r://panorama/styles/shopmark_marks.vcss_c" />\n\t';
 const badge =
@@ -146,7 +158,7 @@ for (const name of nativeNames) {
     xml = xml.replace(anchor, anchor + badge);
     xml = xml.replace(
       "</styles>",
-      '</styles><scripts><include src="s2r://panorama/scripts/shopmark_marks_data.vjs_c" /><include src="s2r://panorama/scripts/shopmark_badge.vjs_c" /></scripts>',
+      '</styles><scripts><include src="s2r://panorama/scripts/shopmark_marks_data.vjs_c" /><include src="s2r://panorama/scripts/shopmark_badge.vjs_c" />' + (probe ? '<include src="s2r://panorama/scripts/shopmark_probe.vjs_c" />' : '') + '</scripts>',
     );
   }
   await fs.writeFile(path.join(content, "panorama/layout", name + ".xml"), xml);
@@ -161,9 +173,15 @@ const sources = [
   "panorama/scripts/shopmark_coach.js",
   "panorama/scripts/shopmark_marks_data.js",
   "panorama/scripts/shopmark_badge.js",
+  "panorama/scripts/shopmark_live_core.js",
+  "panorama/scripts/shopmark_hud.js",
+  "panorama/scripts/shopmark_live.js",
+  "panorama/styles/shopmark_live.css",
+  "panorama/layout/shopmark_live.xml",
   "panorama/styles/shopmark.css",
   "panorama/styles/shopmark_marks.css",
   ...nativeNames.map((n) => "panorama/layout/" + n + ".xml"),
+  ...(probe ? ["panorama/scripts/shopmark_probe.js"] : []),
 ];
 const log = [];
 for (const source of sources) {
@@ -203,7 +221,7 @@ const artifact = packVpk(files);
 await fs.mkdir(at("dist"), { recursive: true });
 await fs.writeFile(at("dist/shopmark.vpk"), artifact);
 await writeJSON(at("dist/build-manifest.json"), {
-  version: "0.3.0",
+  version: (await readJSON("package.json")).version,
   gameBuild: version,
   createdAt: new Date().toISOString(),
   dataGeneratedAt: snapshot.generatedAt,
@@ -212,6 +230,8 @@ await writeJSON(at("dist/build-manifest.json"), {
   nativeHashes: sourceHashes,
   resources: [...files.keys()],
   runtimeTested: false,
+  diagnostic: probe,
+  experimentalAutomatic: true,
 });
 const verify = await readVpk(at("dist/shopmark.vpk"));
 for (const key of files.keys()) await verify.read(key);

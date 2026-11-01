@@ -2,6 +2,15 @@
   var root = $.GetContextPanel(),
     last = "";
   var states = ["buff", "nerf", "mixed", "changed", "unchanged"];
+  // Item layouts already coexist with HUD mods. Mount one independent service
+  // under Hud instead of replacing base_hud or installing one loop per card.
+  var hud = root;
+  for (var n = 0; hud && hud.id !== 'Hud' && n < 40; n++) hud = hud.GetParent();
+  if (hud && hud.id === 'Hud' && !hud.FindChild('ShopmarkLiveRoot')) {
+    var live = $.CreatePanel('Panel', hud, 'ShopmarkLiveRoot');
+    live.hittest = false;
+    if (!live.BLoadLayout('s2r://panorama/layout/shopmark_live.vxml_c', false, false)) live.DeleteAsync(0);
+  }
   function update() {
     if (!root.IsValid()) return;
     var labels = root.FindChildrenWithClassTraverse("modName");
@@ -14,6 +23,8 @@
         root.SetHasClass("sm-mark-" + s, s === status);
       });
     }
+    var item = ($.ShopmarkItemIds || {})[name];
+    root.SetHasClass('ShopmarkAutoNext', !!hud && !!item && String(item) === hud.GetAttributeString('shopmark_next', ''));
     // Cards are reused by the native shop; re-read only their short name label.
     $.Schedule(1.0, update);
   }

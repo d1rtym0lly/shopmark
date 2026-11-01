@@ -100,6 +100,29 @@
       byId[i.id] = i;
       byName[i.name] = i;
     });
+    // An upgrade already contains its consumed components. Do not recommend
+    // buying those again, and quote the remaining price for an owned recipe.
+    function fulfill(id, seen) {
+      if (seen[id]) return;
+      seen[id] = true;
+      owned[id] = true;
+      ((byId[id] || {}).components || []).forEach(function (c) { fulfill(c, seen); });
+    }
+    inventory.forEach(function (id) { fulfill(id, {}); });
+    var held = {};
+    inventory.forEach(function (id) { held[id] = true; });
+    function credit(id, seen) {
+      if (seen[id]) return 0;
+      seen[id] = true;
+      var item = byId[id];
+      if (!item) return 0;
+      if (held[id]) return item.cost || 0;
+      return (item.components || []).reduce(function (sum, c) { return sum + credit(c, seen); }, 0);
+    }
+    function remaining(item) {
+      var seen = {};
+      return Math.max(0, (item.cost || 0) - (item.components || []).reduce(function (sum, c) { return sum + credit(c, seen); }, 0));
+    }
     var base = [],
       seen = {};
     ((build || {}).categories || []).forEach(function (c) {
@@ -137,7 +160,7 @@
         "Выигранная линия даёт окно закрепить объект или помочь соседу. Перед уходом проверь волну, безопасный маршрут и доступность своей цели.",
       );
     var candidates = required.slice(0, 8).map(function (r, index) {
-      var cost = r.item.cost || 0;
+      var cost = remaining(r.item);
       var affordable = Number.isFinite(state.budget)
         ? cost <= state.budget
         : null;
@@ -189,7 +212,7 @@
       var rule = situations[key],
         item = rule && byName[rule.item];
       if (!item || owned[item.id]) return;
-      var cost = item.cost || 0;
+      var cost = remaining(item);
       candidates = candidates.filter(function (r) {
         return r.id !== item.id;
       });

@@ -10,16 +10,20 @@ export async function generate() {
     dir + "/scripts/shopmark_data.js",
     "$.ShopmarkData = " +
       JSON.stringify({
-        heroes: s.heroes.map((h) => ({ id: h.id, name: h.name })),
+        heroes: s.heroes.map((h) => ({ id: h.id, name: h.name, className: h.className })),
         patch: s.patch,
         catalog: s.builds,
-        items: s.items.map(({ id, name, cost, effect, roles, components }) => ({
+        items: s.items.map(({ id, name, class_name, cost, effect, roles, components, aliases, image }) => ({
           id,
           name,
+          className: class_name,
           cost,
           effect,
           roles,
           components,
+          aliases,
+          icon: image && /\/images\/items\/.+\.(webp|png)$/.test(image)
+            ? 's2r://panorama/images/items/' + image.split('/images/items/')[1].replace(/\.(webp|png)$/, '_psd.vtex') : null,
         })),
 
         meta: Object.fromEntries(
@@ -53,14 +57,17 @@ export async function generate() {
     "/* 0.2 resolves item names at runtime; no assumption about native CSS item classes. */\n",
   );
   const names = {};
+  const ids = {};
   for (const item of s.items) {
     const m = s.marks[item.id];
-    for (const name of [item.name, ...(item.aliases ?? [])])
+    for (const name of [item.name, ...(item.aliases ?? [])]) {
       names[name.trim().toLowerCase()] = m?.status ?? "unknown";
+      ids[name.trim().toLowerCase()] = item.id;
+    }
   }
   await fs.writeFile(
     dir + "/scripts/shopmark_marks_data.js",
-    "$.ShopmarkMarks = " + JSON.stringify(names) + ";",
+    "$.ShopmarkMarks = " + JSON.stringify(names) + ";\n$.ShopmarkItemIds = " + JSON.stringify(ids) + ";",
   );
   console.log(
     `Generated ${s.items.length} name mappings and ${s.builds.length} catalog builds.`,

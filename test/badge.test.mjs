@@ -7,6 +7,7 @@ test("badges resolve names without native item classes and update recycled cards
   let name = "Toxic Bullets",
     tick;
   const root = {
+    GetParent: () => null,
     IsValid: () => true,
     FindChildrenWithClassTraverse: () => [
       {
