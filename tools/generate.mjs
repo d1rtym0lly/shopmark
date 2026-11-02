@@ -3,6 +3,7 @@ import { at, readJSON } from "./lib.mjs";
 import { assertSnapshot } from "../src/core.mjs";
 export async function generate() {
   const s = assertSnapshot(await readJSON("data/snapshot.json"));
+  const knowledge = await readJSON('data/knowledge.json');
   const dir = at(".build/generated/panorama");
   await fs.mkdir(dir + "/scripts", { recursive: true });
   await fs.mkdir(dir + "/styles", { recursive: true });
@@ -11,6 +12,7 @@ export async function generate() {
     "$.ShopmarkData = " +
       JSON.stringify({
         heroes: s.heroes.map((h) => ({ id: h.id, name: h.name, className: h.className })),
+        knowledge,
         patch: s.patch,
         catalog: s.builds,
         shopItemIds: s.items.filter((i) => i.tier >= 1 && i.tier <= 4).map((i) => i.id),

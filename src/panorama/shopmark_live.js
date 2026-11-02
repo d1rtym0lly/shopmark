@@ -63,14 +63,21 @@
       if (result.status === 'waiting') label(body, 'При неполных данных очередь приостановлена.', 'sm-live-note'); return; }
     statusLabel = label(body, '', 'sm-live-state');
     var states = {ahead:'преимущество', behind:'отставание', even:'ровно', unknown:'нет данных'};
-    label(body, 'Команда: ' + states[result.advantage] + ' · линия по душам: ' + states[result.lane], 'sm-live-note');
+    label(body, (result.mode==='mechanics'?'Ты против самого богатого врага: ':'Команда: ') + states[result.advantage] + ' · линия по душам: ' + states[result.lane], 'sm-live-note');
+    (result.personalEconomy||[]).forEach(function(e){var enemy=data.heroes.filter(function(h){return h.id===e.heroId;})[0];label(body,(enemy?enemy.name:e.heroId)+': '+(e.delta==null?'нет данных':e.delta>=0?'у тебя на '+$.ShopmarkLive.numberText(e.delta)+' душ больше':'у него на '+$.ShopmarkLive.numberText(-e.delta)+' душ больше'),'sm-live-note');});
     label(body, result.build.name + ' · ' + result.build.author, 'sm-live-note');
-    result.recommendations.slice(0, 3).forEach(function (r, i) {
+    if(result.mode==='mechanics' && ((result.added||[]).length || (result.removed||[]).length)){
+      function names(ids){return ids.slice(0,3).map(function(id){var item=data.items.filter(function(i){return i.id===id;})[0];return item?item.name:String(id);}).join(', ');}
+      if(result.added.length)label(body,'В очередь: '+names(result.added),'sm-live-note');
+      if(result.removed.length)label(body,'Куплены или отложены: '+names(result.removed),'sm-live-note');
+    }
+    result.recommendations.slice(0, 8).forEach(function (r, i) {
       var row = panel(body, 'sm-live-row'), item = data.items.filter(function (x) { return x.id === r.id; })[0];
       if (item && item.icon) { var icon = $.CreatePanel('Image', row, ''); icon.AddClass('sm-live-icon'); icon.SetImage(item.icon); }
       var copy = panel(row, 'sm-live-copy');
       label(copy, (i === 0 ? 'СЕЙЧАС' : 'ЗАТЕМ') + (r.kind === 'situation' ? ' · ПОД СОПЕРНИКА' : '') + ' · ' + r.cost, 'sm-live-tag');
       label(copy, r.name, 'sm-live-name');
+      if(r.partial)label(copy,'Часть условных эффектов пока не входит в числовую оценку','sm-live-note');
       label(copy, r.affordable === false ? 'Нужно накопить или купить компонент' : r.affordable ? 'Можно купить' : 'Проверь стоимость в магазине', 'sm-live-note');
       var why = label(copy, r.why + '\n' + r.when + '\n' + r.tradeoff, 'sm-live-why');
       why.visible = expanded[r.id] === undefined ? i === 0 : expanded[r.id];

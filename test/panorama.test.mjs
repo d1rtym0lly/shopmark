@@ -93,16 +93,15 @@ test('all catalogue controls and manual coach actions preserve native event targ
   assert(h.texts().some(s=>s.startsWith('Отмечено покупок: 1.')));
   h.click('Сбросить сценарий');h.click('Помощник');
   h.choose('sm-rank',2);h.choose('sm-hero',2);h.choose('sm-hero',1);
-  h.click('Для автопомощника');assert(h.root.GetAttributeInt('shopmark_build',0)>0);
-  assert.equal(h.root.GetAttributeInt('shopmark_rank',0),2);
+  assert(!h.nodes.some(p=>p.valid&&p._text==='Для автопомощника'));
   assert.equal(h.destructiveEvents,0);assert.deepEqual(h.errors,[]);
 });
 
-test('a native popup beside Hud defaults to the current hero and can set the automatic build',()=>{
+test('a native popup beside Hud defaults to the current hero without coupling the automatic plan',()=>{
   const h=harness({popupSibling:true,localHero:true});
   assert.equal(h.ctx.FindChildTraverse('sm-hero').GetSelected().GetAttributeString('value',''),'2');
-  h.choose('sm-hero',1);h.click('Для автопомощника');
-  assert(h.root.GetAttributeInt('shopmark_build',0)>0);assert.deepEqual(h.errors,[]);
+  h.choose('sm-hero',1);
+  assert.equal(h.root.GetAttributeInt('shopmark_build',0),0);assert.deepEqual(h.errors,[]);
 });
 
 test('native search reacquires the replaced field and activates the refresh button',()=>{
