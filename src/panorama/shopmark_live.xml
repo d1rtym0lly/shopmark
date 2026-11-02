@@ -4,6 +4,7 @@
     <include src="s2r://panorama/scripts/shopmark_data.vjs_c" />
     <include src="s2r://panorama/scripts/shopmark_coach.vjs_c" />
     <include src="s2r://panorama/scripts/shopmark_live_core.vjs_c" />
+    <include src="s2r://panorama/scripts/shopmark_decision.vjs_c" />
     <include src="s2r://panorama/scripts/shopmark_hud.vjs_c" />
     <include src="s2r://panorama/scripts/shopmark_live.vjs_c" />
   </scripts>

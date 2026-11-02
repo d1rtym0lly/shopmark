@@ -33,8 +33,8 @@
     return delta > 0.12 ? 'ahead' : delta < -0.12 ? 'behind' : 'even';
   }
   function create(coach) {
-    var previousHero = null, previousTime = null, laneAtEnd = null, inventory = [], haveInventory = false, lastPurchased = null;
-    function reset() { previousHero = null; previousTime = null; laneAtEnd = null; inventory = []; haveInventory = false; lastPurchased = null; }
+    var previousHero = null, previousTime = null, laneAtEnd = null, inventory = [], haveInventory = false, lastPurchased = null, previousPlan=[];
+    function reset() { previousHero = null; previousTime = null; laneAtEnd = null; inventory = []; haveInventory = false; lastPurchased = null; previousPlan=[]; }
     function evaluate(data, raw, settings, now) {
       settings = settings || {};
       now = now == null ? Date.now() : now;
@@ -59,9 +59,6 @@
       haveInventory = true;
       var hero = (data.heroes || []).filter(function (h) { return h.id === raw.heroId; })[0];
       if (!hero) return { status: 'waiting', reason: 'Герой пока не распознан', recommendations: [] };
-      var builds = coach.catalog(data, raw.heroId, settings.rank || 0, 'all', '');
-      var build = builds.filter(function (b) { return b.id === settings.buildId; })[0] || builds[0];
-      if (!build) return { status: 'waiting', reason: 'Для героя пока нет сборки', recommendations: [] };
       var enemies = (raw.enemies || []).filter(function (p) { return p.hero; });
       var laneEnemies = enemies.filter(function (p) { return p.sameLane && Number.isFinite(p.souls); });
       var laneAllies = (raw.allies || []).filter(function (p) { return p.sameLane && Number.isFinite(p.souls); });
@@ -73,6 +70,26 @@
         lane = raw.seconds <= 480 ? laneNow : laneAtEnd || 'unknown';
       }
       var advantage = comparison(raw.friendlySouls, raw.enemySouls);
+      if (data.knowledge) {
+        var decision=typeof $!=='undefined'?$.ShopmarkDecision:globalThis.ShopmarkDecision;
+        if(!decision)return {status:'waiting',reason:'Не загружен модуль механик',recommendations:[]};
+        var state={heroId:raw.heroId,purchased:inventory,enemies:enemies,ownSouls:raw.ownSouls,
+          budget:raw.infiniteMoney?Number.MAX_SAFE_INTEGER:raw.budget,availableItems:raw.availableItems};
+        var independent=decision.plan(data,state,data.knowledge,previousPlan);
+        if(independent.status==='waiting')return independent;
+        previousPlan=independent.recommendations.map(function(r){return r.id;});
+        var richest=enemies.filter(function(e){return Number.isFinite(e.souls);}).sort(function(a,b){return b.souls-a.souls;})[0];
+        independent.status='live';independent.mode='mechanics';independent.hero=hero;
+        independent.build={id:0,name:'По механикам матча',author:'Независимый подбор'};
+        independent.advantage=richest?comparison(raw.ownSouls,richest.souls):'unknown';independent.teamAdvantage=advantage;
+        independent.lane=lane;independent.budget=raw.budget;independent.infiniteMoney=!!raw.infiniteMoney;
+        independent.purchased=inventory.slice();independent.seconds=raw.seconds;
+        independent.warnings.push('Угрозы по способностям — оценка. Урон в последних драках и текущие покупки противников пока не прочитаны.');
+        return independent;
+      }
+      var builds = coach.catalog(data, raw.heroId, settings.rank || 0, 'all', '');
+      var build = builds.filter(function (b) { return b.id === settings.buildId; })[0] || builds[0];
+      if (!build) return { status: 'waiting', reason: 'Для героя пока нет сборки', recommendations: [] };
       // A hero's presence is a potential matchup, not evidence of received damage.
       // Prioritize at most one answer, after the opening purchases, against a
       // richer lane opponent or the enemy carrying most of the visible economy.
