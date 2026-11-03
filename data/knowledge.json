@@ -1,7 +1,7 @@
 {
-  "version": 1,
+  "version": 2,
   "generatedAt": "2026-10-31T18:59:31.170Z",
-  "policy": "mechanics-heuristic-v1",
+  "policy": "conditional-mechanics-v2",
   "heroes": {
     "1": {
       "verified": true,
@@ -11,7 +11,8 @@
         "shoot",
         "melee",
         "spiritDamage",
-        "burstSpirit"
+        "burstSpirit",
+        "closeRange"
       ],
       "threats": {
         "bullets": 1.5,
@@ -27,6 +28,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1.5,
+        "spiritAmp": 1.65,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -85,6 +91,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 0.95,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -146,6 +157,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 1.2999999999999998,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -204,6 +220,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 0.95,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -247,7 +268,8 @@
         "shoot",
         "melee",
         "spiritDamage",
-        "burstSpirit"
+        "burstSpirit",
+        "closeRange"
       ],
       "threats": {
         "bullets": 0.6,
@@ -264,6 +286,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 1.2999999999999998,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -324,6 +351,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1.5,
+        "spiritAmp": 1.2999999999999998,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -382,6 +414,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 1.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 1.2999999999999998,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -440,6 +477,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 1.2999999999999998,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -503,6 +545,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 1.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 0.95,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -561,6 +608,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1.5,
+        "spiritAmp": 0.6,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -603,7 +655,8 @@
       "capabilities": [
         "shoot",
         "melee",
-        "spiritDamage"
+        "spiritDamage",
+        "closeRange"
       ],
       "threats": {
         "bullets": 1.5,
@@ -618,6 +671,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1.5,
+        "spiritAmp": 0.95,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -677,6 +735,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 1.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 1.2999999999999998,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -736,6 +799,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 1.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1.5,
+        "spiritAmp": 1.2999999999999998,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -797,6 +865,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 1.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 0.95,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -856,6 +929,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 0.95,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -898,7 +976,8 @@
       "capabilities": [
         "shoot",
         "melee",
-        "spiritDamage"
+        "spiritDamage",
+        "closeRange"
       ],
       "threats": {
         "bullets": 0.6,
@@ -915,6 +994,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 0.95,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -974,6 +1058,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 0.95,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -1034,6 +1123,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 0.95,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -1093,6 +1187,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 0.95,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -1153,6 +1252,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 1.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1.5,
+        "spiritAmp": 0.95,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -1214,6 +1318,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 1.2999999999999998,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -1274,6 +1383,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 1.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 0.95,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -1316,7 +1430,8 @@
       "capabilities": [
         "shoot",
         "melee",
-        "spiritDamage"
+        "spiritDamage",
+        "closeRange"
       ],
       "threats": {
         "bullets": 0.6,
@@ -1333,6 +1448,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 1.65,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -1391,6 +1511,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 0.95,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -1449,6 +1574,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 0.95,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -1504,6 +1634,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 0.25,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -1562,6 +1697,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 0.95,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -1620,6 +1760,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 1.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 0.95,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -1679,6 +1824,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 0.6,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -1722,7 +1872,8 @@
         "shoot",
         "melee",
         "spiritDamage",
-        "burstSpirit"
+        "burstSpirit",
+        "closeRange"
       ],
       "threats": {
         "bullets": 0.6,
@@ -1738,6 +1889,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 1.65,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -1799,6 +1955,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 1.2999999999999998,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -1857,6 +2018,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 1.2999999999999998,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -1916,6 +2082,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 1.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 1.2999999999999998,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -1959,7 +2130,8 @@
         "shoot",
         "melee",
         "spiritDamage",
-        "burstSpirit"
+        "burstSpirit",
+        "closeRange"
       ],
       "threats": {
         "bullets": 0.6,
@@ -1975,6 +2147,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 1.2999999999999998,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -2038,6 +2215,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 1.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 0.6,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -2080,7 +2262,8 @@
       "capabilities": [
         "shoot",
         "melee",
-        "spiritDamage"
+        "spiritDamage",
+        "closeRange"
       ],
       "threats": {
         "bullets": 0.6,
@@ -2098,6 +2281,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 1.65,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -2159,6 +2347,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 0.95,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -2217,6 +2410,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1.5,
+        "spiritAmp": 0.6,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -2260,7 +2458,8 @@
         "shoot",
         "melee",
         "spiritDamage",
-        "burstSpirit"
+        "burstSpirit",
+        "closeRange"
       ],
       "threats": {
         "bullets": 0.6,
@@ -2278,6 +2477,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 1.2999999999999998,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -2338,6 +2542,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 1.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1.5,
+        "spiritAmp": 0.6,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -2396,6 +2605,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 0.95,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -2455,6 +2669,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 1.2999999999999998,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -2514,6 +2733,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 0.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 0.95,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -2574,6 +2798,11 @@
         "sustain": 0.9,
         "mobility": 0.8,
         "melee": 1.3,
+        "barrier": 0.7,
+        "recovery": 0.4,
+        "weaponUtility": 0.4,
+        "weaponAmp": 1,
+        "spiritAmp": 1.65,
         "bulletDefense": 0.5,
         "spiritDefense": 0.5,
         "controlDefense": 0.4,
@@ -2653,6 +2882,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Improved Spirit"
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -2686,6 +2916,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Ваш следующий тяжёлый удар ближнего боя наносит врагу повышенный урон ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -2697,7 +2928,7 @@
       },
       "counters": {},
       "requires": [],
-      "explanation": "При каждом попадании тяжёлым ударом время текущих перезарядок сокращается.",
+      "explanation": "При каждом попадании тяжёлым ударом время текущих перезарядок сокращается. Пробивает сквозь парирование.",
       "facts": [
         {
           "key": "BonusMeleeDamagePercent",
@@ -2708,8 +2939,9 @@
       ],
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
-        "При каждом попадании тяжёлым ударом время текущих перезарядок сокращается."
+        "При каждом попадании тяжёлым ударом время текущих перезарядок сокращается. Пробивает сквозь парирование."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -2717,10 +2949,14 @@
       "verified": true,
       "source": "https://api.deadlock-api.com/v1/assets/items?language=english#upgrade_quick_silver",
       "effects": {
-        "weapon": 0.5
+        "weapon": 0.5,
+        "spirit": 0.7,
+        "weaponUtility": 1.2
       },
       "counters": {},
-      "requires": [],
+      "requires": [
+        "shoot"
+      ],
       "explanation": "Усиленное умение постепенно заряжается, благодаря чему при использовании наносит доп. спиритический урон , даёт повышенную скорострельность и перезаряжает оружие .",
       "facts": [
         {
@@ -2734,6 +2970,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Усиленное умение постепенно заряжается, благодаря чему при использовании наносит доп. спиритический урон , даёт повышенную скорострельность и перезаряжает оружие ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -2758,10 +2995,40 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Нанесение урона от оружия на ближней дистанции открывает рану и даёт вам увеличенную скорость передвижения . Раненые враги получают постепенный спиритический урон , имеют сниженную сопротивляемость пулям и становятся видимыми сквозь стены ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BulletResistReduction",
+          "type": "BULLET_AND_MELEE_RESIST_REDUCTION",
+          "value": -6,
+          "trigger": "veil",
+          "label": "после прохождения завесы",
+          "threshold": null,
+          "effects": {
+            "weaponAmp": 0.4
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_weapon_backstabber.properties.BulletResistReduction"
+        },
+        {
+          "property": "BonusMoveSpeed",
+          "type": "MOVEMENT_SPEED_MAX",
+          "value": 1.5,
+          "trigger": "veil",
+          "label": "после прохождения завесы",
+          "threshold": null,
+          "effects": {
+            "mobility": 0.75
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_weapon_backstabber.properties.BonusMoveSpeed"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "112198670": {
       "verified": true,
@@ -2786,11 +3053,40 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Даёт вам барьер , когда вражеские герои наносят вам значительный спиритический урон за короткий интервал времени."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Barrier",
-        "Spirit Resist"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "CombatBarrier",
+          "type": "BARRIER_HEALTH",
+          "value": 300,
+          "trigger": "spirit_damage_taken",
+          "label": "после получения духовного урона",
+          "threshold": null,
+          "effects": {
+            "barrier": 1
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_spirit_bubble.properties.CombatBarrier"
+        },
+        {
+          "property": "TechResist",
+          "type": "TECH_RESIST",
+          "value": 15,
+          "trigger": "spirit_damage_taken",
+          "label": "после получения духовного урона",
+          "threshold": null,
+          "effects": {
+            "spiritDefense": 1
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_spirit_bubble.properties.TechResist"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "230297145": {
       "verified": true,
@@ -2800,11 +3096,28 @@
       },
       "counters": {},
       "requires": [],
-      "explanation": "Периодически даёт постоянный бонус к случайной характеристике.",
+      "explanation": "Периодически даёт постоянный бонус к случайной характеристике. Сокращает время возрождения после вашей следующей смерти.",
       "facts": [],
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
-        "Периодически даёт постоянный бонус к случайной характеристике."
+        "Периодически даёт постоянный бонус к случайной характеристике. Сокращает время возрождения после вашей следующей смерти."
+      ],
+      "conditionalEffects": [
+        {
+          "property": "RespawnTime",
+          "type": "RESPAWN_TIME_PERCENTAGE",
+          "value": -70,
+          "trigger": "delayed_growth",
+          "label": "после накопления постоянных бонусов",
+          "threshold": null,
+          "effects": {
+            "recovery": 1
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_eternal_gift.properties.RespawnTime"
+        }
       ],
       "partial": false,
       "unmodelled": []
@@ -2817,7 +3130,7 @@
       },
       "counters": {},
       "requires": [],
-      "explanation": "Stamina Mastery",
+      "explanation": "Позволяет делать дополнительный прыжок или рывок в воздухе перед приземлением.",
       "facts": [
         {
           "key": "Stamina",
@@ -2834,8 +3147,9 @@
       ],
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
-        "Stamina Mastery"
+        "Позволяет делать дополнительный прыжок или рывок в воздухе перед приземлением."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -2849,7 +3163,7 @@
       },
       "counters": {},
       "requires": [],
-      "explanation": "Frenzy",
+      "explanation": "Когда у вас меньше 50% здоровья , вы на указанный период получаете бонусы к характеристикам, а наложенные на вас отрицательные эффекты ослабляются.",
       "facts": [
         {
           "key": "BonusHealth",
@@ -2872,14 +3186,57 @@
       ],
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
-        "Frenzy"
+        "Когда у вас меньше 50% здоровья , вы на указанный период получаете бонусы к характеристикам, а наложенные на вас отрицательные эффекты ослабляются."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Move Speed",
-        "Fire Rate",
-        "Debuff Resist"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "FervorMovespeed",
+          "type": "MOVEMENT_SPEED_MAX",
+          "value": 4,
+          "trigger": "health_below",
+          "label": "при здоровье ниже порога",
+          "threshold": 50,
+          "effects": {
+            "mobility": 2
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_fervor.properties.FervorMovespeed"
+        },
+        {
+          "property": "FervorFireRate",
+          "type": "FIRE_RATE",
+          "value": 40,
+          "trigger": "health_below",
+          "label": "при здоровье ниже порога",
+          "threshold": 50,
+          "effects": {
+            "weapon": 2
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_fervor.properties.FervorFireRate"
+        },
+        {
+          "property": "FervorStatusResistancePercent",
+          "type": "STATUS_RESISTANCE",
+          "value": 40,
+          "trigger": "health_below",
+          "label": "при здоровье ниже порога",
+          "threshold": 50,
+          "effects": {
+            "controlDefense": 2
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_fervor.properties.FervorStatusResistancePercent"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "343572757": {
       "verified": true,
@@ -2908,6 +3265,38 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Если нанести врагу значительный спиритический урон в течение 5 сек., происходит взрыв, который наносит урон этому врагу и обжигает его. Во время горения враги получают постепенный урон, а получаемое ими лечение уменьшается. Для каждого врага действует отдельная перезарядка: до её окончания нельзя повторно наложить эффект. Если целью выбран не герой, урон уменьшается вдвое."
       ],
+      "conditionalEffects": [
+        {
+          "property": "HealAmpReceivePenaltyPercent",
+          "type": "HEAL_AMP_RECEIVE_PERCENT",
+          "value": -70,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "healing": 2.8
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_spirit_burn.properties.HealAmpReceivePenaltyPercent"
+        },
+        {
+          "property": "HealAmpRegenPenaltyPercent",
+          "type": "HEAL_AMP_REGEN_PERCENT",
+          "value": -70,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "healing": 2.8
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_spirit_burn.properties.HealAmpRegenPenaltyPercent"
+        }
+      ],
       "partial": false,
       "unmodelled": []
     },
@@ -2932,11 +3321,40 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Каждое убийство героя даёт постоянный бонус к скорострельности (максимум — 8 раз). При смерти владельца теряется один бонус."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Fire Rate per Kill",
-        "Bullet Slow Proc"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "FireRatePerKill",
+          "type": "FIRE_RATE",
+          "value": 7,
+          "trigger": "kill",
+          "label": "после убийства",
+          "threshold": null,
+          "effects": {
+            "weapon": 0.35
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_glass_cannon.properties.FireRatePerKill"
+        },
+        {
+          "property": "SlowPercent",
+          "type": "MOVEMENT_SPEED_SLOW_PERCENT",
+          "value": 30,
+          "trigger": "kill",
+          "label": "после убийства",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 1.2
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_glass_cannon.properties.SlowPercent"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "380806748": {
       "verified": true,
@@ -2959,6 +3377,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Сокращает время перезарядки выбранного умения."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -2966,7 +3385,7 @@
       "verified": true,
       "source": "https://api.deadlock-api.com/v1/assets/items?language=english#upgrade_active_reload",
       "effects": {
-        "weapon": 0.6666666666666666,
+        "weaponUtility": 0.6666666666666666,
         "mobility": 0.375
       },
       "counters": {},
@@ -2977,7 +3396,7 @@
           "key": "BonusClipSizePercent",
           "type": "AMMO_CLIP_SIZE_PERCENT",
           "value": 20,
-          "effect": "weapon"
+          "effect": "weaponUtility"
         },
         {
           "key": "BonusMoveSpeed",
@@ -2990,11 +3409,40 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Нажав Перезарядка в указанный момент перезарядки, вы мгновенно завершите её и получите бонус к скорострельности , краже здоровья пулями и скорости передвижения ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Bullet Lifesteal",
-        "Fire Rate"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BulletLifestealPercent",
+          "type": "BULLET_LIFESTEAL",
+          "value": 16,
+          "trigger": "reload",
+          "label": "после успешной активной перезарядки",
+          "threshold": null,
+          "effects": {
+            "weaponSustain": 0.8
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_active_reload.properties.BulletLifestealPercent"
+        },
+        {
+          "property": "BonusFireRate",
+          "type": "FIRE_RATE",
+          "value": 25,
+          "trigger": "reload",
+          "label": "после успешной активной перезарядки",
+          "threshold": null,
+          "effects": {
+            "weapon": 1.25
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_active_reload.properties.BonusFireRate"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "393974127": {
       "verified": true,
@@ -3014,10 +3462,40 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Ваши пули накладывают на врагов накапливаемое снижение скорости передвижения ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "SlowPercent",
+          "type": "MOVEMENT_SPEED_SLOW_PERCENT",
+          "value": 24,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 0.96
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_slowing_bullets.properties.SlowPercent"
+        },
+        {
+          "property": "GroundDashReductionPercent",
+          "type": "MOVEMENT_GROUND_DASH_REDUCTION_PERCENT",
+          "value": -20,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 0.8
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_slowing_bullets.properties.GroundDashReductionPercent"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "395867183": {
       "verified": true,
@@ -3040,6 +3518,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Ваша следующая пуля нанесёт дополнительный спиритический урон ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -3064,6 +3543,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Периодически наносит спиритический урон двум ближайшим врагам неподалёку."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -3095,6 +3575,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Позволяет добавить любому активному умению, не являющемуся ультом, дополнительные заряды . У умений с системой зарядов повышается их число."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -3116,6 +3597,23 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Совершив лёгкий или тяжёлый удар ближнего боя по герою, вы нанесёте ему дополнительный спиритический урон и уменьшите его сопротивляемость спиритизму . При нанесении лёгких ударов ближнего боя перезарядка длится в 2 раза дольше."
       ],
+      "conditionalEffects": [
+        {
+          "property": "TechArmorDamageReduction",
+          "type": "TECH_RESIST_REDUCTION",
+          "value": -6,
+          "trigger": "melee_hit",
+          "label": "после попадания в ближнем бою",
+          "threshold": null,
+          "effects": {
+            "spiritAmp": 0.4
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_acolytes_glove.properties.TechArmorDamageReduction"
+        }
+      ],
       "partial": false,
       "unmodelled": []
     },
@@ -3128,7 +3626,7 @@
       },
       "counters": {},
       "requires": [],
-      "explanation": "Урон от вашего ульта накладывает оглушение и наносит доп. спиритический урон после короткой задержки.",
+      "explanation": "Урон от вашего ульта накладывает оглушение и наносит доп. спиритический урон после короткой задержки. Данный эффект срабатывает на каждой цели только один раз за ульт. Эффекты «Мистического замедления»",
       "facts": [
         {
           "key": "BonusHealth",
@@ -3145,12 +3643,42 @@
       ],
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
-        "Урон от вашего ульта накладывает оглушение и наносит доп. спиритический урон после короткой задержки."
+        "Урон от вашего ульта накладывает оглушение и наносит доп. спиритический урон после короткой задержки. Данный эффект срабатывает на каждой цели только один раз за ульт. Эффекты «Мистического замедления»"
       ],
-      "partial": true,
-      "unmodelled": [
-        "Move Speed on Spirit Damage"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "MovementSpeedSlow",
+          "type": "MOVEMENT_SPEED_SLOW_PERCENT",
+          "value": 24,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 0.96
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_ultimate_burst.properties.MovementSpeedSlow"
+        },
+        {
+          "property": "GroundDashReductionPercent",
+          "type": "MOVEMENT_GROUND_DASH_REDUCTION_PERCENT",
+          "value": -12,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 0.48
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_ultimate_burst.properties.GroundDashReductionPercent"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "499683006": {
       "verified": true,
@@ -3187,6 +3715,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Bullet Lifesteal"
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -3204,13 +3733,70 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Подбрасывает вас ввысь и даёт вам барьер . Находясь в воздухе, вы можете снова применить этот предмет, чтобы ускорить падение. Нельзя использовать в течение 5 сек. после того, как вас атаковал вражеский герой."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Air Control",
-        "Air Control",
-        "Move Speed",
-        "Barrier"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "AirControlPercent",
+          "type": "AIR_CONTROL_PERCENT",
+          "value": 100,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "mobility": 1
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_rocket_booster.properties.AirControlPercent"
+        },
+        {
+          "property": "AirControlPercentBarrier",
+          "type": "AIR_CONTROL_PERCENT",
+          "value": 50,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "mobility": 0.5
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_rocket_booster.properties.AirControlPercentBarrier"
+        },
+        {
+          "property": "SlowPercent",
+          "type": "MOVEMENT_SPEED_SLOW_PERCENT",
+          "value": 32,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 1.28
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_rocket_booster.properties.SlowPercent"
+        },
+        {
+          "property": "CombatBarrier",
+          "type": "BARRIER_HEALTH",
+          "value": 200,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "barrier": 0.6666666666666666
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_rocket_booster.properties.CombatBarrier"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "619484391": {
       "verified": true,
@@ -3236,6 +3822,7 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Вы выпускаете расширяющийся снаряд, который ненадолго накладывает на врагов безмолвие и наносит урон при попадании. Безмолвие не прерывает подготавливаемые умения."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -3251,7 +3838,7 @@
         "spirit": 0.3333333333333333
       },
       "requires": [],
-      "explanation": "Echo Shard",
+      "explanation": "Сбрасывает перезарядку усиленного умения (кроме ультов). Перезарядка этого предмета увеличивается в зависимости от перезарядки усиленного умения .",
       "facts": [
         {
           "key": "TechResist",
@@ -3268,8 +3855,9 @@
       ],
       "conditions": [
         "Активный предмет: эффект требует своевременного применения.",
-        "Echo Shard"
+        "Сбрасывает перезарядку усиленного умения (кроме ультов). Перезарядка этого предмета увеличивается в зависимости от перезарядки усиленного умения ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -3294,6 +3882,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Rapid Rounds"
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -3322,6 +3911,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Ваши пули получают шанс стать неотвратимыми — такие прошивают врагов и игнорируют их сопротивляемость пулям ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -3356,6 +3946,7 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Сбрасывает перезарядку всех ваших умений и восстанавливает все их заряды ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -3380,18 +3971,62 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "При следующей атаке вы быстро произведёте два выстрела один за другим. Выпущенные при этом пули имеют повышенную скорость и наносят дополнительный урон . Данная атака расходует дополнительный боезапас."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Bullet Velocity",
-        "Weapon Damage",
-        "Secondary Fire Weapon Damage"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "ProcBulletVelocity",
+          "type": "BONUS_BULLET_SPEED_PERCENT",
+          "value": 100,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "weaponUtility": 1
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_express_shot.properties.ProcBulletVelocity"
+        },
+        {
+          "property": "ProcBaseAttackDamagePercent",
+          "type": "WEAPON_DAMAGE_INCREASE",
+          "value": 125,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "weapon": 6.25
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_express_shot.properties.ProcBaseAttackDamagePercent"
+        },
+        {
+          "property": "ProcBaseAttackDamagePercentAltFire",
+          "type": "WEAPON_DAMAGE_INCREASE",
+          "value": 38,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "weapon": 1.9
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_express_shot.properties.ProcBaseAttackDamagePercentAltFire"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "709540378": {
       "verified": true,
       "source": "https://api.deadlock-api.com/v1/assets/items?language=english#upgrade_non_player_bonus_sacrifice",
       "effects": {
-        "sustain": 0.5
+        "sustain": 0.5,
+        "farm": 2
       },
       "counters": {},
       "requires": [],
@@ -3408,14 +4043,85 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Вы поглощаете выбранное существо, не являющееся героем, получая бонусные души в размере 170% и мощный долгосрочный положительный эффект."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Bonus Health",
-        "Weapon Damage",
-        "Bonus Ability Charges",
-        "Ability Range",
-        "Radius"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BonusHealth",
+          "type": "HEALTH_MAX",
+          "value": 50,
+          "trigger": "sacrifice_npc",
+          "label": "после поглощения подходящего существа",
+          "threshold": null,
+          "effects": {
+            "health": 0.25
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_non_player_bonus_sacrifice.properties.BonusHealth"
+        },
+        {
+          "property": "BaseAttackDamagePercent",
+          "type": "WEAPON_DAMAGE_INCREASE",
+          "value": 10,
+          "trigger": "sacrifice_npc",
+          "label": "после поглощения подходящего существа",
+          "threshold": null,
+          "effects": {
+            "weapon": 0.5
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_non_player_bonus_sacrifice.properties.BaseAttackDamagePercent"
+        },
+        {
+          "property": "BonusAbilityCharges",
+          "type": "BONUS_ABILITY_CHARGES",
+          "value": 1,
+          "trigger": "sacrifice_npc",
+          "label": "после поглощения подходящего существа",
+          "threshold": null,
+          "effects": {
+            "charges": 1
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_non_player_bonus_sacrifice.properties.BonusAbilityCharges"
+        },
+        {
+          "property": "TechRangeMultiplier",
+          "type": "TECH_RANGE_PERCENT",
+          "value": 12,
+          "trigger": "sacrifice_npc",
+          "label": "после поглощения подходящего существа",
+          "threshold": null,
+          "effects": {
+            "range": 0.6
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_non_player_bonus_sacrifice.properties.TechRangeMultiplier"
+        },
+        {
+          "property": "TechRadiusMultiplier",
+          "type": "TECH_RADIUS_PERCENT",
+          "value": 12,
+          "trigger": "sacrifice_npc",
+          "label": "после поглощения подходящего существа",
+          "threshold": null,
+          "effects": {
+            "range": 0.6
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_non_player_bonus_sacrifice.properties.TechRadiusMultiplier"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "710436191": {
       "verified": true,
@@ -3425,7 +4131,7 @@
       },
       "counters": {},
       "requires": [],
-      "explanation": "Вы выпускаете снаряд, наносящий урон и накладывающий сильное замедление, которое постепенно развеивается. Цель также не может использовать выносливость , а на её предметы и умения, связанные с движением , накладывается безмолвие .",
+      "explanation": "Вы выпускаете снаряд, наносящий урон и накладывающий сильное замедление, которое постепенно развеивается. Цель также не может использовать выносливость , а на её предметы и умения, связанные с движением , накладывается безмолвие . У ваших выстрелов есть шанс поразить цель электричеством . Электрический заряд также отскочит на ближайшего к цели врага.",
       "facts": [
         {
           "key": "BonusFireRate",
@@ -3436,8 +4142,9 @@
       ],
       "conditions": [
         "Активный предмет: эффект требует своевременного применения.",
-        "Вы выпускаете снаряд, наносящий урон и накладывающий сильное замедление, которое постепенно развеивается. Цель также не может использовать выносливость , а на её предметы и умения, связанные с движением , накладывается безмолвие ."
+        "Вы выпускаете снаряд, наносящий урон и накладывающий сильное замедление, которое постепенно развеивается. Цель также не может использовать выносливость , а на её предметы и умения, связанные с движением , накладывается безмолвие . У ваших выстрелов есть шанс поразить цель электричеством . Электрический заряд также отскочит на ближайшего к цели врага."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -3468,6 +4175,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Увеличивает дальность выбранного умения и радиус его эффекта ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -3506,6 +4214,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Rapid Recharge"
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -3520,7 +4229,7 @@
         "bullets": 0.8
       },
       "requires": [],
-      "explanation": "Нанесённый вами урон ближнего боя восстанавливает ваш боезапас и накладывает накапливаемый эффект снижения сопротивляемости пулям на врагов. Тяжёлый удар ближнего боя накладывает 2 ед. эффекта. Если на цель наложено макс. число единиц эффекта, она оглушается .",
+      "explanation": "Нанесённый вами урон ближнего боя восстанавливает ваш боезапас и накладывает накапливаемый эффект снижения сопротивляемости пулям на врагов. Тяжёлый удар ближнего боя накладывает 2 ед. эффекта. Если на цель наложено макс. число единиц эффекта, она оглушается . Ваш следующий тяжёлый удар ближнего боя наносит врагу повышенный урон .",
       "facts": [
         {
           "key": "BulletResist",
@@ -3537,7 +4246,24 @@
       ],
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
-        "Нанесённый вами урон ближнего боя восстанавливает ваш боезапас и накладывает накапливаемый эффект снижения сопротивляемости пулям на врагов. Тяжёлый удар ближнего боя накладывает 2 ед. эффекта. Если на цель наложено макс. число единиц эффекта, она оглушается ."
+        "Нанесённый вами урон ближнего боя восстанавливает ваш боезапас и накладывает накапливаемый эффект снижения сопротивляемости пулям на врагов. Тяжёлый удар ближнего боя накладывает 2 ед. эффекта. Если на цель наложено макс. число единиц эффекта, она оглушается . Ваш следующий тяжёлый удар ближнего боя наносит врагу повышенный урон ."
+      ],
+      "conditionalEffects": [
+        {
+          "property": "BulletResistReduction",
+          "type": "BULLET_AND_MELEE_RESIST_REDUCTION",
+          "value": -5,
+          "trigger": "melee_hit",
+          "label": "после попадания в ближнем бою",
+          "threshold": null,
+          "effects": {
+            "weaponAmp": 0.3333333333333333
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_crushing_fists.properties.BulletResistReduction"
+        }
       ],
       "partial": false,
       "unmodelled": []
@@ -3565,11 +4291,40 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Даёт вам барьер , когда вражеские герои наносят вам значительный урон от оружия за короткий интервал времени."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Barrier",
-        "Bullet Resist"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "CombatBarrier",
+          "type": "BARRIER_HEALTH",
+          "value": 300,
+          "trigger": "bullet_damage_taken",
+          "label": "после получения урона пулями",
+          "threshold": null,
+          "effects": {
+            "barrier": 1
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_weapon_shielding.properties.CombatBarrier"
+        },
+        {
+          "property": "BulletResist",
+          "type": "BULLET_ARMOR_DAMAGE_RESIST",
+          "value": 18,
+          "trigger": "bullet_damage_taken",
+          "label": "после получения урона пулями",
+          "threshold": null,
+          "effects": {
+            "bulletDefense": 1.2
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_weapon_shielding.properties.BulletResist"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "811521119": {
       "verified": true,
@@ -3585,6 +4340,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "У ваших выстрелов есть шанс поразить цель электричеством . Электрический заряд также отскочит на ближайшего к цели врага."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -3622,11 +4378,40 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Цель получает барьер и временное повышение скорости передвижения . Можно применять на себя. Если применяется не на себя, время перезарядки сокращается вдвое."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Barrier",
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "GuardianWardCombatBarrier",
+          "type": "BARRIER_HEALTH",
+          "value": 250,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "barrier": 0.8333333333333334
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_guardian_ward.properties.GuardianWardCombatBarrier"
+        },
+        {
+          "property": "BonusMoveSpeed",
+          "type": "MOVEMENT_SPEED_MAX",
+          "value": 2.75,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "mobility": 1.375
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_guardian_ward.properties.BonusMoveSpeed"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "865846625": {
       "verified": true,
@@ -3677,6 +4462,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Ослабляет накладываемое на вас врагами снижения лечения ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -3708,10 +4494,25 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Пройдя через вселенскую вуаль , вы получите скрытность , лечение и повышенную скорость передвижения ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Invis Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BonusMoveSpeed",
+          "type": "MOVEMENT_SPEED_MAX",
+          "value": 3.5,
+          "trigger": "veil",
+          "label": "после прохождения завесы",
+          "threshold": null,
+          "effects": {
+            "mobility": 1.75
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_veil_walker.properties.BonusMoveSpeed"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "876563814": {
       "verified": true,
@@ -3748,6 +4549,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Spirit Lifesteal"
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -3779,6 +4581,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Сокращает время перезарядки ваших умений и предметов."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -3795,7 +4598,7 @@
         "spirit": 0.6666666666666666
       },
       "requires": [],
-      "explanation": "Indomitable",
+      "explanation": "Следующий наложенный на вас эффект оглушения, сковывания, обездвиживания, безмолвия или страха автоматически снимается. При этом вы получаете барьер , а перезарядка всех ваших умений сокращается на 20%.",
       "facts": [
         {
           "key": "BulletResist",
@@ -3818,12 +4621,27 @@
       ],
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
-        "Indomitable"
+        "Следующий наложенный на вас эффект оглушения, сковывания, обездвиживания, безмолвия или страха автоматически снимается. При этом вы получаете барьер , а перезарядка всех ваших умений сокращается на 20%."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Barrier"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "VexBarrierCombatBarrier",
+          "type": "BARRIER_HEALTH",
+          "value": 325,
+          "trigger": "control_taken",
+          "label": "после вражеского контроля",
+          "threshold": null,
+          "effects": {
+            "barrier": 1.0833333333333333
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_auto_cleanse.properties.VexBarrierCombatBarrier"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "968099481": {
       "verified": true,
@@ -3846,6 +4664,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Extra Spirit"
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -3900,10 +4719,25 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Когда включено: вы постоянно жертвуете здоровьем, чтобы повысить скорострельность , сопротивляемость отрицательным эффектам и скорость передвижения ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Fire Rate"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BonusFireRate",
+          "type": "FIRE_RATE",
+          "value": 35,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "weapon": 1.75
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_blood_tribute.properties.BonusFireRate"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1009965641": {
       "verified": true,
@@ -3927,6 +4761,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Monster Rounds"
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -3960,6 +4795,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Снижает длительность всех накладываемых на вас отрицательных эффектов."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -3976,7 +4812,7 @@
         "bullets": 0.6666666666666666
       },
       "requires": [],
-      "explanation": "Vampiric Burst",
+      "explanation": "Даёт бонус к краже здоровья , скорострельности и боезапасу . Увеличенный этим умением боезапас может превысить максимальный.",
       "facts": [
         {
           "key": "ActiveBonusLifesteal",
@@ -4011,8 +4847,9 @@
       ],
       "conditions": [
         "Активный предмет: эффект требует своевременного применения.",
-        "Vampiric Burst"
+        "Даёт бонус к краже здоровья , скорострельности и боезапасу . Увеличенный этим умением боезапас может превысить максимальный."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -4044,10 +4881,40 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Когда цель получает спиритический урон , у неё снижается скорость передвижения ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "MovementSpeedSlow",
+          "type": "MOVEMENT_SPEED_SLOW_PERCENT",
+          "value": 24,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 0.96
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_magic_slow.properties.MovementSpeedSlow"
+        },
+        {
+          "property": "GroundDashReductionPercent",
+          "type": "MOVEMENT_GROUND_DASH_REDUCTION_PERCENT",
+          "value": -12,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 0.48
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_magic_slow.properties.GroundDashReductionPercent"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1113837674": {
       "verified": true,
@@ -4061,7 +4928,7 @@
         "spirit": 0.8
       },
       "requires": [],
-      "explanation": "Ваши пули накладывают накапливаемое безмолвие . Жертвы становятся невосприимчивы к накапливанию через 10 сек. после истечения действия безмолвия.",
+      "explanation": "Ваши пули накладывают накапливаемое безмолвие . Жертвы становятся невосприимчивы к накапливанию через 10 сек. после истечения действия безмолвия. Ваши пули снижают наносимый целью спиритический урон .",
       "facts": [
         {
           "key": "TechResist",
@@ -4072,7 +4939,24 @@
       ],
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
-        "Ваши пули накладывают накапливаемое безмолвие . Жертвы становятся невосприимчивы к накапливанию через 10 сек. после истечения действия безмолвия."
+        "Ваши пули накладывают накапливаемое безмолвие . Жертвы становятся невосприимчивы к накапливанию через 10 сек. после истечения действия безмолвия. Ваши пули снижают наносимый целью спиритический урон ."
+      ],
+      "conditionalEffects": [
+        {
+          "property": "TechDamageReduction",
+          "type": "TECH_DAMAGE_MULTIPLIER",
+          "value": -25,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {},
+          "penalties": {
+            "spirit": 1
+          },
+          "constraints": [],
+          "source": "assets:upgrade_proc_silence.properties.TechDamageReduction"
+        }
       ],
       "partial": false,
       "unmodelled": []
@@ -4092,10 +4976,25 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Вы входите в состояние пустоты, которое ненадолго даёт вам неуязвимость и запрещает выбирать вас целью . Во время действия от вас исходят вращающиеся лазерные лучи."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Float Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "FloatMoveSpeed",
+          "type": "MOVE_SPEED_LIMIT",
+          "value": 2.5,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {},
+          "penalties": {},
+          "constraints": [
+            "скорость в особом состоянии ограничена 2.5 м/с"
+          ],
+          "source": "assets:upgrade_prism_blast.properties.FloatMoveSpeed"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1144549437": {
       "verified": true,
@@ -4113,10 +5012,40 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Ваши пули накладывают на цель эффект, снижающий её сопротивляемость спиритизму и дающий вам и вашим союзникам кражу здоровья жертвы спиритизмом ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Spirit Lifesteal"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "TechArmorDamageReduction",
+          "type": "TECH_RESIST_REDUCTION",
+          "value": -8,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {
+            "spiritAmp": 0.5333333333333333
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_tech_defense_shredders.properties.TechArmorDamageReduction"
+        },
+        {
+          "property": "AbilityLifestealPercentHero",
+          "type": "TECH_DAMAGE_TAKEN_HEALS_ATTACKER",
+          "value": 10,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {
+            "spiritSustain": 0.5
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_tech_defense_shredders.properties.AbilityLifestealPercentHero"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1150006784": {
       "verified": true,
@@ -4145,13 +5074,70 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "После совершения рывка с прыжком следующее умение, которое вы используете в течение 7 сек., будет иметь бонусную дальность, длительность и спиритическую мощь ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Ability Duration",
-        "Spirit Power",
-        "Radius",
-        "Ability Range"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BonusAbilityDurationPercent",
+          "type": "BONUS_ABILITY_DURATION_PERCENTAGE",
+          "value": 15,
+          "trigger": "dash",
+          "label": "после рывка",
+          "threshold": null,
+          "effects": {
+            "duration": 0.75
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_arcane_surge.properties.BonusAbilityDurationPercent"
+        },
+        {
+          "property": "SpiritPower",
+          "type": "TECH_POWER",
+          "value": 20,
+          "trigger": "dash",
+          "label": "после рывка",
+          "threshold": null,
+          "effects": {
+            "spirit": 1.3333333333333333
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_arcane_surge.properties.SpiritPower"
+        },
+        {
+          "property": "TechRadiusMultiplierBuff",
+          "type": "TECH_RADIUS_PERCENT",
+          "value": 12,
+          "trigger": "dash",
+          "label": "после рывка",
+          "threshold": null,
+          "effects": {
+            "range": 0.6
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_arcane_surge.properties.TechRadiusMultiplierBuff"
+        },
+        {
+          "property": "TechRangeMultiplierBuff",
+          "type": "TECH_RANGE_PERCENT",
+          "value": 12,
+          "trigger": "dash",
+          "label": "после рывка",
+          "threshold": null,
+          "effects": {
+            "range": 0.6
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_arcane_surge.properties.TechRangeMultiplierBuff"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1152158042": {
       "verified": true,
@@ -4162,7 +5148,7 @@
       },
       "counters": {},
       "requires": [],
-      "explanation": "Vortex Web",
+      "explanation": "Вы бросаете вакуумную гранату, которая притягивает врагов в небольшую область и накладывает на них «Замедляющие чары» . Альт. огонь: применить на конкретную цель.",
       "facts": [
         {
           "key": "TechRangeMultiplier",
@@ -4185,12 +5171,42 @@
       ],
       "conditions": [
         "Активный предмет: эффект требует своевременного применения.",
-        "Vortex Web"
+        "Вы бросаете вакуумную гранату, которая притягивает врагов в небольшую область и накладывает на них «Замедляющие чары» . Альт. огонь: применить на конкретную цель."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "SlowPercent",
+          "type": "MOVEMENT_SPEED_SLOW_PERCENT",
+          "value": 28,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 1.12
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_aoe_root.properties.SlowPercent"
+        },
+        {
+          "property": "GroundDashReductionPercent",
+          "type": "MOVEMENT_GROUND_DASH_REDUCTION_PERCENT",
+          "value": -36,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 1.44
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_aoe_root.properties.GroundDashReductionPercent"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1193964439": {
       "verified": true,
@@ -4228,6 +5244,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Увеличивает дальность и радиус действия ваших умений и предметов."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -4251,6 +5268,23 @@
       "conditions": [
         "Активный предмет: эффект требует своевременного применения.",
         "Снижает сопротивляемость спиритизму и спиритическую мощь выбранного врага."
+      ],
+      "conditionalEffects": [
+        {
+          "property": "MagicResistReduction",
+          "type": "TECH_RESIST_REDUCTION",
+          "value": -9,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "spiritAmp": 0.6
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_spirit_sap.properties.MagicResistReduction"
+        }
       ],
       "partial": false,
       "unmodelled": []
@@ -4285,11 +5319,40 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Если у вас более 65% здоровья , увеличивается наносимый вами урон от оружия и вам даётся повышенная скорострельность ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Weapon Damage",
-        "Fire Rate"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BaseAttackDamagePercent",
+          "type": "WEAPON_DAMAGE_INCREASE",
+          "value": 22,
+          "trigger": "health_above",
+          "label": "при здоровье выше порога",
+          "threshold": 65,
+          "effects": {
+            "weapon": 1.1
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_regenerating_bullet_shield.properties.BaseAttackDamagePercent"
+        },
+        {
+          "property": "BonusFireRate",
+          "type": "FIRE_RATE",
+          "value": 7,
+          "trigger": "health_above",
+          "label": "при здоровье выше порога",
+          "threshold": 65,
+          "effects": {
+            "weapon": 0.35
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_regenerating_bullet_shield.properties.BonusFireRate"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1250307611": {
       "verified": true,
@@ -4300,7 +5363,7 @@
       },
       "counters": {},
       "requires": [],
-      "explanation": "Juggernaut",
+      "explanation": "У стреляющих в вас врагов снижается скорострельность .",
       "facts": [
         {
           "key": "BonusHealthRegen",
@@ -4317,8 +5380,9 @@
       ],
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
-        "Juggernaut"
+        "У стреляющих в вас врагов снижается скорострельность ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -4350,10 +5414,25 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Ваши атаки ближнего боя замедляют врагов и лечат вас на процент от нанесённого в ближнем бою урона , а также на фиксированное количество единиц. Лечение от существ, не являющихся героями, эффективно на 40%. Множитель времени перезарядки составляет 1.5 при нанесении лёгких ударов ближнего боя."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "SlowPercent",
+          "type": "MOVEMENT_SPEED_SLOW_PERCENT",
+          "value": 48,
+          "trigger": "melee_hit",
+          "label": "после попадания в ближнем бою",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 1.92
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_boxing_glove.properties.SlowPercent"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1254091416": {
       "verified": true,
@@ -4392,6 +5471,7 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Вы накладываете оглушение после задержки в 2 сек. Оглушение действует дольше на цели, находящиеся в воздухе . Во время действия оглушения гравитация цели увеличивается."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -4406,7 +5486,7 @@
         "bullets": 0.6666666666666666
       },
       "requires": [],
-      "explanation": "Siphon Bullets",
+      "explanation": "Ваши выстрелы на время крадут долю от максимального здоровья жертв. Украденное здоровье возвращается врагам по окончании действия эффекта.",
       "facts": [
         {
           "key": "BaseAttackDamagePercent",
@@ -4423,8 +5503,9 @@
       ],
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
-        "Siphon Bullets"
+        "Ваши выстрелы на время крадут долю от максимального здоровья жертв. Украденное здоровье возвращается врагам по окончании действия эффекта."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -4449,11 +5530,70 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Усиливает выбранное умение: навсегда увеличивает его спиритическую мощь . Применив его, вы некоторое время передвигаетесь быстрее и не замедляетесь при совершении атак."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Fire Rate Bonus",
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "FireRateBonus",
+          "type": "FIRE_RATE",
+          "value": 20,
+          "trigger": "cast",
+          "label": "после применения умения",
+          "threshold": null,
+          "effects": {
+            "weapon": 1
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_magic_storm.properties.FireRateBonus"
+        },
+        {
+          "property": "BonusMoveSpeed",
+          "type": "MOVEMENT_SPEED_MAX",
+          "value": 1.75,
+          "trigger": "cast",
+          "label": "после применения умения",
+          "threshold": null,
+          "effects": {
+            "mobility": 0.875
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_magic_storm.properties.BonusMoveSpeed"
+        },
+        {
+          "property": "MoveWhileShootingSpeedPenaltyReductionPercent",
+          "type": "MOVEMENT_SPEED_WHILE_SHOOTING_PENALTY_REDUCTION_PERCENT",
+          "value": 100,
+          "trigger": "cast",
+          "label": "после применения умения",
+          "threshold": null,
+          "effects": {
+            "mobility": 1
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_magic_storm.properties.MoveWhileShootingSpeedPenaltyReductionPercent"
+        },
+        {
+          "property": "MoveWhileZoomedSpeedPenaltyReductionPercent",
+          "type": "MOVEMENT_SPEED_WHILE_ZOOMED_PENALTY_REDUCTION_PERCENT",
+          "value": 100,
+          "trigger": "cast",
+          "label": "после применения умения",
+          "threshold": null,
+          "effects": {
+            "mobility": 1
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_magic_storm.properties.MoveWhileZoomedSpeedPenaltyReductionPercent"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1342610602": {
       "verified": true,
@@ -4471,6 +5611,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Когда цель выстрелов находится на малой дальности , вы наносите больше урона оружием ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -4502,10 +5643,25 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Телепортирует вас к выбранному врагу и притягивает его к земле, нанося урон , обезоруживая его, и снижая скорость его передвижения ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "SlowPercent",
+          "type": "MOVEMENT_SPEED_SLOW_PERCENT",
+          "value": 40,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 1.6
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_phantom_strike.properties.SlowPercent"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1378931225": {
       "verified": true,
@@ -4530,6 +5686,55 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Даёт невосприимчивость к пулям ."
       ],
+      "conditionalEffects": [
+        {
+          "property": "ActiveMoveSpeedPenalty",
+          "type": "MOVEMENT_SPEED_MAX",
+          "value": -1.5,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {},
+          "penalties": {
+            "mobility": 0.75
+          },
+          "constraints": [],
+          "source": "assets:upgrade_metal_skin.properties.ActiveMoveSpeedPenalty"
+        },
+        {
+          "property": "GroundDashReductionPercent",
+          "type": "MOVEMENT_GROUND_DASH_REDUCTION_PERCENT",
+          "value": -20,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {},
+          "penalties": {
+            "mobility": 0.8
+          },
+          "constraints": [],
+          "source": "assets:upgrade_metal_skin.properties.GroundDashReductionPercent"
+        },
+        {
+          "property": "GravityScale",
+          "type": "GRAVITY_SCALE",
+          "value": 20,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {},
+          "penalties": {
+            "mobility": 0.5
+          },
+          "constraints": [
+            "изменение гравитации ограничивает воздушное движение"
+          ],
+          "source": "assets:upgrade_metal_skin.properties.GravityScale"
+        }
+      ],
       "partial": false,
       "unmodelled": []
     },
@@ -4537,7 +5742,7 @@
       "verified": true,
       "source": "https://api.deadlock-api.com/v1/assets/items?language=english#upgrade_critshot",
       "effects": {
-        "weapon": 1
+        "weaponUtility": 1
       },
       "counters": {},
       "requires": [],
@@ -4547,13 +5752,14 @@
           "key": "BonusClipSizePercent",
           "type": "AMMO_CLIP_SIZE_PERCENT",
           "value": 30,
-          "effect": "weapon"
+          "effect": "weaponUtility"
         }
       ],
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
         "Ваши пули могут стать усиленными и нанести дополнительный урон при попадании. Дополнительный урон не может быть критическим."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -4570,7 +5776,7 @@
         "spirit": 2.6666666666666665
       },
       "requires": [],
-      "explanation": "Fury Trance",
+      "explanation": "Даёт скорострельность , сопротивляемость спиритизму и скорость передвижения , а также снимает штраф к скорости передвижения при стрельбе, но накладывает безмолвие и не даёт восстанавливать и использовать выносливость .",
       "facts": [
         {
           "key": "BulletLifestealPercent",
@@ -4599,12 +5805,42 @@
       ],
       "conditions": [
         "Активный предмет: эффект требует своевременного применения.",
-        "Fury Trance"
+        "Даёт скорострельность , сопротивляемость спиритизму и скорость передвижения , а также снимает штраф к скорости передвижения при стрельбе, но накладывает безмолвие и не даёт восстанавливать и использовать выносливость ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "ActiveBonusMoveSpeed",
+          "type": "MOVEMENT_SPEED_MAX",
+          "value": 1.5,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "mobility": 0.75
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_fury_trance.properties.ActiveBonusMoveSpeed"
+        },
+        {
+          "property": "MoveWhileShootingSpeedPenaltyReductionPercent",
+          "type": "MOVEMENT_SPEED_WHILE_SHOOTING_PENALTY_REDUCTION_PERCENT",
+          "value": 100,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "mobility": 1
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_fury_trance.properties.MoveWhileShootingSpeedPenaltyReductionPercent"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1414025773": {
       "verified": true,
@@ -4637,12 +5873,55 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Ваше следующее парирование защитит вас от урона и эффектов вражеских умений и предметов . При успешном парировании умения вы получите лечение и бонусы к скорости передвижения и спиритической мощи ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Spirit Power",
-        "Move Speed",
-        "Healing"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "SpiritPower",
+          "type": "TECH_POWER",
+          "value": 20,
+          "trigger": "parry",
+          "label": "после успешного парирования",
+          "threshold": null,
+          "effects": {
+            "spirit": 1.3333333333333333
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_counterspell.properties.SpiritPower"
+        },
+        {
+          "property": "BonusMoveSpeed",
+          "type": "MOVEMENT_SPEED_MAX",
+          "value": 1.75,
+          "trigger": "parry",
+          "label": "после успешного парирования",
+          "threshold": null,
+          "effects": {
+            "mobility": 0.875
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_counterspell.properties.BonusMoveSpeed"
+        },
+        {
+          "property": "HealOnSuccess",
+          "type": null,
+          "value": 150,
+          "trigger": "parry",
+          "label": "после успешного парирования",
+          "threshold": null,
+          "effects": {
+            "sustain": 0.75
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_counterspell.properties.HealOnSuccess"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1414319208": {
       "verified": true,
@@ -4667,6 +5946,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Повышает наносимый урон от оружия , когда вы получаете урон на протяжении долгого времени."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -4733,6 +6013,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Когда вы накладываете на себя или союзника лечение , у цели будет повышенная скорострельность и bonus move speed . Не распространяется на врождённое восстановление и пассивную кражу здоровья пулями/спиритизмом."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -4760,6 +6041,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Ваша следующая атака ближнего боя лечит вас . Лечение от существ, не являющихся героями, эффективно на 30%. Множитель времени перезарядки составляет 1.5 при нанесении лёгких ударов ближнего боя."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -4785,6 +6067,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Нанесение спиритического урона вражеским героям даёт вам бонусное восстановление . Накапливается при нанесении урона разным героям."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -4792,7 +6075,8 @@
       "verified": true,
       "source": "https://api.deadlock-api.com/v1/assets/items?language=english#upgrade_clip_size",
       "effects": {
-        "weapon": 1.4
+        "weaponUtility": 1,
+        "weapon": 0.4
       },
       "counters": {},
       "requires": [],
@@ -4802,7 +6086,7 @@
           "key": "BonusClipSizePercent",
           "type": "AMMO_CLIP_SIZE_PERCENT",
           "value": 30,
-          "effect": "weapon"
+          "effect": "weaponUtility"
         },
         {
           "key": "BaseAttackDamagePercent",
@@ -4815,6 +6099,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Extended Magazine"
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -4835,13 +6120,70 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Вы принимаете отвар, который даёт вам неудержимость и повышает вашу скорость, здоровье и урон от оружия и спиритизма . Спустя короткое время вы погибаете и взрываетесь , оглушая врагов поблизости и нанося урон, пропорциональный вашему максимальному здоровью. Такая смерть сокращает время вашего возрождения на 50% ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Spirit Power",
-        "Move Speed",
-        "Bonus Health",
-        "Weapon Damage"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "TechPower",
+          "type": "TECH_POWER",
+          "value": 150,
+          "trigger": "sacrifice_self",
+          "label": "при намеренном самопожертвовании",
+          "threshold": null,
+          "effects": {
+            "spirit": 10
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_unstable_concoction.properties.TechPower"
+        },
+        {
+          "property": "BonusMoveSpeed",
+          "type": "MOVEMENT_SPEED_MAX",
+          "value": 10,
+          "trigger": "sacrifice_self",
+          "label": "при намеренном самопожертвовании",
+          "threshold": null,
+          "effects": {
+            "mobility": 5
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_unstable_concoction.properties.BonusMoveSpeed"
+        },
+        {
+          "property": "BonusHealth",
+          "type": "HEALTH_MAX",
+          "value": 3000,
+          "trigger": "sacrifice_self",
+          "label": "при намеренном самопожертвовании",
+          "threshold": null,
+          "effects": {
+            "health": 15
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_unstable_concoction.properties.BonusHealth"
+        },
+        {
+          "property": "BaseAttackDamagePercent",
+          "type": "WEAPON_DAMAGE_INCREASE",
+          "value": 150,
+          "trigger": "sacrifice_self",
+          "label": "при намеренном самопожертвовании",
+          "threshold": null,
+          "effects": {
+            "weapon": 7.5
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_unstable_concoction.properties.BaseAttackDamagePercent"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1644605047": {
       "verified": true,
@@ -4866,10 +6208,25 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Вы получаете барьер , когда оглушены, скованы, обездвижены, спите или обезмолвлены ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Barrier"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "VexBarrierCombatBarrier",
+          "type": "BARRIER_HEALTH",
+          "value": 325,
+          "trigger": "control_taken",
+          "label": "после вражеского контроля",
+          "threshold": null,
+          "effects": {
+            "barrier": 1.0833333333333333
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_vex_barrier.properties.VexBarrierCombatBarrier"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1662311306": {
       "verified": true,
@@ -4905,11 +6262,40 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Снимает все отрицательные эффекты (кроме оглушения) с цели, а также даёт ей барьер и бонус к скорости передвижения . Можно применять на себя. При применении не на себя время перезарядки сокращается вдвое."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Barrier",
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "CombatBarrier",
+          "type": "BARRIER_HEALTH",
+          "value": 600,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "barrier": 2
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_divine_barrier.properties.CombatBarrier"
+        },
+        {
+          "property": "BonusMoveSpeed",
+          "type": "MOVEMENT_SPEED_MAX",
+          "value": 2.75,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "mobility": 1.375
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_divine_barrier.properties.BonusMoveSpeed"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1672893796": {
       "verified": true,
@@ -4932,10 +6318,25 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Вы ненадолго получаете барьер ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Barrier"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "CombatBarrier",
+          "type": "BARRIER_HEALTH",
+          "value": 200,
+          "trigger": "damage_taken",
+          "label": "после получения урона",
+          "threshold": null,
+          "effects": {
+            "barrier": 0.6666666666666666
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_grit.properties.CombatBarrier"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1710079648": {
       "verified": true,
@@ -4951,10 +6352,25 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Даёт цели восстановление здоровья и скорость бега . Эффект пропадает, если цель получает урон от вражеских героев или построек. Можно применить на себя."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Sprint Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BonusSprintSpeed",
+          "type": "SPRINT_SPEED_BONUS",
+          "value": 2,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "mobility": 1
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_health_stimpak.properties.BonusSprintSpeed"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1736094134": {
       "verified": true,
@@ -4977,6 +6393,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Находясь в воздухе, вы наносите больше и получаете меньше урона. Вам также доступны неограниченные рывки и прыжки в воздухе."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -4984,7 +6401,8 @@
       "verified": true,
       "source": "https://api.deadlock-api.com/v1/assets/items?language=english#upgrade_rechargingbullets",
       "effects": {
-        "weapon": 1.1666666666666665
+        "weaponUtility": 0.6666666666666666,
+        "weapon": 0.5
       },
       "counters": {},
       "requires": [],
@@ -4994,7 +6412,7 @@
           "key": "BonusClipSizePercent",
           "type": "AMMO_CLIP_SIZE_PERCENT",
           "value": 20,
-          "effect": "weapon"
+          "effect": "weaponUtility"
         },
         {
           "key": "BaseAttackDamagePercent",
@@ -5007,6 +6425,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Нанеся значительный урон от оружия , вы восстанавливаете заряд у каждого умения с зарядами ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -5030,6 +6449,23 @@
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
         "Попадание в голову снижает сопротивляемость пулям у жертвы."
+      ],
+      "conditionalEffects": [
+        {
+          "property": "BulletResistReduction",
+          "type": "BULLET_AND_MELEE_RESIST_REDUCTION",
+          "value": -12,
+          "trigger": "headshot",
+          "label": "при попадании в голову",
+          "threshold": null,
+          "effects": {
+            "weaponAmp": 0.8
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_headshot_booster2.properties.BulletResistReduction"
+        }
       ],
       "partial": false,
       "unmodelled": []
@@ -5078,11 +6514,40 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Даёт бонус к краже здоровья спиритизмом и спиритической мощи ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Spirit Power",
-        "Spirit Lifesteal"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BonusSpirit",
+          "type": "TECH_POWER",
+          "value": 30,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "spirit": 2
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_infuser.properties.BonusSpirit"
+        },
+        {
+          "property": "AbilityLifestealPercentHero",
+          "type": "TECH_LIFESTEAL",
+          "value": 75,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "spiritSustain": 3.75
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_infuser.properties.AbilityLifestealPercentHero"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1798666702": {
       "verified": true,
@@ -5093,7 +6558,7 @@
       },
       "counters": {},
       "requires": [],
-      "explanation": "Даёт скрытность . Получение урона ненадолго раскроет вас.",
+      "explanation": "Даёт скрытность . Получение урона ненадолго раскроет вас. Если вы атакуете или используете умение, ваша скрытность прекращается и начинается засада , которая временно увеличивает ваш урон от оружия и спиритическую мощь .",
       "facts": [
         {
           "key": "OutOfCombatHealthRegen",
@@ -5110,13 +6575,42 @@
       ],
       "conditions": [
         "Активный предмет: эффект требует своевременного применения.",
-        "Даёт скрытность . Получение урона ненадолго раскроет вас."
+        "Даёт скрытность . Получение урона ненадолго раскроет вас. Если вы атакуете или используете умение, ваша скрытность прекращается и начинается засада , которая временно увеличивает ваш урон от оружия и спиритическую мощь ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Ambush Weapon Damage",
-        "Ambush Spirit Power"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "AmbushBonusWeaponDamage",
+          "type": "WEAPON_DAMAGE_INCREASE",
+          "value": 50,
+          "trigger": "ambush",
+          "label": "при выходе из скрытности",
+          "threshold": null,
+          "effects": {
+            "weapon": 2.5
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_cloaking_device_active.properties.AmbushBonusWeaponDamage"
+        },
+        {
+          "property": "AmbushBonusTechPower",
+          "type": "TECH_POWER",
+          "value": 25,
+          "trigger": "ambush",
+          "label": "при выходе из скрытности",
+          "threshold": null,
+          "effects": {
+            "spirit": 1.6666666666666667
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_cloaking_device_active.properties.AmbushBonusTechPower"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1804594021": {
       "verified": true,
@@ -5152,6 +6646,7 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Лечит вас и выбранного союзного героя в зависимости от максимального здоровья . Один раз за время лечения вы можете притянуть цель к себе. Можно применить на себя."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -5178,10 +6673,40 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Замедляет передвижение выбранного врага и накладывает безмолвие на его предметы и умения, связанные с передвижением . Увеличивает гравитацию цели. Не влияет на расход её выносливости."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "SlowPercent",
+          "type": "MOVEMENT_SPEED_SLOW_PERCENT",
+          "value": 16,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 0.64
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_containment.properties.SlowPercent"
+        },
+        {
+          "property": "GroundDashReductionPercent",
+          "type": "MOVEMENT_GROUND_DASH_REDUCTION_PERCENT",
+          "value": -26,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 1.04
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_containment.properties.GroundDashReductionPercent"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1825399334": {
       "verified": true,
@@ -5204,11 +6729,40 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "При скольжении вы уклоняетесь от пуль, получаете бонус к скорострельности и наносите урон врагам вокруг. Перезарядка отдельна для каждой цели."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Evasion While Sliding",
-        "Fire Rate While Sliding"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "EvasionWhileSliding",
+          "type": null,
+          "value": 60,
+          "trigger": "sliding",
+          "label": "во время скольжения",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "bullets": 2
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_electric_slippers.properties.EvasionWhileSliding"
+        },
+        {
+          "property": "FireRateWhileSliding",
+          "type": "FIRE_RATE",
+          "value": 60,
+          "trigger": "sliding",
+          "label": "во время скольжения",
+          "threshold": null,
+          "effects": {
+            "weapon": 3
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_electric_slippers.properties.FireRateWhileSliding"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1925087134": {
       "verified": true,
@@ -5240,6 +6794,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Нанося спиритический урон врагам, вы также снижаете их скорострельность ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -5263,6 +6818,23 @@
       "conditions": [
         "Активный предмет: эффект требует своевременного применения.",
         "Вы бросаете колбу, которая взрывается в указанной точке и создаёт область, наносящую растущий спиритический урон каждую секунду и снижающую сопротивляемость пулям у врагов. Урон существам, не являющимися героями, ниже на 50%."
+      ],
+      "conditionalEffects": [
+        {
+          "property": "BulletArmorReduction",
+          "type": "BULLET_AND_MELEE_RESIST_REDUCTION",
+          "value": -7,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "weaponAmp": 0.4666666666666667
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_thermal_detonator.properties.BulletArmorReduction"
+        }
       ],
       "partial": false,
       "unmodelled": []
@@ -5305,6 +6877,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "При следующем получении большого спиритического урона он будет существенно снижен."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -5312,7 +6885,9 @@
       "verified": true,
       "source": "https://api.deadlock-api.com/v1/assets/items?language=english#upgrade_cold_front",
       "effects": {
-        "spiritDefense": 0.4
+        "spiritDefense": 0.4,
+        "spirit": 1,
+        "farm": 1
       },
       "counters": {
         "spirit": 0.4
@@ -5331,10 +6906,25 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Вы выпускаете расширяющуюся леденящую волну, которая наносит спиритический урон и замедляет задетых врагов."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "MovementSpeedSlow",
+          "type": "MOVEMENT_SPEED_SLOW_PERCENT",
+          "value": 48,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 1.92
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_cold_front.properties.MovementSpeedSlow"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "1998374645": {
       "verified": true,
@@ -5344,7 +6934,7 @@
       },
       "counters": {},
       "requires": [
-        "burstSpirit"
+        "spiritDamage"
       ],
       "explanation": "Постепенно заряжается спиритическим уроном , благодаря чему умения, наносящие более 80 ед. урона, причиняют дополнительный урон.",
       "facts": [],
@@ -5352,6 +6942,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Постепенно заряжается спиритическим уроном , благодаря чему умения, наносящие более 80 ед. урона, причиняют дополнительный урон."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -5376,6 +6967,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Ваше следующее попадание в голову вражескому герою нанесёт ему доп. урон от оружия ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -5407,6 +6999,54 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Ваши пули накладывают на цель накапливаемый эффект, который снижает наносимый ею урон и её лечение ."
       ],
+      "conditionalEffects": [
+        {
+          "property": "OutgoingDamagePenaltyPercent",
+          "type": "ALL_DAMAGE_MULTIPLIER",
+          "value": -30,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "bullets": 1.2,
+            "spirit": 1.2
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_inhibitor.properties.OutgoingDamagePenaltyPercent"
+        },
+        {
+          "property": "HealAmpReceivePenaltyPercent",
+          "type": "HEAL_AMP_RECEIVE_PERCENT",
+          "value": -40,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "healing": 1.6
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_inhibitor.properties.HealAmpReceivePenaltyPercent"
+        },
+        {
+          "property": "HealAmpRegenPenaltyPercent",
+          "type": "HEAL_AMP_REGEN_PERCENT",
+          "value": -40,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "healing": 1.6
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_inhibitor.properties.HealAmpRegenPenaltyPercent"
+        }
+      ],
       "partial": false,
       "unmodelled": []
     },
@@ -5425,6 +7065,23 @@
         "Активный предмет: эффект требует своевременного применения.",
         "После короткой задержки враги в выбранной области будут оглушены и лишены запаса выносливости. После оглушения враги будут временно ошеломлены."
       ],
+      "conditionalEffects": [
+        {
+          "property": "DazeMoveSpeed",
+          "type": "MOVE_SPEED_LIMIT",
+          "value": 2,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 1
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_mystical_piano.properties.DazeMoveSpeed"
+        }
+      ],
       "partial": false,
       "unmodelled": []
     },
@@ -5438,7 +7095,7 @@
         "spirit": 0.5333333333333333
       },
       "requires": [],
-      "explanation": "Restorative Locket",
+      "explanation": "Если враг применяет умение в радиусе 32m м от вас, вы получаете единицу эффекта восстановления . Поглотите все накопленные единицы, чтобы полечить себя и восстановить до 3 ед. выносливости в зависимости от числа накопленных единиц.",
       "facts": [
         {
           "key": "TechResist",
@@ -5449,8 +7106,9 @@
       ],
       "conditions": [
         "Активный предмет: эффект требует своевременного применения.",
-        "Restorative Locket"
+        "Если враг применяет умение в радиусе 32m м от вас, вы получаете единицу эффекта восстановления . Поглотите все накопленные единицы, чтобы полечить себя и восстановить до 3 ед. выносливости в зависимости от числа накопленных единиц."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -5481,6 +7139,23 @@
       "conditions": [
         "Активный предмет: эффект требует своевременного применения.",
         "Разоружает выбранного врага и снижает его сопротивляемость пулям ."
+      ],
+      "conditionalEffects": [
+        {
+          "property": "BulletArmorReduction",
+          "type": "BULLET_AND_MELEE_RESIST_REDUCTION",
+          "value": -13,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "weaponAmp": 0.8666666666666667
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_greater_withering_whip.properties.BulletArmorReduction"
+        }
       ],
       "partial": false,
       "unmodelled": []
@@ -5513,10 +7188,25 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Повышает урон от оружия , наносимый врагам, у которых больше 50% здоровья ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Weapon Damage"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BaseAttackDamagePercentBonus",
+          "type": "WEAPON_DAMAGE_INCREASE",
+          "value": 25,
+          "trigger": "enemy_health_above",
+          "label": "при здоровье цели выше порога",
+          "threshold": 50,
+          "effects": {
+            "weapon": 1.25
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_pristine_emblem.properties.BaseAttackDamagePercentBonus"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "2068250483": {
       "verified": true,
@@ -5546,6 +7236,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "У усиленного умения сокращается время перезарядки и увеличивается спиритическая мощь . Когда умение наносит урон, цель замораживается и получает дополнительный урон . Перезарядка отдельна для каждой цели."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -5575,6 +7266,23 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Когда враг получает спиритический урон , у него снижается сопротивляемость спиритизму ."
       ],
+      "conditionalEffects": [
+        {
+          "property": "TechArmorDamageReduction",
+          "type": "TECH_RESIST_REDUCTION",
+          "value": -8,
+          "trigger": "spirit_hit",
+          "label": "после духовного урона",
+          "threshold": null,
+          "effects": {
+            "spiritAmp": 0.5333333333333333
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_magic_vulnerability.properties.TechArmorDamageReduction"
+        }
+      ],
       "partial": false,
       "unmodelled": []
     },
@@ -5599,10 +7307,25 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Когда цель выстрелов находится на малой дальности , вы замедляете её передвижение выстрелами и наносите больше урона оружием ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "SlowPercent",
+          "type": "MOVEMENT_SPEED_SLOW_PERCENT",
+          "value": 20,
+          "trigger": "near_enemy",
+          "label": "на нужной дистанции от врага",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 0.8
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_close_quarter_combat.properties.SlowPercent"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "2108215830": {
       "verified": true,
@@ -5615,7 +7338,7 @@
         "bullets": 1.1333333333333333
       },
       "requires": [],
-      "explanation": "Даёт сопротивляемость пулям союзникам поблизости.",
+      "explanation": "Даёт сопротивляемость пулям союзникам поблизости. Повышает скорость передвижения и скорострельность у вас и союзников поблизости. У солдатов эффект удваивается.",
       "facts": [
         {
           "key": "BulletResist",
@@ -5632,13 +7355,42 @@
       ],
       "conditions": [
         "Активный предмет: эффект требует своевременного применения.",
-        "Даёт сопротивляемость пулям союзникам поблизости."
+        "Даёт сопротивляемость пулям союзникам поблизости. Повышает скорость передвижения и скорострельность у вас и союзников поблизости. У солдатов эффект удваивается."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Fire Rate",
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BonusFireRate",
+          "type": "FIRE_RATE",
+          "value": 26,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "weapon": 1.3
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_dps_aura.properties.BonusFireRate"
+        },
+        {
+          "property": "ActiveBonusMoveSpeed",
+          "type": "MOVEMENT_SPEED_MAX",
+          "value": 2.25,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "mobility": 1.125
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_dps_aura.properties.ActiveBonusMoveSpeed"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "2121044373": {
       "verified": true,
@@ -5661,6 +7413,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Постепенно заряжается спиритическим уроном , благодаря чему умения, наносящие более 165 ед. урона, причиняют дополнительный урон. Игнорирует сопротивляемость спиритизму."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -5685,6 +7438,7 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Накладывает безмолвие на выбранного врага. Часть всего урона , нанесённого в период безмолвия, накладывается на цель по окончании действия эффекта."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -5716,6 +7470,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Вы наносите больше урона оружием , когда цель находится за пределами минимальной дальности ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -5749,10 +7504,25 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Если у вас менее 50% здоровья , вы получаете дополнительную сопротивляемость спиритизму."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Spirit Resist"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "TechResistBelowThreshold",
+          "type": null,
+          "value": 15,
+          "trigger": "health_below",
+          "label": "при здоровье ниже порога",
+          "threshold": 50,
+          "effects": {
+            "spiritDefense": 1
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_tech_purge.properties.TechResistBelowThreshold"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "2221211450": {
       "verified": true,
@@ -5782,6 +7552,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "При использовании умения или предмета в бою вы получаете суммирующийся положительный эффект, повышающий вашу скорострельность и скорость перезарядки. Каждое новое использование продлевает действие эффекта."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -5846,6 +7617,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Стреляя в героев, вы накапливаете эффект, который повышает ваши скорострельность , спиритическую мощь и кражу здоровья спиритизмом ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -5877,6 +7649,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "При расходовании выносливости вы получаете невидимость без радиуса обнаружения. При нанесении удара ближнего боя в невидимом состоянии вы украдёте у цели сопротивляемость пулям и спиритизму ; цель также будет получать постепенный урон ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -5884,7 +7657,8 @@
       "verified": true,
       "source": "https://api.deadlock-api.com/v1/assets/items?language=english#upgrade_titan_round",
       "effects": {
-        "weapon": 4.033333333333333
+        "weaponUtility": 3.3333333333333335,
+        "weapon": 0.7
       },
       "counters": {},
       "requires": [],
@@ -5894,7 +7668,7 @@
           "key": "BonusClipSizePercent",
           "type": "AMMO_CLIP_SIZE_PERCENT",
           "value": 100,
-          "effect": "weapon"
+          "effect": "weaponUtility"
         },
         {
           "key": "BaseAttackDamagePercent",
@@ -5907,6 +7681,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Titanic Magazine"
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -5914,7 +7689,7 @@
       "verified": true,
       "source": "https://api.deadlock-api.com/v1/assets/items?language=english#upgrade_intensifying_clip",
       "effects": {
-        "weapon": 0.6666666666666666
+        "weaponUtility": 0.6666666666666666
       },
       "counters": {},
       "requires": [],
@@ -5924,17 +7699,32 @@
           "key": "BonusClipSizePercent",
           "type": "AMMO_CLIP_SIZE_PERCENT",
           "value": 20,
-          "effect": "weapon"
+          "effect": "weaponUtility"
         }
       ],
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
         "Увеличивает урон от оружия при непрерывной стрельбе."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Max Weapon Damage"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BaseAttackDamagePercentAtMaxDuration",
+          "type": "WEAPON_DAMAGE_INCREASE",
+          "value": 45,
+          "trigger": "firing",
+          "label": "при длительной стрельбе",
+          "threshold": null,
+          "effects": {
+            "weapon": 2.25
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_intensifying_clip.properties.BaseAttackDamagePercentAtMaxDuration"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "2407781327": {
       "verified": true,
@@ -5971,12 +7761,70 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Вы увеличиваетесь в размерах и получаете бонусы к сопротивляемости пулям и спиритизму , а также наносите повышенный урон ближнего боя . Враги поблизости замедляются и имеют сниженную скорость рывка ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Bullet Resist",
-        "Spirit Resist",
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BuffBulletResist",
+          "type": "BULLET_ARMOR_DAMAGE_RESIST",
+          "value": 35,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "bulletDefense": 2.3333333333333335
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_colossus.properties.BuffBulletResist"
+        },
+        {
+          "property": "BuffTechResist",
+          "type": "TECH_RESIST",
+          "value": 35,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "spiritDefense": 2.3333333333333335
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_colossus.properties.BuffTechResist"
+        },
+        {
+          "property": "SlowPercent",
+          "type": "MOVEMENT_SPEED_SLOW_PERCENT",
+          "value": 24,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 0.96
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_colossus.properties.SlowPercent"
+        },
+        {
+          "property": "GroundDashReductionPercent",
+          "type": "MOVEMENT_GROUND_DASH_REDUCTION_PERCENT",
+          "value": -22,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 0.88
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_colossus.properties.GroundDashReductionPercent"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "2417568017": {
       "verified": true,
@@ -5999,11 +7847,40 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Накладывает на союзника сопротивляемость спиритизму , сопротивляемость отриц. эффектам и ауру, которая наносит урон врагам пропорционально их макс. здоровью. Отрицательные эффекты, уже наложенные на цель, ослабляются. Можно применять на себя."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Spirit Resist",
-        "Debuff Resist"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "TechResist",
+          "type": "TECH_RESIST",
+          "value": 40,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "spiritDefense": 2.6666666666666665
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_discord.properties.TechResist"
+        },
+        {
+          "property": "StatusResistancePercent",
+          "type": "STATUS_RESISTANCE",
+          "value": 20,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "controlDefense": 1
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_discord.properties.StatusResistancePercent"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "2447176615": {
       "verified": true,
@@ -6033,6 +7910,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Уменьшает эффективность наложенного врагами снижения скорости передвижения ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -6045,7 +7923,7 @@
       },
       "counters": {},
       "requires": [],
-      "explanation": "Вы постепенно получаете души , пока живы.",
+      "explanation": "Вы постепенно получаете души , пока живы. Вылупив яйцо, вы получите души и постоянные бонусы . Чем дольше у вас яйцо, тем выше его ценность. При вылуплении яйца вы получите постоянный бонус за каждые 80 накопленных душ.",
       "facts": [
         {
           "key": "BonusSprintSpeed",
@@ -6062,8 +7940,9 @@
       ],
       "conditions": [
         "Активный предмет: эффект требует своевременного применения.",
-        "Вы постепенно получаете души , пока живы."
+        "Вы постепенно получаете души , пока живы. Вылупив яйцо, вы получите души и постоянные бонусы . Чем дольше у вас яйцо, тем выше его ценность. При вылуплении яйца вы получите постоянный бонус за каждые 80 накопленных душ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -6071,8 +7950,9 @@
       "verified": true,
       "source": "https://api.deadlock-api.com/v1/assets/items?language=english#upgrade_reinforcing_casings",
       "effects": {
-        "weapon": 2.066666666666667,
-        "health": 0.375
+        "weapon": 0.9,
+        "health": 0.375,
+        "weaponUtility": 1.1666666666666667
       },
       "counters": {},
       "requires": [],
@@ -6094,17 +7974,32 @@
           "key": "BonusClipSizePercent",
           "type": "AMMO_CLIP_SIZE_PERCENT",
           "value": 35,
-          "effect": "weapon"
+          "effect": "weaponUtility"
         }
       ],
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
         "Увеличивает вашу сопротивляемость пулям , когда ваши пули задевают героя. Каждый выстрел может дать только одну единицу этого эффекта."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Bullet Resist per Stack"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BulletResistPerStack",
+          "type": "BULLET_ARMOR_DAMAGE_RESIST",
+          "value": 2,
+          "trigger": "bullet_damage_taken",
+          "label": "после получения урона пулями",
+          "threshold": null,
+          "effects": {
+            "bulletDefense": 0.13333333333333333
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_reinforcing_casings.properties.BulletResistPerStack"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "2480592370": {
       "verified": true,
@@ -6128,6 +8023,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Ваши пули рикошетят во врагов рядом с целью, накладывая эффекты выстрелов и нанося долю изначального урона ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -6158,6 +8054,23 @@
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
         "Снижает сопротивляемость пулям и скорострельность у врагов поблизости. Если рядом только один вражеский герой, эффект удваивается ."
+      ],
+      "conditionalEffects": [
+        {
+          "property": "BulletArmorReduction",
+          "type": null,
+          "value": -10,
+          "trigger": "near_enemy",
+          "label": "на нужной дистанции от врага",
+          "threshold": null,
+          "effects": {
+            "weaponAmp": 0.6666666666666666
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_bullet_armor_reduction_aura.properties.BulletArmorReduction"
+        }
       ],
       "partial": false,
       "unmodelled": []
@@ -6197,6 +8110,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Boundless Spirit"
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -6209,19 +8123,76 @@
         "bullets": 1
       },
       "requires": [],
-      "explanation": "Вы мгновенно переходите в состояние пустоты и кратковременно становитесь неуязвимы.",
+      "explanation": "Вы мгновенно переходите в состояние пустоты и кратковременно становитесь неуязвимы. После этого вы получаете временные усиления:",
       "facts": [],
       "conditions": [
         "Активный предмет: эффект требует своевременного применения.",
-        "Вы мгновенно переходите в состояние пустоты и кратковременно становитесь неуязвимы."
+        "Вы мгновенно переходите в состояние пустоты и кратковременно становитесь неуязвимы. После этого вы получаете временные усиления:"
       ],
-      "partial": true,
-      "unmodelled": [
-        "Spirit Resist",
-        "Spirit Power",
-        "Float Speed",
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "TechResist",
+          "type": "TECH_RESIST",
+          "value": 30,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "spiritDefense": 2
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_self_bubble.properties.TechResist"
+        },
+        {
+          "property": "BonusSpirit",
+          "type": "TECH_POWER",
+          "value": 20,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "spirit": 1.3333333333333333
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_self_bubble.properties.BonusSpirit"
+        },
+        {
+          "property": "FloatMoveSpeed",
+          "type": "MOVE_SPEED_LIMIT",
+          "value": 2.5,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {},
+          "penalties": {},
+          "constraints": [
+            "скорость в особом состоянии ограничена 2.5 м/с"
+          ],
+          "source": "assets:upgrade_self_bubble.properties.FloatMoveSpeed"
+        },
+        {
+          "property": "BonusMoveSpeed",
+          "type": "MOVEMENT_SPEED_MAX",
+          "value": 3,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "mobility": 1.5
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_self_bubble.properties.BonusMoveSpeed"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "2566692615": {
       "verified": true,
@@ -6257,6 +8228,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Повышает эффективность вашего лечения ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -6285,6 +8257,38 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Наносимый вами спиритический урон снижает врагу получаемое лечение . Если вражеский герой умирает, находясь под действием этого эффекта, вы значительно восстанавливаете здоровье."
       ],
+      "conditionalEffects": [
+        {
+          "property": "HealAmpReceivePenaltyPercent",
+          "type": "HEAL_AMP_RECEIVE_PERCENT",
+          "value": -35,
+          "trigger": "spirit_hit",
+          "label": "после духовного урона",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "healing": 1.4
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_healbane.properties.HealAmpReceivePenaltyPercent"
+        },
+        {
+          "property": "HealAmpRegenPenaltyPercent",
+          "type": "HEAL_AMP_REGEN_PERCENT",
+          "value": -35,
+          "trigger": "spirit_hit",
+          "label": "после духовного урона",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "healing": 1.4
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_healbane.properties.HealAmpRegenPenaltyPercent"
+        }
+      ],
       "partial": false,
       "unmodelled": []
     },
@@ -6303,6 +8307,41 @@
       "conditions": [
         "Активный предмет: эффект требует своевременного применения.",
         "Проклинает врага: прерывает его действия, накладывает безмолвие и обезоруживание и запрещает использовать предметы . Снимает все положительные эффекты, кроме наложенных ультами . Наносимый вами урон снижен на время действия проклятия."
+      ],
+      "conditionalEffects": [
+        {
+          "property": "SkipFrames",
+          "type": "ANIMATION_FRAME_SKIP_RATE",
+          "value": 6,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "bullets": 1
+          },
+          "penalties": {},
+          "constraints": [
+            "ошеломление замедляет действия цели; это не прямой бонус урона"
+          ],
+          "source": "assets:upgrade_glitch.properties.SkipFrames"
+        },
+        {
+          "property": "OutgoingDamagePenaltyPercent",
+          "type": "ALL_DAMAGE_MULTIPLIER",
+          "value": -25,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {},
+          "penalties": {
+            "weapon": 1,
+            "spirit": 1
+          },
+          "constraints": [],
+          "source": "assets:upgrade_glitch.properties.OutgoingDamagePenaltyPercent"
+        }
       ],
       "partial": false,
       "unmodelled": []
@@ -6335,10 +8374,40 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Когда у вас более 65% здоровья , вы наносите дополнительный урон от оружия , а ваши пули снижают сопротивляемость пулям у врагов."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Weapon Damage"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BaseAttackDamagePercent",
+          "type": "WEAPON_DAMAGE_INCREASE",
+          "value": 35,
+          "trigger": "health_above",
+          "label": "при здоровье выше порога",
+          "threshold": 65,
+          "effects": {
+            "weapon": 1.75
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_hollow_point_rounds.properties.BaseAttackDamagePercent"
+        },
+        {
+          "property": "BulletArmorReduction",
+          "type": "BULLET_AND_MELEE_RESIST_REDUCTION",
+          "value": -10,
+          "trigger": "health_above",
+          "label": "при здоровье выше порога",
+          "threshold": 65,
+          "effects": {
+            "weaponAmp": 0.6666666666666666
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_hollow_point_rounds.properties.BulletArmorReduction"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "2717651715": {
       "verified": true,
@@ -6370,6 +8439,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Увеличивает длительность действия ваших умений и предметов."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -6394,11 +8464,40 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Ненадолго увеличивает ваши скорострельность и скорость передвижения при попадании выстрелом по герою."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Fire Rate",
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "ActivatedFireRate",
+          "type": "FIRE_RATE",
+          "value": 32,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {
+            "weapon": 1.6
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_burst_fire.properties.ActivatedFireRate"
+        },
+        {
+          "property": "BonusMoveSpeed",
+          "type": "MOVEMENT_SPEED_MAX",
+          "value": 1.25,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {
+            "mobility": 0.625
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_burst_fire.properties.BonusMoveSpeed"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "2800629741": {
       "verified": true,
@@ -6435,10 +8534,25 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Призывает волшебный ковёр, который уносит вас прочь. Вам даётся невосприимчивость к замедлениям на время полёта, но любое ваше действие его прервёт. Во время призыва нельзя использовать умения."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Bonus Fly Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "FlyMoveSpeed",
+          "type": "MOVEMENT_SPEED_MAX",
+          "value": 7,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "mobility": 3.5
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_magic_carpet.properties.FlyMoveSpeed"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "2820116164": {
       "verified": true,
@@ -6461,11 +8575,40 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Применив ульт , вы получаете барьер и временный бонус к спиритической мощи ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Spirit Power",
-        "Barrier"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "TechPower",
+          "type": "TECH_POWER",
+          "value": 40,
+          "trigger": "ultimate",
+          "label": "после применения ультимейта",
+          "threshold": null,
+          "effects": {
+            "spirit": 2.6666666666666665
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_diviners_kevlar.properties.TechPower"
+        },
+        {
+          "property": "CombatBarrier",
+          "type": "BARRIER_HEALTH",
+          "value": 1000,
+          "trigger": "ultimate",
+          "label": "после применения ультимейта",
+          "threshold": null,
+          "effects": {
+            "barrier": 3.3333333333333335
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_diviners_kevlar.properties.CombatBarrier"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "2829638276": {
       "verified": true,
@@ -6494,6 +8637,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Extra Regen"
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -6525,6 +8669,23 @@
         "Активный предмет: эффект требует своевременного применения.",
         "У выбранной цели снижаются скорострельность и сопротивляемость пулям ."
       ],
+      "conditionalEffects": [
+        {
+          "property": "BulletArmorReduction",
+          "type": "BULLET_AND_MELEE_RESIST_REDUCTION",
+          "value": -8,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "weaponAmp": 0.5333333333333333
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_withering_whip.properties.BulletArmorReduction"
+        }
+      ],
       "partial": false,
       "unmodelled": []
     },
@@ -6533,11 +8694,14 @@
       "source": "https://api.deadlock-api.com/v1/assets/items?language=english#upgrade_resonant_healing",
       "effects": {
         "mobility": 0.875,
-        "health": 0.45
+        "health": 0.45,
+        "sustain": 1.5
       },
       "counters": {},
-      "requires": [],
-      "explanation": "В бою вы при применении умения вы получаете лечение и кратковременный бонус к скорости передвижения .",
+      "requires": [
+        "spiritDamage"
+      ],
+      "explanation": "В бою вы при применении умения вы получаете лечение и кратковременный бонус к скорости передвижения . Нанесение спиритического урона вражеским героям даёт вам бонусное восстановление . Накапливается при нанесении урона разным героям.",
       "facts": [
         {
           "key": "BonusMoveSpeed",
@@ -6554,8 +8718,9 @@
       ],
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
-        "В бою вы при применении умения вы получаете лечение и кратковременный бонус к скорости передвижения ."
+        "В бою вы при применении умения вы получаете лечение и кратковременный бонус к скорости передвижения . Нанесение спиритического урона вражеским героям даёт вам бонусное восстановление . Накапливается при нанесении урона разным героям."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -6580,6 +8745,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Усиливает выбранное умение, повышая время его действия ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -6617,6 +8783,7 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Лечит вас и союзников поблизости."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -6653,6 +8820,23 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Снижает сопротивляемость пулям у врагов, которым вы наносите спиритический урон ."
       ],
+      "conditionalEffects": [
+        {
+          "property": "BulletArmorReduction",
+          "type": "BULLET_AND_MELEE_RESIST_REDUCTION",
+          "value": -10,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {
+            "weaponAmp": 0.6666666666666666
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_bullet_resist_shredder.properties.BulletArmorReduction"
+        }
+      ],
       "partial": false,
       "unmodelled": []
     },
@@ -6678,6 +8862,23 @@
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
         "Нанося спиритический урон , вы получаете накапливаемое повышение спиритизма , которое увеличивает спиритический урон , наносимый вами цели."
+      ],
+      "conditionalEffects": [
+        {
+          "property": "TechArmorDamageReduction",
+          "type": "TECH_RESIST_REDUCTION",
+          "value": -8,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {
+            "spiritAmp": 0.5333333333333333
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_escalating_exposure.properties.TechArmorDamageReduction"
+        }
       ],
       "partial": false,
       "unmodelled": []
@@ -6719,6 +8920,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Когда вы получаете большой спиритический урон от врагов, у вашего случайно выбранного умения сокращается время перезарядки ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -6750,6 +8952,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "При каждой помощи или убийстве вы получаете бонус к скорости бега и дальности умений , а ещё у вас начинают пассивно генерироваться души . Данный эффект накапливается и не обнуляется в случае смерти."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -6774,6 +8977,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "High-Velocity Rounds"
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -6807,10 +9011,25 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Если у вас менее 50% здоровья , вы получаете дополнительную сопротивляемость пулям ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Bullet Resist"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BulletResistBelowThreshold",
+          "type": null,
+          "value": 15,
+          "trigger": "health_below",
+          "label": "при здоровье ниже порога",
+          "threshold": 50,
+          "effects": {
+            "bulletDefense": 1
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_improved_bullet_armor.properties.BulletResistBelowThreshold"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "3144988365": {
       "verified": true,
@@ -6841,6 +9060,38 @@
       "conditions": [
         "Активный предмет: эффект требует своевременного применения.",
         "Вы постепенно наносите урон цели на основе её текущего здоровья. Урон от «Разложения» не может убить и не влияет на срабатывание предметов."
+      ],
+      "conditionalEffects": [
+        {
+          "property": "HealAmpReceivePenaltyPercent",
+          "type": "HEAL_AMP_RECEIVE_PERCENT",
+          "value": -55,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "healing": 2.2
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_rupture.properties.HealAmpReceivePenaltyPercent"
+        },
+        {
+          "property": "HealAmpRegenPenaltyPercent",
+          "type": "HEAL_AMP_REGEN_PERCENT",
+          "value": -55,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "healing": 2.2
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_rupture.properties.HealAmpRegenPenaltyPercent"
+        }
       ],
       "partial": false,
       "unmodelled": []
@@ -6873,11 +9124,70 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Совершив лёгкий или тяжёлый удар ближнего боя по герою, вы нанесёте ему дополнительный спиритический урон , а также украдёте его сопротивляемость спиритизму и спиритическую мощь . При нанесении лёгких ударов ближнего боя сила эффектов снижается на 30%."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Spirit Resist Steal",
-        "Spirit Power Steal"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "TechArmorDamageReduction",
+          "type": "TECH_RESIST_REDUCTION",
+          "value": -12,
+          "trigger": "melee_hit",
+          "label": "после попадания в ближнем бою",
+          "threshold": null,
+          "effects": {
+            "spiritAmp": 0.8
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_spirit_snatch.properties.TechArmorDamageReduction"
+        },
+        {
+          "property": "TechArmorGain",
+          "type": "TECH_RESIST",
+          "value": 12,
+          "trigger": "melee_hit",
+          "label": "после попадания в ближнем бою",
+          "threshold": null,
+          "effects": {
+            "spiritDefense": 0.8
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_spirit_snatch.properties.TechArmorGain"
+        },
+        {
+          "property": "TechPowerReduction",
+          "type": "TECH_POWER",
+          "value": -25,
+          "trigger": "melee_hit",
+          "label": "после попадания в ближнем бою",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "spirit": 1.6666666666666667
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_spirit_snatch.properties.TechPowerReduction"
+        },
+        {
+          "property": "TechPowerGain",
+          "type": "TECH_POWER",
+          "value": 25,
+          "trigger": "melee_hit",
+          "label": "после попадания в ближнем бою",
+          "threshold": null,
+          "effects": {
+            "spirit": 1.6666666666666667
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_spirit_snatch.properties.TechPowerGain"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "3261353684": {
       "verified": true,
@@ -6907,6 +9217,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Сокращает время перезарядки ваших умений."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -6918,7 +9229,7 @@
       },
       "counters": {},
       "requires": [],
-      "explanation": "Даёт бесконечный боезапас.",
+      "explanation": "Даёт бесконечный боезапас. Ваши пули получают шанс стать неотвратимыми — такие прошивают врагов и игнорируют их сопротивляемость пулям .",
       "facts": [
         {
           "key": "BonusFireRate",
@@ -6929,8 +9240,9 @@
       ],
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
-        "Даёт бесконечный боезапас."
+        "Даёт бесконечный боезапас. Ваши пули получают шанс стать неотвратимыми — такие прошивают врагов и игнорируют их сопротивляемость пулям ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -6950,10 +9262,25 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Телепортирует вас вперёд и увеличивает сопротивляемость пулям ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Bullet Resist"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BulletResist",
+          "type": "BULLET_ARMOR_DAMAGE_RESIST",
+          "value": 30,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "bulletDefense": 2
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_warp_stone.properties.BulletResist"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "3294954488": {
       "verified": true,
@@ -6989,10 +9316,25 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Выбранное умение получает повышенную дальность . Нанесение урона этим умением увеличивает урон от оружия за каждого задетого героя . Слабее действует на существ, не являющихся героями."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Weapon Damage per Stack"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "WeaponPowerPerStack",
+          "type": "WEAPON_DAMAGE_INCREASE",
+          "value": 20,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {
+            "weapon": 1
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_bulletshredimbue.properties.WeaponPowerPerStack"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "3331811235": {
       "verified": true,
@@ -7015,6 +9357,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Вы наносите больше урона оружием , когда цель находится за пределами минимальной дальности ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -7048,6 +9391,7 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Временно подавляет отрицательные эффекты и даёт вам невосприимчивость к оглушению, безмолвию, сну, оцепенению и обезоруживанию . Нельзя использовать во время оглушения или сна ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -7074,6 +9418,7 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Автоматически выстреливает в любого врага, который наносит вам урон умением или оружием."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -7088,7 +9433,7 @@
         "bullets": 1
       },
       "requires": [],
-      "explanation": "Cheat Death",
+      "explanation": "Если вам наносят смертельный урон, вы получаете временное бессмертие , а также избавляетесь от всех отрицательных эффектов, кроме оглушения . В этом состоянии вы наносите уменьшенный урон , и имеете сниженное лечение .",
       "facts": [
         {
           "key": "BonusHealth",
@@ -7105,7 +9450,55 @@
       ],
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
-        "Cheat Death"
+        "Если вам наносят смертельный урон, вы получаете временное бессмертие , а также избавляетесь от всех отрицательных эффектов, кроме оглушения . В этом состоянии вы наносите уменьшенный урон , и имеете сниженное лечение ."
+      ],
+      "conditionalEffects": [
+        {
+          "property": "DeathImmunityDamageReduction",
+          "type": "ALL_DAMAGE_MULTIPLIER",
+          "value": -60,
+          "trigger": "lethal_damage",
+          "label": "при смертельном уроне",
+          "threshold": null,
+          "effects": {},
+          "counters": {},
+          "penalties": {
+            "weapon": 2.4,
+            "spirit": 2.4
+          },
+          "constraints": [],
+          "source": "assets:upgrade_cheat_death.properties.DeathImmunityDamageReduction"
+        },
+        {
+          "property": "HealAmpReceivePenaltyPercent",
+          "type": "HEAL_AMP_RECEIVE_PERCENT",
+          "value": -60,
+          "trigger": "lethal_damage",
+          "label": "при смертельном уроне",
+          "threshold": null,
+          "effects": {},
+          "counters": {},
+          "penalties": {
+            "sustain": 2.4
+          },
+          "constraints": [],
+          "source": "assets:upgrade_cheat_death.properties.HealAmpReceivePenaltyPercent"
+        },
+        {
+          "property": "HealAmpRegenPenaltyPercent",
+          "type": "HEAL_AMP_REGEN_PERCENT",
+          "value": -60,
+          "trigger": "lethal_damage",
+          "label": "при смертельном уроне",
+          "threshold": null,
+          "effects": {},
+          "counters": {},
+          "penalties": {
+            "sustain": 2.4
+          },
+          "constraints": [],
+          "source": "assets:upgrade_cheat_death.properties.HealAmpRegenPenaltyPercent"
+        }
       ],
       "partial": false,
       "unmodelled": []
@@ -7138,6 +9531,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Sprint Boots"
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -7152,7 +9546,7 @@
         "bullets": 0.4
       },
       "requires": [],
-      "explanation": "Fleetfoot",
+      "explanation": "Даёт бонус к скорости передвижения и сопротивляемости замедлению . Убирает снижение скорости передвижения во время стрельбы.",
       "facts": [
         {
           "key": "BulletResist",
@@ -7169,12 +9563,27 @@
       ],
       "conditions": [
         "Активный предмет: эффект требует своевременного применения.",
-        "Fleetfoot"
+        "Даёт бонус к скорости передвижения и сопротивляемости замедлению . Убирает снижение скорости передвижения во время стрельбы."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "ActiveBonusMoveSpeed",
+          "type": "MOVEMENT_SPEED_MAX",
+          "value": 3,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "mobility": 1.5
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_fleetfoot_boots.properties.ActiveBonusMoveSpeed"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "3491236900": {
       "verified": true,
@@ -7197,6 +9606,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Даёт шанс нейтрализовать либо наносимый пулями урон от оружия , либо эффекты, накладываемые на вас пулями при попадании ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -7214,11 +9624,40 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Блокирует следующее наложение на вас оглушения, сковывания, обездвиживания, сна или блокировки передвижения и даёт вам неудержимость . Вы также получаете барьер и увеличенную скорость передвижения ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Barrier",
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "CombatBarrier",
+          "type": "BARRIER_HEALTH",
+          "value": 500,
+          "trigger": "control_taken",
+          "label": "после вражеского контроля",
+          "threshold": null,
+          "effects": {
+            "barrier": 1.6666666666666667
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_cloak_of_opportunity.properties.CombatBarrier"
+        },
+        {
+          "property": "BonusMoveSpeed",
+          "type": "MOVEMENT_SPEED_MAX",
+          "value": 3,
+          "trigger": "control_taken",
+          "label": "после вражеского контроля",
+          "threshold": null,
+          "effects": {
+            "mobility": 1.5
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_cloak_of_opportunity.properties.BonusMoveSpeed"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "3568217437": {
       "verified": true,
@@ -7238,10 +9677,86 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Ваша следующая пуля накладывает мощный отрицательный эффект, который снижает урон, лечение и скорость передвижения врага. Кроме того, она наносит доп. спиритический урон пропорционально текущему здоровью цели. Пуля имеет больший размер и прошивает цели насквозь."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "OutgoingDamagePenaltyPercent",
+          "type": "ALL_DAMAGE_MULTIPLIER",
+          "value": -40,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "bullets": 1.6,
+            "spirit": 1.6
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_eldritch_shot.properties.OutgoingDamagePenaltyPercent"
+        },
+        {
+          "property": "HealAmpReceivePenaltyPercent",
+          "type": "HEAL_AMP_RECEIVE_PERCENT",
+          "value": -40,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "healing": 1.6
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_eldritch_shot.properties.HealAmpReceivePenaltyPercent"
+        },
+        {
+          "property": "HealAmpRegenPenaltyPercent",
+          "type": "HEAL_AMP_REGEN_PERCENT",
+          "value": -40,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "healing": 1.6
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_eldritch_shot.properties.HealAmpRegenPenaltyPercent"
+        },
+        {
+          "property": "MovementSpeedSlow",
+          "type": "MOVEMENT_SPEED_SLOW_PERCENT",
+          "value": 32,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 1.28
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_eldritch_shot.properties.MovementSpeedSlow"
+        },
+        {
+          "property": "GroundDashReductionPercent",
+          "type": "MOVEMENT_GROUND_DASH_REDUCTION_PERCENT",
+          "value": -36,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 1.44
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_eldritch_shot.properties.GroundDashReductionPercent"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "3577481646": {
       "verified": true,
@@ -7251,7 +9766,7 @@
       },
       "counters": {},
       "requires": [],
-      "explanation": "Mystic Reverb",
+      "explanation": "Усиливает выбранное умение: оно получает кражу здоровья , замедляет цель и после короткой задержки наносит врагам вокруг неё долю от нанесённого ей урона .",
       "facts": [
         {
           "key": "AbilityLifestealPercentHero",
@@ -7268,14 +9783,57 @@
       ],
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
-        "Mystic Reverb"
+        "Усиливает выбранное умение: оно получает кражу здоровья , замедляет цель и после короткой задержки наносит врагам вокруг неё долю от нанесённого ей урона ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Damage",
-        "Move Speed",
-        "Current Health Bonus Damage"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "TechDamagePercent",
+          "type": "TECH_DAMAGE_MULTIPLIER",
+          "value": 50,
+          "trigger": "spirit_burst",
+          "label": "при достаточном разовом духовном уроне",
+          "threshold": null,
+          "effects": {
+            "spirit": 2
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_mystic_reverb.properties.TechDamagePercent"
+        },
+        {
+          "property": "MovementSpeedSlow",
+          "type": "MOVEMENT_SPEED_SLOW_PERCENT",
+          "value": 32,
+          "trigger": "spirit_burst",
+          "label": "при достаточном разовом духовном уроне",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 1.28
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_mystic_reverb.properties.MovementSpeedSlow"
+        },
+        {
+          "property": "MaxHealthDamage",
+          "type": null,
+          "value": 10,
+          "trigger": "spirit_burst",
+          "label": "при достаточном разовом духовном уроне",
+          "threshold": null,
+          "effects": {
+            "spirit": 1
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_mystic_reverb.properties.MaxHealthDamage"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "3585132399": {
       "verified": true,
@@ -7285,7 +9843,7 @@
       },
       "counters": {},
       "requires": [],
-      "explanation": "Если в течение некоторого времени не получать урон, вам даётся восстановление здоровья.",
+      "explanation": "Если в течение некоторого времени не получать урон, вам даётся восстановление здоровья. Увеличивает вашу скорость передвижения , когда у вас больше 75% здоровья .",
       "facts": [
         {
           "key": "BonusHealth",
@@ -7296,12 +9854,27 @@
       ],
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
-        "Если в течение некоторого времени не получать урон, вам даётся восстановление здоровья."
+        "Если в течение некоторого времени не получать урон, вам даётся восстановление здоровья. Увеличивает вашу скорость передвижения , когда у вас больше 75% здоровья ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BonusMoveSpeed",
+          "type": "MOVEMENT_SPEED_MAX",
+          "value": 1.5,
+          "trigger": "health_above",
+          "label": "при здоровье выше порога",
+          "threshold": 75,
+          "effects": {
+            "mobility": 0.75
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_chonky.properties.BonusMoveSpeed"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "3633614685": {
       "verified": true,
@@ -7324,6 +9897,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Extra Health"
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -7344,10 +9918,25 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Ваше оружие начинает совершать мультивыстрелы . Попадание в более чем одного героя за выстрел даёт накапливаемый бонус к урону от оружия . При каждом мультивыстреле попасть в определённую цель можно только единожды."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Weapon Multishot"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BulletSplitShot",
+          "type": null,
+          "value": 5,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {
+            "farm": 1
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_split_shot.properties.BulletSplitShot"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "3696726732": {
       "verified": true,
@@ -7364,6 +9953,38 @@
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
         "От ваших пуль у врагов накапливается эффект кровотечения , который наносит им постепенный урон в процентах от их макс. здоровья , а также снижает им получаемое лечение ."
+      ],
+      "conditionalEffects": [
+        {
+          "property": "HealAmpReceivePenaltyPercent",
+          "type": "HEAL_AMP_RECEIVE_PERCENT",
+          "value": -40,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "healing": 1.6
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_toxic_bullets.properties.HealAmpReceivePenaltyPercent"
+        },
+        {
+          "property": "HealAmpRegenPenaltyPercent",
+          "type": "HEAL_AMP_REGEN_PERCENT",
+          "value": -40,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "healing": 1.6
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_toxic_bullets.properties.HealAmpRegenPenaltyPercent"
+        }
       ],
       "partial": false,
       "unmodelled": []
@@ -7384,11 +10005,40 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Накладывает мощнейшее очищение, которое восстанавливает силы всех ваших союзников."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Stamina Recovery",
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "StaminaCooldownReduction",
+          "type": "STAMINA_REGEN_PER_SECOND_PERCENTAGE",
+          "value": 100,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "mobility": 4
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_celestial_guidance.properties.StaminaCooldownReduction"
+        },
+        {
+          "property": "BuffMoveSpeedBonus",
+          "type": "MOVEMENT_SPEED_MAX",
+          "value": 5,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "mobility": 2.5
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_celestial_guidance.properties.BuffMoveSpeedBonus"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "3731635960": {
       "verified": true,
@@ -7401,7 +10051,7 @@
         "spirit": 0.6666666666666666
       },
       "requires": [],
-      "explanation": "Dispel Magic",
+      "explanation": "Снимает с вас все отрицательные эффекты, кроме наложенных ультами. Если был снят хоть один эффект, вы лечите себя и получаете бонус к скорости передвижения . Нельзя применять в состоянии оглушения и сна.",
       "facts": [
         {
           "key": "TechResist",
@@ -7412,12 +10062,27 @@
       ],
       "conditions": [
         "Активный предмет: эффект требует своевременного применения.",
-        "Dispel Magic"
+        "Снимает с вас все отрицательные эффекты, кроме наложенных ультами. Если был снят хоть один эффект, вы лечите себя и получаете бонус к скорости передвижения . Нельзя применять в состоянии оглушения и сна."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "ActiveBonusMoveSpeed",
+          "type": "MOVEMENT_SPEED_MAX",
+          "value": 2,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {
+            "mobility": 1
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_reduce_debuff_duration.properties.ActiveBonusMoveSpeed"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "3776945997": {
       "verified": true,
@@ -7447,6 +10112,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Extra Charge"
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -7480,10 +10146,40 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Ваши пули накладывают на врагов накапливаемое снижение скорости передвижения ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "SlowPercent",
+          "type": "MOVEMENT_SPEED_SLOW_PERCENT",
+          "value": 24,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 0.96
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_weighted_shots.properties.SlowPercent"
+        },
+        {
+          "property": "GroundDashReductionPercent",
+          "type": "MOVEMENT_GROUND_DASH_REDUCTION_PERCENT",
+          "value": -20,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 0.8
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_weighted_shots.properties.GroundDashReductionPercent"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "3812615317": {
       "verified": true,
@@ -7508,10 +10204,25 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Вы выпускаете расширяющуюся леденящую волну, которая наносит спиритический урон и замораживает , а затем замедляет задетые цели. У замедленных жертв замораживается восстановление выносливости"
       ],
-      "partial": true,
-      "unmodelled": [
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "SlowPercent",
+          "type": "MOVEMENT_SPEED_SLOW_PERCENT",
+          "value": 48,
+          "trigger": "active",
+          "label": "при своевременном применении активного предмета",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "escape": 1.92
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_arctic_blast.properties.SlowPercent"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "3862866912": {
       "verified": true,
@@ -7535,6 +10246,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Следующий выстрел вас излечит (количество будет зависеть от того, во что или кого вы попадёте)."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -7559,6 +10271,68 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Попадание в голову уменьшает жертве сопротивляемость пулям и спиритизму , а также получаемое лечение ."
       ],
+      "conditionalEffects": [
+        {
+          "property": "BulletResistReduction",
+          "type": "BULLET_AND_MELEE_RESIST_REDUCTION",
+          "value": -16,
+          "trigger": "headshot",
+          "label": "при попадании в голову",
+          "threshold": null,
+          "effects": {
+            "weaponAmp": 1.0666666666666667
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_banshee_slugs.properties.BulletResistReduction"
+        },
+        {
+          "property": "MagicResistReduction",
+          "type": "TECH_RESIST_REDUCTION",
+          "value": -16,
+          "trigger": "headshot",
+          "label": "при попадании в голову",
+          "threshold": null,
+          "effects": {
+            "spiritAmp": 1.0666666666666667
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_banshee_slugs.properties.MagicResistReduction"
+        },
+        {
+          "property": "HealAmpReceivePenaltyPercent",
+          "type": "HEAL_AMP_RECEIVE_PERCENT",
+          "value": -40,
+          "trigger": "headshot",
+          "label": "при попадании в голову",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "healing": 1.6
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_banshee_slugs.properties.HealAmpReceivePenaltyPercent"
+        },
+        {
+          "property": "HealAmpRegenPenaltyPercent",
+          "type": "HEAL_AMP_REGEN_PERCENT",
+          "value": -40,
+          "trigger": "headshot",
+          "label": "при попадании в голову",
+          "threshold": null,
+          "effects": {},
+          "counters": {
+            "healing": 1.6
+          },
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_banshee_slugs.properties.HealAmpRegenPenaltyPercent"
+        }
+      ],
       "partial": false,
       "unmodelled": []
     },
@@ -7567,7 +10341,8 @@
       "source": "https://api.deadlock-api.com/v1/assets/items?language=english#upgrade_ethereal_bullets",
       "effects": {
         "spirit": 0.4666666666666667,
-        "weapon": 1.7666666666666666
+        "weapon": 1.1,
+        "weaponUtility": 0.6666666666666666
       },
       "counters": {},
       "requires": [],
@@ -7589,13 +10364,14 @@
           "key": "BonusClipSizePercent",
           "type": "AMMO_CLIP_SIZE_PERCENT",
           "value": 20,
-          "effect": "weapon"
+          "effect": "weaponUtility"
         }
       ],
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
         "Усиленное умение постепенно заряжается, благодаря чему наносит доп. спиритический урон , повышает скорострельность и перезаряжает оружие при использовании. До следующей перезарядки оружия ваши пули наносят доп. спиритический урон , пропорциональный вашей спиритической мощи."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -7629,6 +10405,7 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Снимает с врагов все положительные эффекты, а также не даёт им использовать выносливость и лечение."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -7676,6 +10453,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Если у вас более 65% здоровья , вам даётся дополнительная спиритическая мощь и сокращённое время перезарядки умений ."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -7706,11 +10484,40 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "При совершении рывка с прыжком вы получаете бонус к скорострельности и боезапасу до следующей перезарядки. Действует до 7 сек."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Fire Rate",
-        "Temporary Ammo"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BonusFireRate",
+          "type": "FIRE_RATE",
+          "value": 25,
+          "trigger": "dash",
+          "label": "после рывка",
+          "threshold": null,
+          "effects": {
+            "weapon": 1.25
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_kinetic_sash.properties.BonusFireRate"
+        },
+        {
+          "property": "BonusClipSize",
+          "type": "AMMO_CLIP_SIZE",
+          "value": 6,
+          "trigger": "dash",
+          "label": "после рывка",
+          "threshold": null,
+          "effects": {
+            "weapon": 0.3
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_kinetic_sash.properties.BonusClipSize"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "4050602737": {
       "verified": true,
@@ -7722,7 +10529,7 @@
       },
       "counters": {},
       "requires": [],
-      "explanation": "Даёт вам и союзникам мощную спиритическую ауру. Сила ауры меньше для союзников.",
+      "explanation": "Даёт вам и союзникам мощную спиритическую ауру. Сила ауры меньше для союзников. При нанесении значительного урона вражескому герою в течение 5 сек. вы и союзники поблизости получите лечение.",
       "facts": [
         {
           "key": "TechPower",
@@ -7751,8 +10558,9 @@
       ],
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
-        "Даёт вам и союзникам мощную спиритическую ауру. Сила ауры меньше для союзников."
+        "Даёт вам и союзникам мощную спиритическую ауру. Сила ауры меньше для союзников. При нанесении значительного урона вражескому герою в течение 5 сек. вы и союзники поблизости получите лечение."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -7784,10 +10592,25 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Ваше следующее попадание в голову вражескому герою нанесёт ему доп. урон от оружия . Вы также получите лечение , а ваша скорость передвижения ненадолго повысится."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Move Speed"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BonusMoveSpeed",
+          "type": "MOVEMENT_SPEED_MAX",
+          "value": 1.75,
+          "trigger": "headshot",
+          "label": "при попадании в голову",
+          "threshold": null,
+          "effects": {
+            "mobility": 0.875
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_headhunter.properties.BonusMoveSpeed"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "4075861416": {
       "verified": true,
@@ -7797,7 +10620,7 @@
       },
       "counters": {},
       "requires": [],
-      "explanation": "Spirit Rend",
+      "explanation": "Ваши пули накладывают на цель эффект, снижающий её сопротивляемость спиритизму и дающий вам и вашим союзникам кражу здоровья жертвы спиритизмом . Попадания в голову ещё больше снижают сопротивляемость спиритизму у жертвы.",
       "facts": [
         {
           "key": "BonusHealth",
@@ -7808,12 +10631,57 @@
       ],
       "conditions": [
         "Проверь условия срабатывания пассивного эффекта.",
-        "Spirit Rend"
+        "Ваши пули накладывают на цель эффект, снижающий её сопротивляемость спиритизму и дающий вам и вашим союзникам кражу здоровья жертвы спиритизмом . Попадания в голову ещё больше снижают сопротивляемость спиритизму у жертвы."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Spirit Lifesteal"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "AbilityLifestealPercentHero",
+          "type": "TECH_DAMAGE_TAKEN_HEALS_ATTACKER",
+          "value": 10,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {
+            "spiritSustain": 0.5
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_spellslinger_headshots.properties.AbilityLifestealPercentHero"
+        },
+        {
+          "property": "MagicResistReduction",
+          "type": "TECH_RESIST_REDUCTION",
+          "value": -7,
+          "trigger": "headshot",
+          "label": "при попадании в голову",
+          "threshold": null,
+          "effects": {
+            "spiritAmp": 0.4666666666666667
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_spellslinger_headshots.properties.MagicResistReduction"
+        },
+        {
+          "property": "TechArmorDamageReduction",
+          "type": "TECH_RESIST_REDUCTION",
+          "value": -8,
+          "trigger": "bullet_hit",
+          "label": "после попаданий пулями",
+          "threshold": null,
+          "effects": {
+            "spiritAmp": 0.5333333333333333
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_spellslinger_headshots.properties.TechArmorDamageReduction"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     },
     "4104549924": {
       "verified": true,
@@ -7843,6 +10711,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Swift Striker"
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -7874,6 +10743,7 @@
         "Активный предмет: эффект требует своевременного применения.",
         "Уменьшает размер модели и даёт цели бонус к скорости передвижения . Позволяет цели использовать туннели . Можно применить на себя."
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -7904,6 +10774,7 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "Extra Stamina"
       ],
+      "conditionalEffects": [],
       "partial": false,
       "unmodelled": []
     },
@@ -7928,10 +10799,26 @@
         "Проверь условия срабатывания пассивного эффекта.",
         "В случае успешного парирования атаки вражеского героя вы лечите себя на объём, соответствующий парированному урону, отражаете этот урон на цель и получаете временный бонус к наносимому урону ."
       ],
-      "partial": true,
-      "unmodelled": [
-        "Bonus Damage"
-      ]
+      "conditionalEffects": [
+        {
+          "property": "BonusDamagePercent",
+          "type": "ALL_DAMAGE_MULTIPLIER",
+          "value": 30,
+          "trigger": "parry",
+          "label": "после успешного парирования",
+          "threshold": null,
+          "effects": {
+            "weapon": 1.2,
+            "spirit": 1.2
+          },
+          "counters": {},
+          "penalties": {},
+          "constraints": [],
+          "source": "assets:upgrade_melee_rebuttal.properties.BonusDamagePercent"
+        }
+      ],
+      "partial": false,
+      "unmodelled": []
     }
   }
 }

@@ -1,7 +1,9 @@
 import{test}from'node:test';import assert from'node:assert/strict';import fs from'node:fs';
-import '../src/decision.js';import '../src/live.js';
+import '../src/conditions.js';import '../src/decision.js';import '../src/live.js';
 const data=JSON.parse(fs.readFileSync(new URL('../data/snapshot.json',import.meta.url)));
 data.knowledge=JSON.parse(fs.readFileSync(new URL('../data/knowledge.json',import.meta.url)));
+const flow=JSON.parse(fs.readFileSync(new URL('../data/purchase-flow.json',import.meta.url)));
+data.purchaseFlow=flow.heroes;
 const available=data.items.filter(i=>i.tier<=4).map(i=>i.id);
 test('recorded native purchases and hero changes remain coherent with the independent planner',()=>{
  const receipt=JSON.parse(fs.readFileSync(new URL('./fixtures/native-6839.json',import.meta.url))),e=engine();
@@ -28,4 +30,18 @@ test('covering healing suppresses redundant antiheal recommendations rather than
  const after=e.evaluate(data,{...raw(1,enemy),purchased:[2603935618]},{enabled:true},1000);
  assert(!after.recommendations.some(i=>i.id===2603935618));
  assert(after.removed.includes(2603935618)||!before.recommendations.some(i=>i.id===2603935618));
+});
+test('ranked openings follow the hero and advance through full prices for the entire roster',()=>{
+  assert.equal(flow.patchDate,data.patch.date);
+  const starters={Abrams:'Close Quarters',Haze:'Rapid Rounds',Infernus:'Extra Spirit',Pocket:'Mystic Burst'};
+  for(const hero of data.heroes){
+    assert(data.purchaseFlow[hero.id].matches>=150,hero.name);
+    for(const [seconds,ownSouls,budget] of [[210,3000,1600],[780,10000,3200],[1600,21000,6400]]){
+      const r=engine().evaluate(data,{...raw(hero.id),seconds,ownSouls,budget},{enabled:true},1000);
+      const items=r.recommendations;
+      assert(items.length>=3,hero.name+' @ '+seconds);
+      assert(items.every((i,j)=>i.cost<=i.fullCost&&(!j||i.fullCost>=items[j-1].fullCost)),hero.name);
+      if(seconds===210&&starters[hero.name])assert(items.slice(0,3).some(i=>i.name===starters[hero.name]),hero.name);
+    }
+  }
 });

@@ -16,6 +16,11 @@ class Panel {
   GetAttributeInt(k,fallback){return this[k]??fallback;}
 }
 function label(id,text,classes=[]){return new Panel(id,'Label',classes,text);}
+test('current health is read from the local health container and unavailable labels stay unknown',()=>{
+ const f=fixture();assert.equal(f.adapter.read().healthPercent,null);
+ f.root.add(new Panel('health_and_abilities_container').add(label('','400',['currentHealthLabel']),label('','/ 1 000',['totalHealthLabel'])));
+ assert.equal(f.adapter.read().healthPercent,40);
+});
 function fixture() {
   const local=new Panel('player1','CitadelHudTopBarPlayer',['LocalPlayer']).add(label('','Инфернус',['HeroName']),label('SoulsValue','4,2k'));
   const enemy=new Panel('player2','CitadelHudTopBarPlayer',['IsInLocalPlayerLane']).add(label('','Haze',['HeroName']),label('SoulsValue','6000'));
