@@ -74,7 +74,8 @@
         var decision=typeof $!=='undefined'?$.ShopmarkDecision:globalThis.ShopmarkDecision;
         if(!decision)return {status:'waiting',reason:'Не загружен модуль механик',recommendations:[]};
         var state={heroId:raw.heroId,purchased:inventory,enemies:enemies,ownSouls:raw.ownSouls,
-          budget:raw.infiniteMoney?Number.MAX_SAFE_INTEGER:raw.budget,availableItems:raw.availableItems};
+          budget:raw.infiniteMoney?Number.MAX_SAFE_INTEGER:raw.budget,seconds:raw.seconds,availableItems:raw.availableItems,
+          healthPercent:raw.healthPercent,observations:raw.observations};
         var independent=decision.plan(data,state,data.knowledge,previousPlan);
         if(independent.status==='waiting')return independent;
         previousPlan=independent.recommendations.map(function(r){return r.id;});

@@ -105,6 +105,9 @@ await fs.copyFile(
 if (probe) await fs.copyFile(at("src/panorama/shopmark_probe.js"), path.join(content, "panorama/scripts/shopmark_probe.js"));
 for (const [source, destination] of [
   ['src/decision.js', 'panorama/scripts/shopmark_decision.js'],
+  ['src/conditions.js', 'panorama/scripts/shopmark_conditions.js'],
+  ['src/panorama/shopmark_shop.js', 'panorama/scripts/shopmark_shop.js'],
+  ['src/panorama/shopmark_shop.xml', 'panorama/layout/shopmark_shop.xml'],
   ['src/live.js', 'panorama/scripts/shopmark_live_core.js'],
   ['src/panorama/shopmark_hud.js', 'panorama/scripts/shopmark_hud.js'],
   ['src/panorama/shopmark_live.js', 'panorama/scripts/shopmark_live.js'],
@@ -176,6 +179,9 @@ const sources = [
   "panorama/scripts/shopmark_badge.js",
   "panorama/scripts/shopmark_live_core.js",
   "panorama/scripts/shopmark_decision.js",
+  "panorama/scripts/shopmark_conditions.js",
+  "panorama/scripts/shopmark_shop.js",
+  "panorama/layout/shopmark_shop.xml",
   "panorama/scripts/shopmark_hud.js",
   "panorama/scripts/shopmark_live.js",
   "panorama/styles/shopmark_live.css",

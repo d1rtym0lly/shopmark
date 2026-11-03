@@ -53,11 +53,19 @@
         raw.ownSouls = localPlayer.souls;
         raw.playing = true;
       }
+      var health=cache.health;
+      if(!valid(health)){health=find(root,'health_and_abilities_container');if(valid(health))cache.health=health;}
+      var currentLabels=valid(health)?health.FindChildrenWithClassTraverse('currentHealthLabel'):[];
+      var maxLabels=valid(health)?health.FindChildrenWithClassTraverse('totalHealthLabel'):[];
+      var currentHealth=currentLabels.length?live.number(text(currentLabels[0])):null;
+      var maxHealth=maxLabels.length?live.number(text(maxLabels[0]).replace(/^\/\s*/,'')):null;
+      raw.healthPercent=raw.playing&&currentHealth!=null&&maxHealth>0&&currentHealth<=maxHealth?100*currentHealth/maxHealth:null;
       // The native tree can retain its previous scoreboard while returning
       // to hideout. A fresh read of stale labels is not a fresh match state.
       ['connectedToHideout', 'inHideoutIntro'].forEach(function (c) {
         if (root.BHasClass(c) || (typeof root.BAscendantHasClass === 'function' && root.BAscendantHasClass(c))) raw.playing = false;
       });
+      if(!raw.playing)raw.healthPercent=null;
       var gold = find(stats, 'gold_and_ap_container');
       var shopGold = find(shop, 'GoldAPContainer');
       var currency = valid(shopGold) && shop.visible ? shopGold : gold;

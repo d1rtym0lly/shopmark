@@ -38,3 +38,13 @@
 .sm-live-button { margin-top: 7px; padding: 5px 9px; border: 1px solid #ff7f9045; border-radius: 5px; }
 .sm-live-button Label { color: #ff9aa7; font-size: 13px; }
 .sm-live-button:hover { background-color: #ff7f9020; }
+.ShopmarkShopNav { width: 110px; min-height: 42px; margin: 6px 8px; padding: 10px 5px; border: 1px solid #ff7f9060; border-radius: 6px; background-color: #101018; }
+.ShopmarkShopNavLabel { horizontal-align: center; color: #ff9aa7; font-size: 14px; font-weight: bold; }
+.ShopmarkShopNav:hover, .ShopmarkShopSelected { background-color: #492632; }
+.ShopmarkShopView { ignore-parent-flow: true; z-index: 8; width: 100%; height: 100%; background-color: #0b0c12fa; padding: 20px; flow-children: down; }
+.ShopmarkShopTitle { color: #ff9aa7; font-size: 20px; font-weight: bold; margin-bottom: 10px; }
+.ShopmarkShopNote { color: #d6d2df; font-size: 14px; margin-bottom: 14px; }
+.ShopmarkShopScroll { width: 100%; height: fill-parent-flow(1); flow-children: down; overflow: squish scroll; }
+.ShopmarkShopSection { width: 100%; flow-children: down; margin-bottom: 18px; }
+.ShopmarkShopGrid { width: 100%; min-height: 110px; flow-children: right-wrap; }
+.ShopmarkShopGrid .mod_view { width: 104px; height: 140px; margin: 4px; }

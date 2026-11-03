@@ -7,6 +7,7 @@
   var nextIcon = host.FindChildTraverse('ShopmarkNextIcon'), nextName = host.FindChildTraverse('ShopmarkNextName');
   var nextWhy = host.FindChildTraverse('ShopmarkNextWhy'), nextPrice = host.FindChildTraverse('ShopmarkNextPrice'), shownIcon = '';
   var source = null, sourcePending = false;
+  var shopView=$.ShopmarkShop?$.ShopmarkShop.create(hud,data):null;
   function inventorySource(enabled) {
     if (!data.shopItemIds || !data.shopItemIds.length) return;
     if (source && source.IsValid()) {
@@ -53,7 +54,7 @@
     if (icon !== shownIcon) { nextIcon.SetImage(icon); shownIcon = icon; }
     nextName.text = next.name;
     nextWhy.text = next.shortWhy || next.why;
-    nextPrice.text = $.ShopmarkLive.numberText(next.cost) + ' душ' + (next.affordable === true ? ' · можно купить' :
+    nextPrice.text = (next.fullCost>next.cost?'Доплата ':'') + $.ShopmarkLive.numberText(next.cost) + ' душ' + (next.affordable === true ? ' · можно купить' :
       next.affordable === false && Number.isFinite(result.budget) ? ' · ещё ' + $.ShopmarkLive.numberText(Math.max(0, next.cost - result.budget)) : ' · проверь магазин');
   }
   function render(result, raw) {
@@ -75,7 +76,8 @@
       var row = panel(body, 'sm-live-row'), item = data.items.filter(function (x) { return x.id === r.id; })[0];
       if (item && item.icon) { var icon = $.CreatePanel('Image', row, ''); icon.AddClass('sm-live-icon'); icon.SetImage(item.icon); }
       var copy = panel(row, 'sm-live-copy');
-      label(copy, (i === 0 ? 'СЕЙЧАС' : 'ЗАТЕМ') + (r.kind === 'situation' ? ' · ПОД СОПЕРНИКА' : '') + ' · ' + r.cost, 'sm-live-tag');
+      var price=r.fullCost>r.cost?r.fullCost+' · доплата '+r.cost:String(r.cost);
+      label(copy, (i === 0 ? 'СЕЙЧАС' : 'ЗАТЕМ') + (r.kind === 'situation' ? ' · ПОД СОПЕРНИКА' : '') + ' · ' + price, 'sm-live-tag');
       label(copy, r.name, 'sm-live-name');
       if(r.partial)label(copy,'Часть условных эффектов пока не входит в числовую оценку','sm-live-note');
       label(copy, r.affordable === false ? 'Нужно накопить или купить компонент' : r.affordable ? 'Можно купить' : 'Проверь стоимость в магазине', 'sm-live-note');
@@ -110,10 +112,13 @@
       Object.keys(raw.diagnostics || {}).forEach(function (key) { if (key !== 'economy') debug.diagnostics[key] = raw.diagnostics[key]; });
       $.Msg('[SHOPMARK-LIVE] ' + JSON.stringify(debug));
     }
+    var planStarted=Date.now();
     var result = engine.evaluate(data, raw, { enabled:enabled, rank:hud.GetAttributeInt('shopmark_rank', 0), buildId:hud.GetAttributeInt('shopmark_build', 0) });
+    if(hud.GetAttributeInt('shopmark_diagnostics',0))$.Msg('[SHOPMARK-PERF] planMs='+String(Date.now()-planStarted));
     if (hud.GetAttributeInt('shopmark_diagnostics', 0)) $.Msg('[SHOPMARK-PLAN] ' + JSON.stringify({status:result.status,hero:result.hero && result.hero.name,
       next:result.recommendations.map(function (r) {return {id:r.id,cost:r.cost,kind:r.kind,affordable:r.affordable};}),advantage:result.advantage,lane:result.lane}));
     hud.SetAttributeString('shopmark_next', result.status === 'live' && result.recommendations.length ? String(result.recommendations[0].id) : '');
+    if(shopView)shopView.update(result,enabled);
     compact(result);
     var key = JSON.stringify({status:result.status, reason:result.reason, hero:result.hero && result.hero.id, build:result.build && result.build.id,
       recommendations:result.recommendations, advantage:result.advantage, lane:result.lane, purchased:raw && raw.purchased});

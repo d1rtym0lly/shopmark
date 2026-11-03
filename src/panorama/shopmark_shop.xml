@@ -1,0 +1,13 @@
+<root>
+  <styles><include src="s2r://panorama/styles/shopmark_live.vcss_c" /></styles>
+  <Panel class="ShopmarkShopView" hittest="true">
+    <Label class="ShopmarkShopTitle" text="SHOPMARK · СБОРКА ПОД МАТЧ" />
+    <Label class="ShopmarkShopNote" text="Порядок и состав меняются автоматически. Карточки предметов — штатные игровые." />
+    <Panel id="ShopmarkShopScroll" class="ShopmarkShopScroll">
+      <Panel class="ShopmarkShopSection"><Label class="ShopmarkShopTitle" text="Ближайшие покупки" /><Panel id="ShopmarkShopNow" class="ShopmarkShopGrid" /></Panel>
+      <Panel class="ShopmarkShopSection"><Label class="ShopmarkShopTitle" text="Следующие шаги" /><Panel id="ShopmarkShopLater" class="ShopmarkShopGrid" /></Panel>
+      <Panel class="ShopmarkShopSection"><Label class="ShopmarkShopTitle" text="Уже куплено" /><Panel id="ShopmarkShopOwned" class="ShopmarkShopGrid" /></Panel>
+    </Panel>
+    <Panel id="ShopmarkShopCache" class="ShopmarkInventorySource" hittest="false" hittestchildren="false" style="width: 1px; height: 1px; opacity: 0;" />
+  </Panel>
+</root>
