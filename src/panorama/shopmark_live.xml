@@ -13,16 +13,25 @@
   <Panel class="ShopmarkLiveHost" hittest="false">
     <GlobalClassListener classes="gShopOpen gEditingBuilds gScoreboardOpen" />
     <Panel id="ShopmarkNext" hittest="false" hittestchildren="false">
-      <Image id="ShopmarkNextIcon" />
-      <Panel id="ShopmarkNextCopy">
-        <Label id="ShopmarkNextTag" text="SHOPMARK · ДАЛЬШЕ" />
-        <Label id="ShopmarkNextName" />
-        <Label id="ShopmarkNextWhy" />
-        <Label id="ShopmarkNextPrice" />
+      <Panel id="ShopmarkNextEdge" />
+      <Panel id="ShopmarkNextContent">
+        <Panel id="ShopmarkNextFrame"><Image id="ShopmarkNextIcon" /></Panel>
+        <Panel id="ShopmarkNextCopy">
+          <Label id="ShopmarkNextTag" text="СЛЕДУЮЩАЯ ПОКУПКА" />
+          <Label id="ShopmarkNextName" />
+          <Label id="ShopmarkNextWhy" />
+          <Panel id="ShopmarkNextFooter">
+            <Label id="ShopmarkNextPrice" />
+            <Label id="ShopmarkNextAvailability" />
+          </Panel>
+        </Panel>
       </Panel>
     </Panel>
     <Panel id="ShopmarkLiveBox" hittest="true">
-      <Button id="ShopmarkAutoToggle"><Label id="ShopmarkAutoToggleText" text="SHOPMARK · Автопомощник выкл" /></Button>
+      <Button id="ShopmarkAutoToggle">
+        <Label id="ShopmarkAutoBrand" text="SHOPMARK / HUD" />
+        <Label id="ShopmarkAutoToggleText" text="Автопомощник · выкл" />
+      </Button>
       <Panel id="ShopmarkPlacement">
         <Button id="ShopmarkSideToggle"><Label id="ShopmarkSideText" text="Карточка: слева" /></Button>
         <Button id="ShopmarkCompactToggle"><Label id="ShopmarkCompactText" text="Только иконка" /></Button>

@@ -85,7 +85,8 @@
   }
   var header = $.CreatePanel("Panel", host, "ShopmarkHeader");
   header.AddClass("sm-header");
-  label(header, "SHOPMARK / COACH", "sm-wordmark");
+  label(header, "SHOPMARK", "sm-wordmark");
+  label(header, "КАТАЛОГ СБОРОК", "sm-subtitle");
   label(
     header,
     "Патч " + (data.patch ? data.patch.date.slice(0, 10) : "не проверен"),
@@ -150,11 +151,11 @@
     view = "builds";
     render();
   });
-  button(bar, "Помощник", function () {
+  var coachTab = button(bar, "Помощник", function () {
     view = view === "coach" ? "builds" : "coach";
     render();
   });
-  button(bar, "Патчи", function () {
+  var patchTab = button(bar, "Патчи", function () {
     view = view === "patches" ? "builds" : "patches";
     render();
   });
@@ -225,6 +226,9 @@
     if (!alive(cards)) return;
     cards.RemoveAndDeleteChildren();
     cards.SetHasClass("sm-coach-view", view !== "builds");
+    coachTab.SetHasClass("sm-button-selected", view === "coach");
+    patchTab.SetHasClass("sm-button-selected", view === "patches");
+    filter.SetHasClass("sm-button-selected", source === "pro");
     var id = Number(value(hero)),
       rankId = Number(value(rank)),
       all = coach.catalog(data, id, rankId, source, search.text || "");

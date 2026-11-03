@@ -31,8 +31,8 @@ function harness() {
     Localize:t=>t,Schedule:(delay,fn)=>jobs.push(fn),Msg:msg=>logs.push(msg)};
   vm.runInNewContext(fs.readFileSync(new URL('../src/panorama/shopmark_live.js',import.meta.url),'utf8'),{$});
   function next(extra={}){result={status:'live',hero:{id:1,name:'Infernus'},build:{id:1,name:'Build',author:'Author'},
-    advantage:'even',lane:'unknown',budget:600,recommendations:[{id:10,name:'Magazine',cost:800,kind:'build',affordable:false,
-      why:'Full explanation',shortWhy:'Upgrade an owned component',when:'When',tradeoff:'Tradeoff'}],...extra};}
+    advantage:'even',lane:'unknown',budget:600,recommendations:[{id:10,name:'Magazine',cost:800,fullCost:1600,kind:'build',affordable:false,
+      why:'Full explanation',shortWhy:'Upgrade an owned component',hudWhy:'Больше патронов до перезарядки.',when:'When',tradeoff:'Tradeoff'}],...extra};}
   next();
   return {hud,host,nodes,logs,next,tick:()=>jobs.shift()(),click:id=>nodes.get(id).handlers.onactivate(),
     setFail:()=>{fail=true;},get reads(){return reads;}};
@@ -41,11 +41,12 @@ function harness() {
 test('compact recommendation updates price without recreating explanations or resetting the icon',()=>{
   const h=harness();h.hud.SetAttributeInt('shopmark_auto',1);h.tick();
   assert(h.host.BHasClass('sm-auto-playing'));
-  assert.equal(h.nodes.get('ShopmarkNextWhy').text,'Upgrade an owned component');
-  assert.match(h.nodes.get('ShopmarkNextPrice').text,/ещё 200/);
+  assert.equal(h.nodes.get('ShopmarkNextWhy').text,'Больше патронов до перезарядки.');
+  assert.equal(h.nodes.get('ShopmarkNextPrice').text,'Доплата 800 душ');
+  assert.equal(h.nodes.get('ShopmarkNextAvailability').text,'Ещё 200');
   const body=h.nodes.get('ShopmarkLiveBody'),child=body.nodes[0];
   h.next({budget:750});h.tick();
-  assert.match(h.nodes.get('ShopmarkNextPrice').text,/ещё 50/);
+  assert.equal(h.nodes.get('ShopmarkNextAvailability').text,'Ещё 50');
   assert.equal(body.nodes[0],child);
   assert.equal(h.nodes.get('ShopmarkNextIcon').images.length,1);
   h.click('ShopmarkSideToggle');h.click('ShopmarkCompactToggle');

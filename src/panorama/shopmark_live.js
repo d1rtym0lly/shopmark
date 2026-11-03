@@ -6,6 +6,7 @@
   var toggleText = host.FindChildTraverse('ShopmarkAutoToggleText'), body = host.FindChildTraverse('ShopmarkLiveBody'), last = '', expanded = {}, statusLabel = null;
   var nextIcon = host.FindChildTraverse('ShopmarkNextIcon'), nextName = host.FindChildTraverse('ShopmarkNextName');
   var nextWhy = host.FindChildTraverse('ShopmarkNextWhy'), nextPrice = host.FindChildTraverse('ShopmarkNextPrice'), shownIcon = '';
+  var nextAvailability = host.FindChildTraverse('ShopmarkNextAvailability');
   var source = null, sourcePending = false;
   var shopView=$.ShopmarkShop?$.ShopmarkShop.create(hud,data):null;
   function inventorySource(enabled) {
@@ -49,13 +50,14 @@
     var next = result.status === 'live' && result.recommendations[0];
     host.SetHasClass('sm-auto-playing', !!next);
     host.SetHasClass('sm-live-affordable', !!next && next.affordable === true);
-    if (!next) { nextName.text = ''; nextWhy.text = ''; nextPrice.text = ''; return; }
+    if (!next) { nextName.text = ''; nextWhy.text = ''; nextPrice.text = ''; nextAvailability.text = ''; return; }
     var item = data.items.filter(function (x) { return x.id === next.id; })[0], icon = item && item.icon || '';
     if (icon !== shownIcon) { nextIcon.SetImage(icon); shownIcon = icon; }
     nextName.text = next.name;
-    nextWhy.text = next.shortWhy || next.why;
-    nextPrice.text = (next.fullCost>next.cost?'Доплата ':'') + $.ShopmarkLive.numberText(next.cost) + ' душ' + (next.affordable === true ? ' · можно купить' :
-      next.affordable === false && Number.isFinite(result.budget) ? ' · ещё ' + $.ShopmarkLive.numberText(Math.max(0, next.cost - result.budget)) : ' · проверь магазин');
+    nextWhy.text = next.hudWhy || next.shortWhy || next.why;
+    nextPrice.text = (next.fullCost>next.cost?'Доплата ':'') + $.ShopmarkLive.numberText(next.cost) + ' душ';
+    nextAvailability.text = next.affordable === true ? 'Можно купить' :
+      next.affordable === false && Number.isFinite(result.budget) ? 'Ещё ' + $.ShopmarkLive.numberText(Math.max(0, next.cost - result.budget)) : '';
   }
   function render(result, raw) {
     body.RemoveAndDeleteChildren();
@@ -81,8 +83,9 @@
       label(copy, r.name, 'sm-live-name');
       if(r.partial)label(copy,'Часть условных эффектов пока не входит в числовую оценку','sm-live-note');
       label(copy, r.affordable === false ? 'Нужно накопить или купить компонент' : r.affordable ? 'Можно купить' : 'Проверь стоимость в магазине', 'sm-live-note');
-      var why = label(copy, r.why + '\n' + r.when + '\n' + r.tradeoff, 'sm-live-why');
-      why.visible = expanded[r.id] === undefined ? i === 0 : expanded[r.id];
+      label(copy, r.hudWhy || r.shortWhy || r.why, 'sm-live-why');
+      var why = label(copy, [r.why, r.when, r.tradeoff].filter(Boolean).join('\n\n'), 'sm-live-detail');
+      why.visible = !!expanded[r.id];
       var button = $.CreatePanel('Button', copy, ''); button.AddClass('sm-live-button');
       label(button, why.visible ? 'Свернуть объяснение' : 'Почему этот предмет?', 'sm-live-tag');
       button.SetPanelEvent('onactivate', function () { why.visible = !why.visible; expanded[r.id] = why.visible; button.GetChild(0).text = why.visible ? 'Свернуть объяснение' : 'Почему этот предмет?'; });
@@ -100,7 +103,7 @@
     host.SetHasClass('sm-live-obscured', hud.BHasClass('ShowEscapeMenu') || hud.BHasClass('HudHidden') || hud.BHasClass('HudTakeoverEnabled'));
     host.FindChildTraverse('ShopmarkSideText').text = 'Карточка: ' + (right ? 'справа' : 'слева');
     host.FindChildTraverse('ShopmarkCompactText').text = mini ? 'Иконка и причина' : 'Только иконка';
-    toggleText.text = 'SHOPMARK · Автопомощник ' + (enabled ? 'вкл ●' : 'выкл');
+    toggleText.text = 'Автопомощник · ' + (enabled ? 'включён' : 'выключен');
     var raw = enabled ? adapter.read() : null;
     if (hud.GetAttributeInt('shopmark_diagnostics', 0) && raw) {
       // Native console lines are bounded. Keep captures parseable without the

@@ -7,8 +7,12 @@
     data.items.forEach(function(i){items[i.id]=i;[i.name].concat(i.aliases||[]).forEach(function(n){idsByName[String(n).trim().toLowerCase()]=i.id;});});
     function label(parent,text,cls){var p=$.CreatePanel('Label',parent,'');p.text=text;p.html=false;p.AddClass(cls);return p;}
     function tabState(){return ['showingFavorites','showingAllItems','showingWeapon','showingTech','showingArmor','showingRecommendations'].filter(function(c){return shop.BHasClass(c);}).join('|');}
-    function close(){hud.SetAttributeInt('shopmark_shop_view',0);if(valid(view))view.visible=false;if(valid(nav)){nav.SetHasClass('ShopmarkShopSelected',false);nav.style.backgroundColor='#101018';}return false;}
-    function section(parent,id,title){var p=$.CreatePanel('Panel',parent,'');p.AddClass('ShopmarkShopSection');label(p,title,'ShopmarkShopTitle');var grid=$.CreatePanel('Panel',p,id);grid.AddClass('ShopmarkShopGrid');return grid;}
+    function paintNav(open){
+      if(!valid(nav))return;
+      nav.SetHasClass('ShopmarkShopSelected',open);
+      nav.style.backgroundColor=open?'#572e3e':'#1c161e';
+    }
+    function close(){hud.SetAttributeInt('shopmark_shop_view',0);if(valid(view))view.visible=false;paintNav(false);return false;}
     function mount(){
       if(valid(view)&&valid(nav))return true;
       shop=hud.FindChildTraverse('CitadelHudHeroShop');
@@ -16,9 +20,10 @@
       var navigation=shop.FindChildTraverse('ShopNavigation'),content=shop.FindChildTraverse('ShopModListsContainer');
       if(!valid(navigation)||!valid(content))return false;
       nav=$.CreatePanel('Button',navigation,'ShopmarkShopNav');nav.AddClass('ShopmarkShopNav');var title=label(nav,'SHOPMARK','ShopmarkShopNavLabel');
-      nav.style.width='110px';nav.style.minHeight='42px';nav.style.margin='6px 8px';nav.style.padding='10px 5px';nav.style.backgroundColor='#101018';
-      title.style.color='#ff9aa7';title.style.fontSize='14px';title.style.fontWeight='bold';title.style.horizontalAlign='center';
-      nav.SetPanelEvent('onactivate',function(){if(!valid(hud))return;var open=!hud.GetAttributeInt('shopmark_shop_view',0);hud.SetAttributeInt('shopmark_shop_view',open?1:0);tabs=tabState();if(valid(view))view.visible=open;nav.SetHasClass('ShopmarkShopSelected',open);nav.style.backgroundColor=open?'#492632':'#101018';});
+      nav.style.width='110px';nav.style.minHeight='42px';nav.style.margin='6px 8px';nav.style.padding='10px 5px';
+      nav.style.borderRadius='12px';nav.style.border='1px solid #945469';paintNav(false);
+      title.style.color='#ffd1da';title.style.fontSize='14px';title.style.fontWeight='bold';title.style.horizontalAlign='center';
+      nav.SetPanelEvent('onactivate',function(){if(!valid(hud))return;var open=!hud.GetAttributeInt('shopmark_shop_view',0);hud.SetAttributeInt('shopmark_shop_view',open?1:0);tabs=tabState();if(valid(view))view.visible=open;paintNav(open);});
       ['FavoritesNav','RecommendedNav','FilteredNav','WeaponNav','TechNav','ArmorNav'].forEach(function(id){
         var button=shop.FindChildTraverse(id);if(valid(button))$.RegisterEventHandler('Activated',button,close);
       });
@@ -63,8 +68,7 @@
       if(!wasEnabled){hud.SetAttributeInt('shopmark_shop_view',1);tabs=tabState();wasEnabled=true;}
       else if(tabState()!==tabs){close();tabs=tabState();}
       var open=!!hud.GetAttributeInt('shopmark_shop_view',0)&&!shop.BHasClass('gEditingBuilds');
-      view.visible=open;nav.SetHasClass('ShopmarkShopSelected',open);
-      nav.style.backgroundColor=open?'#492632':'#101018';
+      view.visible=open;paintNav(open);
       var key=JSON.stringify([result.status==='live'?result.recommendations.map(function(r){return r.id;}):[],result.purchased||[]]);
       if(key!==last&&!pending){pending=true;$.Schedule(0.03,render);}
     }
