@@ -1,50 +1,110 @@
 .ShopmarkLiveHost { width: 100%; height: 100%; }
-.ShopmarkLiveHost.gEditingBuilds, .ShopmarkLiveHost.gScoreboardOpen { visibility: collapse; }
-.ShopmarkLiveHost.sm-live-obscured { visibility: collapse; }
-#ShopmarkNext { visibility: collapse; horizontal-align: left; vertical-align: top; margin-left: 24px; margin-top: 190px; width: 284px; padding: 10px; flow-children: right; background-color: #090a10ee; border-left: 3px solid #ff7f90; border-radius: 9px; box-shadow: #00000088 0px 3px 12px 0px; }
+.ShopmarkLiveHost.gEditingBuilds, .ShopmarkLiveHost.gScoreboardOpen, .ShopmarkLiveHost.sm-live-obscured { visibility: collapse; }
+
+#ShopmarkNext {
+  visibility: collapse;
+  horizontal-align: left;
+  vertical-align: top;
+  margin-left: 24px;
+  margin-top: 190px;
+  width: 316px;
+  background-color: #121017f7;
+  border: 1px solid #65404e;
+  border-radius: 16px;
+  box-shadow: #00000088 0px 4px 12px 0px;
+}
 .sm-auto-enabled.sm-auto-playing #ShopmarkNext { visibility: visible; }
 .gShopOpen #ShopmarkNext { visibility: collapse; }
 .sm-live-right #ShopmarkNext { horizontal-align: right; margin-left: 0px; margin-right: 24px; }
-#ShopmarkNextIcon { width: 42px; height: 42px; border-radius: 7px; margin-right: 9px; }
+#ShopmarkNextEdge {
+  width: 3px;
+  height: 54px;
+  margin-left: 3px;
+  vertical-align: center;
+  border-radius: 2px;
+  background-color: #ff8196;
+}
+.sm-live-right #ShopmarkNextEdge { horizontal-align: right; margin-left: 0px; margin-right: 3px; }
+#ShopmarkNextContent { width: 100%; padding: 12px 14px; flow-children: right; }
+#ShopmarkNextFrame {
+  width: 48px;
+  height: 48px;
+  margin-right: 11px;
+  margin-top: 2px;
+  border: 1px solid #a95870;
+  background-color: #261821;
+  border-radius: 10px;
+  padding: 3px;
+}
+#ShopmarkNextIcon { width: 100%; height: 100%; border-radius: 7px; }
 #ShopmarkNextCopy { width: fill-parent-flow(1); flow-children: down; }
-#ShopmarkNextTag { color: #ff9aa7; font-size: 10px; letter-spacing: 1px; }
-#ShopmarkNextName { color: #fff2ed; font-size: 16px; font-weight: bold; max-height: 22px; text-overflow: ellipsis; }
-#ShopmarkNextWhy { color: #d6d2df; font-size: 13px; max-height: 36px; text-overflow: ellipsis; margin-top: 3px; }
-#ShopmarkNextPrice { color: #b6b0c2; font-size: 12px; margin-top: 4px; }
-.sm-live-affordable #ShopmarkNextPrice { color: #9ef1c8; }
-.sm-live-compact #ShopmarkNext { width: 65px; }
-.sm-live-compact #ShopmarkNextCopy { visibility: collapse; }
-.sm-live-compact #ShopmarkNextIcon { margin-right: 0px; }
-#ShopmarkLiveBox { visibility: collapse; width: 340px; horizontal-align: right; vertical-align: top; margin-right: 22px; margin-top: 180px; flow-children: down; background-color: #0b0c12f8; border: 1px solid #ff7f9060; border-radius: 12px; box-shadow: #000000aa 0px 5px 20px 0px; }
+#ShopmarkNextTag { color: #ffa6b4; font-size: 11px; font-weight: bold; letter-spacing: 1px; }
+#ShopmarkNextName { width: 100%; color: #fff3f4; font-size: 18px; font-weight: bold; max-height: 42px; text-overflow: ellipsis; }
+#ShopmarkNextWhy { width: 100%; color: #e5dce4; font-size: 15px; min-height: 38px; max-height: 57px; text-overflow: ellipsis; white-space: normal; margin-top: 5px; }
+#ShopmarkNextFooter { width: 100%; flow-children: right; margin-top: 7px; padding-top: 6px; border-top: 1px solid #553544; }
+#ShopmarkNextPrice, #ShopmarkNextAvailability { color: #ffe6eb; font-size: 12px; font-weight: bold; }
+#ShopmarkNextAvailability { color: #d9b5c4; margin-left: 8px; }
+.sm-live-affordable #ShopmarkNextAvailability { color: #9ef1c8; }
+.sm-live-compact #ShopmarkNext { width: 66px; }
+.sm-live-compact #ShopmarkNextContent { padding: 8px; }
+.sm-live-compact #ShopmarkNextCopy, .sm-live-compact #ShopmarkNextEdge { visibility: collapse; }
+.sm-live-compact #ShopmarkNextFrame { margin: 0px; }
+
+#ShopmarkLiveBox {
+  visibility: collapse;
+  width: 344px;
+  horizontal-align: right;
+  vertical-align: top;
+  margin-right: 22px;
+  margin-top: 180px;
+  flow-children: down;
+  background-color: #100e15fc;
+  border: 1px solid #714052;
+  border-radius: 18px;
+  box-shadow: #000000aa 0px 5px 20px 0px;
+}
 .gShopOpen #ShopmarkLiveBox { visibility: visible; }
-#ShopmarkPlacement { visibility: collapse; flow-children: right; padding: 0px 14px 8px; }
+#ShopmarkPlacement { visibility: collapse; flow-children: right; padding: 8px 14px 4px; }
 .sm-auto-enabled #ShopmarkPlacement { visibility: visible; }
-#ShopmarkPlacement Button { padding: 6px; margin-right: 5px; border: 1px solid #ff7f9045; border-radius: 5px; }
-#ShopmarkPlacement Button:hover { background-color: #ff7f9020; }
-#ShopmarkPlacement Label { color: #ff9aa7; font-size: 12px; }
-#ShopmarkAutoToggle { width: 100%; padding: 14px; background-color: #ff7f9018; }
-#ShopmarkAutoToggle:hover { background-color: #ff7f9030; }
-#ShopmarkAutoToggleText { color: #ff9aa7; font-size: 16px; font-weight: bold; }
+#ShopmarkPlacement Button, .sm-live-button {
+  padding: 6px 10px;
+  margin-right: 6px;
+  border: 1px solid #744453;
+  border-radius: 10px;
+  background-color: #241922;
+}
+#ShopmarkPlacement Button:hover, .sm-live-button:hover { background-color: #422633; }
+#ShopmarkPlacement Label { color: #ffd0d8; font-size: 13px; }
+#ShopmarkAutoToggle { width: 100%; flow-children: down; padding: 10px 14px; background-color: #301d28; border-radius: 16px 16px 8px 8px; }
+#ShopmarkAutoToggle:hover { background-color: #442631; }
+#ShopmarkAutoBrand { color: #ffa6b4; font-size: 11px; font-weight: bold; letter-spacing: 2px; }
+#ShopmarkAutoToggleText { color: #fff0f2; font-size: 17px; font-weight: bold; margin-top: 2px; }
 #ShopmarkLiveBody { width: 100%; max-height: 540px; overflow: squish scroll; flow-children: down; padding: 0px 14px 14px; visibility: collapse; }
 .sm-auto-enabled #ShopmarkLiveBody { visibility: visible; }
-.sm-live-state { color: #9ef1c8; font-size: 16px; margin-top: 10px; }
-.sm-live-note { color: #a8a8ba; font-size: 13px; margin-top: 7px; }
-.sm-live-name { color: #fff2ed; font-size: 17px; font-weight: bold; }
-.sm-live-row { width: 100%; flow-children: right; margin-top: 14px; border-top: 1px solid #ffffff14; padding-top: 10px; }
-.sm-live-icon { width: 48px; height: 48px; margin-right: 10px; border-radius: 8px; }
+.sm-live-state { color: #ffd1da; font-size: 18px; font-weight: bold; margin-top: 10px; }
+.sm-live-note { color: #c8bcc9; font-size: 13px; margin-top: 5px; }
+.sm-live-name { color: #fff2f3; font-size: 17px; font-weight: bold; }
+.sm-live-row { width: 100%; flow-children: right; margin-top: 10px; padding: 9px; border: 1px solid #50333f; border-radius: 12px; background-color: #1d161e; }
+.sm-live-icon { width: 42px; height: 42px; margin-right: 9px; border-radius: 8px; }
 .sm-live-copy { width: fill-parent-flow(1); flow-children: down; }
-.sm-live-why { color: #d6d2df; font-size: 14px; margin-top: 5px; }
-.sm-live-tag { color: #ff9aa7; font-size: 13px; }
-.sm-live-button { margin-top: 7px; padding: 5px 9px; border: 1px solid #ff7f9045; border-radius: 5px; }
-.sm-live-button Label { color: #ff9aa7; font-size: 13px; }
-.sm-live-button:hover { background-color: #ff7f9020; }
-.ShopmarkShopNav { width: 110px; min-height: 42px; margin: 6px 8px; padding: 10px 5px; border: 1px solid #ff7f9060; border-radius: 6px; background-color: #101018; }
-.ShopmarkShopNavLabel { horizontal-align: center; color: #ff9aa7; font-size: 14px; font-weight: bold; }
-.ShopmarkShopNav:hover, .ShopmarkShopSelected { background-color: #492632; }
-.ShopmarkShopView { ignore-parent-flow: true; z-index: 8; width: 100%; height: 100%; background-color: #0b0c12fa; padding: 20px; flow-children: down; }
-.ShopmarkShopTitle { color: #ff9aa7; font-size: 20px; font-weight: bold; margin-bottom: 10px; }
-.ShopmarkShopNote { color: #d6d2df; font-size: 14px; margin-bottom: 14px; }
+.sm-live-why { color: #efe5ec; font-size: 15px; margin-top: 6px; white-space: normal; }
+.sm-live-detail { color: #c8bcc9; font-size: 13px; margin-top: 6px; white-space: normal; }
+.sm-live-tag { color: #ffb1be; font-size: 12px; font-weight: bold; }
+.sm-live-button { margin-top: 7px; }
+.sm-live-button Label { color: #ffd0d8; font-size: 13px; }
+
+.ShopmarkShopView { ignore-parent-flow: true; z-index: 8; width: 100%; height: 100%; }
+.ShopmarkShopSurface { width: 100%; height: 100%; padding: 16px; flow-children: down; background-color: #110e16fc; border: 1px solid #714052; border-radius: 20px; }
+.ShopmarkShopHeader { width: 100%; flow-children: down; background-color: #2c1b26; border: 1px solid #714052; border-radius: 14px; padding: 11px 15px; margin-bottom: 10px; }
+.ShopmarkShopKicker { color: #ffa6b4; font-size: 12px; letter-spacing: 2px; font-weight: bold; }
+.ShopmarkShopTitle { color: #fff3f4; font-size: 28px; font-weight: bold; margin: 1px 0px 3px; }
+.ShopmarkShopNote { color: #ded0db; font-size: 15px; }
 .ShopmarkShopScroll { width: 100%; height: fill-parent-flow(1); flow-children: down; overflow: squish scroll; }
-.ShopmarkShopSection { width: 100%; flow-children: down; margin-bottom: 18px; }
-.ShopmarkShopGrid { width: 100%; min-height: 110px; flow-children: right-wrap; }
+.ShopmarkShopSection { width: 100%; flow-children: down; padding: 8px 11px; margin-bottom: 8px; border: 1px solid #503542; border-radius: 14px; background-color: #1d161e; }
+.ShopmarkShopSectionNow { border-color: #a65d72; background-color: #261922; }
+.ShopmarkShopSectionHead { width: 100%; flow-children: right; margin-bottom: 3px; }
+.ShopmarkShopIndex { width: 27px; height: 24px; text-align: center; padding-top: 3px; border-radius: 8px; background-color: #4a2937; color: #ffd0d8; font-size: 14px; font-weight: bold; margin-right: 9px; }
+.ShopmarkShopSectionOwned .ShopmarkShopIndex { background-color: #203934; color: #a9eccc; }
+.ShopmarkShopHeading { color: #f8e8ef; font-size: 17px; font-weight: bold; vertical-align: center; }
+.ShopmarkShopGrid { width: 100%; min-height: 32px; flow-children: right-wrap; }
 .ShopmarkShopGrid .mod_view { width: 104px; height: 140px; margin: 4px; }

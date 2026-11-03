@@ -84,6 +84,18 @@
       bullets:'пули',healing:'лечение',control:'контроль',flight:'полёт',channel:'поддерживаемые способности',escape:'уход из боя',
       bulletDefense:'сопротивление пулям',spiritDefense:'сопротивление духу',controlDefense:'защита от контроля',weaponSustain:'лечение от стрельбы',spiritSustain:'лечение от духовного урона',
       barrier:'барьер',recovery:'восстановление после возрождения',weaponUtility:'удобство стрельбы',weaponAmp:'усиление урона оружия',spiritAmp:'усиление духовного урона'};
+    var hudBenefits={weapon:'Усиливает стрельбу',spirit:'Усиливает духовный урон',health:'Добавляет запас здоровья',
+      sustain:'Помогает восстановить здоровье',mobility:'Облегчает перемещение',melee:'Усиливает ближний бой',
+      farm:'Помогает быстрее фармить',cooldown:'Позволяет чаще применять умения',duration:'Продлевает действие умений',
+      range:'Увеличивает дальность умений',charges:'Даёт дополнительные заряды',healing:'Усиливает лечение',
+      bulletDefense:'Помогает пережить обстрел',spiritDefense:'Помогает выдержать духовный урон',
+      controlDefense:'Сокращает действие контроля',weaponSustain:'Восстанавливает здоровье за счёт стрельбы',
+      spiritSustain:'Восстанавливает здоровье за счёт духовного урона',barrier:'Даёт защитный барьер',
+      weaponUtility:'Помогает дольше вести огонь',weaponAmp:'Усиливает урон оружия',
+      spiritAmp:'Усиливает духовный урон',growth:'Усиливает героя по ходу матча',recovery:'Ускоряет возвращение в бой'};
+    var hudCounters={bullets:'Защита от стрельбы',spirit:'Защита от духовного урона',healing:'Снижение лечения',
+      control:'Защита от контроля',flight:'Ответ на полёт',channel:'Прерывание умения',escape:'Мешает уйти из боя',
+      bulletDefense:'Снижение защиты от пуль',spiritDefense:'Снижение защиты от духовного урона'};
     var richestRatio=1;
     (state.enemies||[]).forEach(function(e){if(Number.isFinite(state.ownSouls)&&state.ownSouls>0&&Number.isFinite(e.souls))richestRatio=Math.max(richestRatio,e.souls/state.ownSouls);});
     var unreviewed = [], candidates = [];
@@ -99,7 +111,7 @@
       Object.keys(v.effects).forEach(function (key) {
         var value=v.effects[key] * ((own.benefits || {})[key] || 0) / (1 + (ownedEffects[key] || 0));
         if(richestRatio>1.12 && (key==='farm'||key==='sustain'||key==='health'))value*=key==='farm'?1.5:1.2;
-        benefit += value;if(value>0.3)benefits.push({key:key,value:value});
+        benefit += value;if(value>0)benefits.push({key:key,value:value});
       });
       Object.keys(v.counters).forEach(function (key) {
         // One answered threat must not fill the plan with redundant counters.
@@ -123,6 +135,11 @@
       var targetName=target&&((data.heroes||[]).filter(function(h){return h.id===target.heroId;})[0]||{}).name;
       var short=target?'Ответ на '+(labels[target.mechanic]||target.mechanic)+' у '+(targetName||target.heroId):
         'Для твоего героя: '+benefits.slice(0,2).map(function(b){return labels[b.key]||b.key;}).join(', ');
+      var mainBenefit=benefits[0]&&hudBenefits[benefits[0].key];
+      var facts=rule.facts||[];
+      if(mainBenefit===hudBenefits.weapon&&facts.length===1&&facts[0].type==='FIRE_RATE')mainBenefit='Повышает скорострельность';
+      var hudWhy=target&&targetName&&hudCounters[target.mechanic]?hudCounters[target.mechanic]+' · '+targetName:
+        mainBenefit?mainBenefit+'.':short;
       if(cost<item.cost)short=(state.projected?'Улучшение по плану. ':'Улучшение купленного компонента. ')+short;
       var economic='';
       if(target){var opponent=(state.enemies||[]).filter(function(e){return e.heroId===target.heroId;})[0];
@@ -135,7 +152,7 @@
       var stats=observed&&observed.share>=0.05?' В '+Math.round(observed.share*100)+'% матчей на этом герое с покупками на соответствующем этапе брали этот предмет.':'';
       candidates.push({id:item.id, name:item.name, cost:cost, fullCost:item.cost, tier:tier, score:rating / (1 + gap / 3200),
         affordable:Number.isFinite(state.budget) ? gap === 0 : null, answers:answers,
-        shortWhy:short,kind:target?'situation':'mechanics',why:short+'.'+economic+' '+rule.explanation+stats,
+        shortWhy:short,hudWhy:hudWhy,kind:target?'situation':'mechanics',why:short+'.'+economic+' '+rule.explanation+stats,
         when:(rule.conditions||[]).concat(v.evidence.map(function(e){return e.label+': '+(e.state==='estimated'?'оценка вероятного применения':e.state==='observed'?'условие подтверждено':e.state==='inactive'?'сейчас не выполняется':'требует подходящего действия');})).join(' '),
         tradeoff:gap>0?'Нужно накопить ещё '+gap+' душ; сравни с ближайшим доступным усилением.':'Эта покупка откладывает другие усиления; при изменении угроз очередь пересчитается.',
         conditions:rule.conditions || [], conditionEvidence:v.evidence,source:rule.source,partial:!!rule.partial});
